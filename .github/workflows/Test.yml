@@ -9,6 +9,9 @@ on:
       - main
   workflow_dispatch:
 
+permissions: 
+  contents: write
+
 jobs:
   
   test-tc-01:
@@ -48,7 +51,7 @@ jobs:
       
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-        
+
       - name: Run Playwright tests
         run: npm run test:tc01
         env: 
