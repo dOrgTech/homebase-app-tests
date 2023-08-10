@@ -1,11 +1,12 @@
 const { test } = require("@playwright/test");
-const { changeNetwork } = require("./CommonFile/Action");
-const { pageLocators } = require("./CommonFile/Locator");
-const { TezosTestData } = require("./CommonFile/TestData");+
+const { changeNetwork } = require("../CommonFile/Action");
+const { pageLocators } = require("../CommonFile/Locator");
+const { TezosTestData } = require("../CommonFile/TestData");+
 
 test("Test Case 1: Successful Token Creation", async ({ page }) => {
 
-  test.setTimeout(600000); //To extend the time of test execution
+  console.log('Extending Test Case timeout to 10 minutes')
+  test.setTimeout(10 * 60* 1000); //To extend the time of test execution
 
   await changeNetwork(page); //PreConditions Open URL and Selecting the Ghost-net
 

@@ -1,9 +1,11 @@
 const { test } = require("@playwright/test");
-const { pageLocators } = require ("./Locator")
+const { pageLocators } = require ("./Locator");
+const AppConfig = require("../../config");
 
 async function changeNetwork(page){
 
-    await page.goto("https://deploy-preview-629--tezos-homebase.netlify.app");
+    console.log("WebApp URL for Testing:", AppConfig.TestURL)
+    await page.goto(AppConfig.TestURL);
 
     await page.click(pageLocators.TokenCreator.EnterApp)
   

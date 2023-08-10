@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
-const { changeNetwork } = require("./CommonFile/Action");
-const { pageLocators } = require("./CommonFile/Locator");
-const { TezosTestData } = require("./CommonFile/TestData");
+const { changeNetwork } = require("../CommonFile/Action");
+const { pageLocators } = require("../CommonFile/Locator");
+const { TezosTestData } = require("../CommonFile/TestData");
 
 test("Test Case 2: Token Creation with Various Input Values", async ({ page, }) => {
 

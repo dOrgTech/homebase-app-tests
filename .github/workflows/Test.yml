@@ -29,7 +29,7 @@ jobs:
         run: npm install @playwright/test aws-sdk playwright  
   
       - name: Run Playwright tests
-        run: npm test
+        run: npm run test:tc01
 
       - name: Deploy Report 🚀
         uses: JamesIves/github-pages-deploy-action@v4
