@@ -1,0 +1,23 @@
+{
+    "name": "tezosauto",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "playwright test",
+        "dev": "node --inspect-brk ./node_modules/@playwright/test/cli.js test TC04DAOValues.spec.js --project=chromium --headed"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "playwright": "^1.35.1"
+    },
+    "dependencies": {
+        "@playwright/test": "^1.35.1",
+        "aws-sdk": "^2.1419.0"
+    },
+    "directories": {
+        "test": "tests"
+    }
+}
