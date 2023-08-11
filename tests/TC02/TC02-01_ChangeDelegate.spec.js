@@ -25,6 +25,8 @@ test('Test case 1: Change Delegate', async ({ page }) => {
 
         await page.waitForTimeout(30000); //Wait For Timeout
 
+        const content = await page.content(); //Assume Page
+
         const isTextVisible = content.includes(pageLocators.ChangeDelegate.TransactionText, { visible: true });  //Verify that text visible on the webpage
 
         console.log(isTextVisible); //Prints True or false for is Text Visible

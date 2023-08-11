@@ -29,6 +29,8 @@ test('Test case 8: Remove Lambda ', async ({ page }) => {
 
         await page.waitForTimeout(30000); //Wait For Remove the Lambda 
 
+        const content = await page.content(); //Assume Page
+
         const isTextVisible = content.includes(pageLocators.RemoveLambda.TransactionText, { visible: true });  //Verify that text visible on the webpage
 
         console.log(isTextVisible);  //Prints True or false for is Text Visible

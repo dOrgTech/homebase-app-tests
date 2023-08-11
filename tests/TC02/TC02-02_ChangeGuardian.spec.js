@@ -24,6 +24,8 @@ test('Test case 2: Change Guardian', async ({ page }) => {
         await page.click(pageLocators.ChangeGuardian.SubmitButton); //Click on Submit button
 
         await page.waitForTimeout(30000); //Wait for TimeOut Submit the proposal
+        
+        const content = await page.content(); //Assume Page
 
         const isTextVisible = content.includes(pageLocators.ChangeGuardian.TransactionText, { visible: true });  //Verify that text visible on the webpage
 

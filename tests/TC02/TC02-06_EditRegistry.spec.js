@@ -27,6 +27,8 @@ test('Test case 6: Edit Registry', async ({ page }) => {
 
         await page.waitForTimeout(30000);  //Wait for Timeout the Script
 
+        const content = await page.content(); //Assume Page
+ 
         const isTextVisible = content.includes(pageLocators.EditRegistry.TransactionText, { visible: true });  //Verify that text visible on the webpage
 
         console.log(isTextVisible); //Prints True or false for is Text Visible

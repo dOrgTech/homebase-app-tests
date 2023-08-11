@@ -25,6 +25,8 @@ test('Test case 7: Add Lambda ', async ({ page }) => {
 
         await page.waitForTimeout(30000); //Wait for Lambda Implementation
 
+        const content = await page.content(); //Assume Page
+
         const isTextVisible = content.includes(pageLocators.AddLambda.TransactionText, { visible: true });  //Verify that text visible on the webpage
 
         console.log(isTextVisible); //Prints True or false for is Text Visible

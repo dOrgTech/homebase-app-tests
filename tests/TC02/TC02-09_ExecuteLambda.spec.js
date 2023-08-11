@@ -32,6 +32,8 @@ test('Test case 9: Execute Lambda ', async ({ page }) => {
         await page.fill(pageLocators.ExecuteLambda.LambdaParams, TezosTestData.ExecuteLambda.LambdaParams); //Pass The Lambda Params Code 
 
         await page.waitForTimeout(2000);  //Wait For Validate 
+        
+        const content = await page.content(); //Assume Page
 
         await page.click(pageLocators.ExecuteLambda.SubmitButton); //Click On the Submit Button
 

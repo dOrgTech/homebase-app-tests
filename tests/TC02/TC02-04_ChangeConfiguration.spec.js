@@ -30,6 +30,8 @@ test('Test case 4: Change Configuration', async ({ page }) => {
         await page.click(pageLocators.ChangeConfiguration.SubmitButton); //Click on the Submit button
 
         await page.waitForTimeout(30000); //Wait for DAO Configuration
+        
+        const content = await page.content(); //Assume Page
 
         const isTextVisible = content.includes(pageLocators.ChangeConfiguration.TransactionText, { visible: true });  //Verify that text visible on the webpage
 
