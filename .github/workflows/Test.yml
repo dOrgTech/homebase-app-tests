@@ -3,10 +3,10 @@ name: Run Playwright Tests
 on:
   push:
     branches:
-      - main
+      - dev-aayushi
   pull_request:
     branches:
-      - main
+      - dev-aayushi
   workflow_dispatch:
 
 permissions: 

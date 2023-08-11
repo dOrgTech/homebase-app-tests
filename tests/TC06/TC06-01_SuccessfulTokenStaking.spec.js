@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("./CommonFile/PreAction");
-const { pageLocators } = require("./CommonFile/Locator");
+const { PreProposal } = require("../CommonFile/PreAction");
+const { pageLocators } = require("../CommonFile/Locator");
 const path = require('path');
 
 test('Test case 11: Successful Token Staking', async ({ page }) => {

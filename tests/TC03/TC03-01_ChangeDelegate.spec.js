@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("./CommonFile/PreAction");
-const { pageLocators } = require("./CommonFile/Locator");
-const { TezosTestData } = require("./CommonFile/TestData");
+const { PreProposal } = require("../CommonFile/PreAction");
+const { pageLocators } = require("../CommonFile/Locator");
+const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test case 05-01: Change Delegate', async ({ page }) => {
 
@@ -11,6 +11,7 @@ test('Test case 05-01: Change Delegate', async ({ page }) => {
         test.setTimeout(600000);  //To Extend the time of test Execution
 
         await page.click(pageLocators.OffChainPoll.cycle);  // Click on Running Cycle Status
+        // await page.waitForTimeout(3000);
 
         await page.click(pageLocators.OffChainPoll.NewProposal); //Click on new Proposal
 
