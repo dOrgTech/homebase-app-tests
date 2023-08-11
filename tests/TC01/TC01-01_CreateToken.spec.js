@@ -6,6 +6,7 @@ const { TezosTestData } = require("../CommonFile/TestData");+
 test("Test Case 1: Successful Token Creation", async ({ page }) => {
 
   console.log('Extending Test Case timeout to 10 minutes')
+  
   test.setTimeout(10 * 60* 1000); //To extend the time of test execution
 
   await changeNetwork(page); //PreConditions Open URL and Selecting the Ghost-net
@@ -49,6 +50,7 @@ test("Test Case 1: Successful Token Creation", async ({ page }) => {
   const textContent = await element.innerText();  //get the text From this element
 
   console.log('Token Address:', textContent);  // Console The test Present on the Webpage
+  
   console.log("The token is successfully created and the user is redirected to a confirmation page with the details of the newly created token.");
 
 });

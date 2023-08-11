@@ -38,7 +38,7 @@ const TezosTestData = {
         MaxAmount: "20",
     },
 
-    DAOConfiguration: {
+    ChangeConfiguration: {
 
         ProposalFee: "1",
         ReturnedTokenPercentage: "1",
@@ -46,7 +46,7 @@ const TezosTestData = {
     },
 
     ChangeGuardian: {
-        WalletAddress: "tz1VxgGHwU6T6MaWrzfCBSpg2tw823KWVbk6",
+        WalletAddress: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
 
     },
 
@@ -56,7 +56,7 @@ const TezosTestData = {
 
     TransferToken: {
         RecipientAddress: "tz1VxgGHwU6T6MaWrzfCBSpg2tw823KWVbk6",
-        Asset: "SRD",
+        Asset: "TST",
         Amount: "10",
         AgoraPostID: "10",
     },
@@ -83,7 +83,7 @@ const TezosTestData = {
     ExecuteLambda: {
         SearchText: "transfer_proposal",
         LambdaArgumentsCode: "Write Michelson Code For the Input",
-        LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format."
+        LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format.",
 
     },
 

@@ -4,8 +4,10 @@ const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
 test("Test Case 2: Token Creation with Various Input Values", async ({ page, }) => {
-
-  test.setTimeout(600000); //To extend the time of test execution
+ 
+  console.log('Extending Test Case timeout to 10 minutes')
+  
+  test.setTimeout(10 * 60* 1000); //To extend the time of test execution
 
   await changeNetwork(page); //PreConditions Open URL and selecting the Ghost-net
 

@@ -63,26 +63,26 @@ const pageLocators = {
     ErrorText: "Required",
   },
 
-  DAOConfiguration: {
+  ChangeConfiguration: {
     DAOConfiguration: "//p[text()='DAO Configuration']",
     ProposalFee: "input[placeholder='Proposal fee']",
     ReturnedTokenPercentage: "input[placeholder='Returned tokens percentage']",
     SubmitButton: "//span[text()='Submit']",
-
+    TransactionText: "",
   },
 
   ChangeGuardian: {
     ChangeGuardian: "//p[text()='Change Guardian']",
     WalletAddress: "input[placeholder=' tz1...']",
     SubmitButton: '//span[text()="Submit"]',
+    TransactionText: "Guardian change proposal transaction confirmed",
   },
 
   ChangeDelegate: {
     ChangeDelegate: "//p[text()='Change Delegate']",
     NewDelegateAddress: "input[placeholder=' tz1...']",
     SubmitButton: "//span[text()='Submit']",
-    PopUp: "",
-
+    TransactionText: "Delegation change proposal transaction confirmed",
   },
 
   TransferToken: {
@@ -107,6 +107,7 @@ const pageLocators = {
     Key: "//input[@placeholder='Type a Key']",
     Value: "//textarea[@placeholder='Type a value']",
     Submit: "//span[text()='Submit']",
+    TransactionText: "Registry proposal transaction confirmed",
 
   },
 
@@ -114,6 +115,7 @@ const pageLocators = {
     AddLambda: "//p[text()='Add Lambda']",
     TestBox: ".npm__react-simple-code-editor__textarea",
     SubmitButton: "//span[text()='Submit']",
+    TransactionText: "",
 
   },
 
@@ -121,7 +123,7 @@ const pageLocators = {
     RemoveLambda: "//p[text()='Remove Lambda']",
     SearchBox: "#combo-box-demo",
     SubmitButton: "//span[text()='Submit']",
-
+    TransactionText:"",
   },
 
   ExecuteLambda: {
@@ -130,10 +132,11 @@ const pageLocators = {
     LambdaArgumentsCode: 'Write Michelson Code for the input Paramerers of your Lambda\n\nEg:-\n\n{\n  "prim": "pair",\n  "annots": [\n    "%xtz_transfer_type"\n  ],\n  "args": [\n    {\n      "prim": "mutez",\n      "annots": [\n        "%amount"\n      ]\n    },\n    {\n      "prim": "address",\n      "annots": [\n        "%recipient"\n      ]\n    }\n  ]\n},\n',
     LambdaParams: 'Enter the values for the given params in a JSON/JavaScript Object format.\n\nEg:-\n\n{\n  xtz_transfer_type: {\n    amount: 10000000000000000000,\n    recipient: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb"\n  }\n}\n  ',
     SubmitButton: "//span[text()='Submit']",
+    TransactionText:"",
   },
 
   VoteOnProposal: {
-    VotingCycle: "//p[text()='Creating']",
+    VotingCycle: "//p[text()='Voting']",
     OnChainButton: "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-text jss417']",
     Active: "//p[text()='Active']",
     Pending: "//p[text()='Pending']",

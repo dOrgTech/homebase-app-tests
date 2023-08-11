@@ -1,10 +1,12 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("./CommonFile/PreAction");
-const { pageLocators } = require("./CommonFile/Locator");
+const { PreProposal } = require("../CommonFile/PreAction");
+const { pageLocators } = require("../CommonFile/Locator");
 
-test('Test case 09: Vote On Off Chain Proposal ', async ({ page }) => {
+test('Test case 2: Vote On Off Chain Proposal ', async ({ page }) => {
 
-    test.setTimeout(600000);  //To Extend the time of test Execution
+    console.log('Extending Test Case timeout to 10 minutes');
+
+    test.setTimeout(10 * 60 * 1000); //To extend the time of test execution
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 

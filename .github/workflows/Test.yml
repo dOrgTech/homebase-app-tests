@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: 18
 
+      # TODO: Caches not working properly as of now. Debug it later
       - name: Cache node modules
         id: cache-npm
         uses: actions/cache@v3
@@ -52,14 +53,26 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
+      - name: TC01 - Run Playwright tests 
         run: npm run test:tc01
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
 
-      - name: Deploy Report 🚀
+      - name: TC01 - Deploy Report for TC 01🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: playwright-report # The folder the action should deploy.
           target-folder: tests/tc-01/
+
+      - name: TC02 - Run Playwright tests
+        run: npm run test:tc02
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+
+      - name: TC02 - Deploy Report 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: playwright-report # The folder the action should deploy.
+          target-folder: tests/pr-01/tc-02/

@@ -1,10 +1,12 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("./CommonFile/PreAction");
-const { pageLocators } = require("./CommonFile/Locator");
+const { PreProposal } = require("../CommonFile/PreAction");
+const { pageLocators } = require("../CommonFile/Locator");
 
-test('Test case 10: Correct vote Count on Off Chain Poll ', async ({ page }) => {
+test('Test case 3: Correct vote Count on Off Chain Poll ', async ({ page }) => {
 
-    test.setTimeout(600000);  //To Extend the time of test Execution
+    console.log('Extending Test Case timeout to 10 minutes');
+
+    test.setTimeout(10 * 60 * 1000); //To extend the time of test execution
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
@@ -20,6 +22,6 @@ test('Test case 10: Correct vote Count on Off Chain Poll ', async ({ page }) => 
   
     console.log('Votes:', textContent);  // Console The test Present on the Webpage
 
-    console.log("The vote count matches the number of votes submitted for the poll, and if multiple choice is enabled, the voting weight is evenly split between all the options that a voter picked.")
+    console.log("The vote count matches the number of votes submitted for the poll, and if multiple choice is enabled, the voting weight is evenly split between all the options that a voter picked.");
 
 })
