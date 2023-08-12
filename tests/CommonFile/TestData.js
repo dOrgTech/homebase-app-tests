@@ -1,26 +1,26 @@
 const TezosTestData = {
 
-    TokenCreator: {
+    TokenCreation: {
         TokenName: "My token name",
         TokenDescription: "My Token Descriptions",
-        TC02TokenDescription: "",
+        TC01_02TokenDescription: "",
         SupplyToken: "100",
         Decimals: "18",
         Symbol: "#",
         Icon: "Picture.PNG",
         WalletAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Amount: "100",
-        TC02Amount:"10",
-        ErrorText2: "Total Supply not fully allocated",
+        TC01_03Amount:"10",
+        
     },
 
-    DAOCreate: {
+    DAOCreation: {
         DAOName: "My Test DAO",
-        TokenAddress: "KT1FZiY1zuGqD5k1EMk1ijBUsFasJRN9QSqZ",
+        TokenAddress: "KT1ND3pDj67PqfjvzqPUAvSRqmcqcHnqpiEQ",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
-        TC04DAODescription: "",
+        TC02_02DAODescription: "",
         VotingDays: '00',
         VotingHours: '01',
         VotingMinutes: "00",

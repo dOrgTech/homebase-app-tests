@@ -6,50 +6,50 @@ const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test3: Amount Less than Supply Token',async ({page})=>{
 
-    test.setTimeout(120000);
+    //To extend the time of test execution
+    test.setTimeout(120000); 
 
-    // set Network to Ghostnet
-    await changeNetwork(page);
+    //Open URL and Selecting the Ghost-net
+    await changeNetwork(page); 
 
     //Click Create DAO button
-    await page.click(pageLocators.TokenCreator.CreateDAO);
+    await page.getByText(pageLocators.TokenCreation.CreateDAO).click();
 
     //click "No, I need one"
-    await page.click(pageLocators.TokenCreator.GovernanceToken);
+    await page.getByText(pageLocators.TokenCreation.GovernanceToken).click();
 
     //Enter token name
-    await page.fill(pageLocators.TokenCreator.TokenName, TezosTestData.TokenCreator.TokenName);
+    await page.fill(pageLocators.TokenCreation.TokenName, TezosTestData.TokenCreation.TokenName);
 
     //Enter token description
-    await page.fill(pageLocators.TokenCreator.TokenDescription, TezosTestData.TokenCreator.TokenDescription)
+    await page.fill(pageLocators.TokenCreation.TokenDescription, TezosTestData.TokenCreation.TokenDescription)
     //Enter Supply
-    await page.fill(pageLocators.TokenCreator.TotalSupply, TezosTestData.TokenCreator.SupplyToken)
+    await page.fill(pageLocators.TokenCreation.TotalSupply, TezosTestData.TokenCreation.SupplyToken)
     //Enter Decimals
-    await page.fill(pageLocators.TokenCreator.Decimals, TezosTestData.TokenCreator.Decimals)
+    await page.fill(pageLocators.TokenCreation.Decimals, TezosTestData.TokenCreation.Decimals)
     //Enter Icon
-    await page.fill(pageLocators.TokenCreator.Icon, TezosTestData.TokenCreator.Icon)
+    await page.fill(pageLocators.TokenCreation.Icon, TezosTestData.TokenCreation.Icon)
     //Enter Symbol
-    await page.fill(pageLocators.TokenCreator.Symbol, TezosTestData.TokenCreator.Symbol)
+    await page.fill(pageLocators.TokenCreation.Symbol, TezosTestData.TokenCreation.Symbol)
 
     // Click Continue
-    await page.click(pageLocators.TokenCreator.ContinueButton1);
-
-    await page.waitForTimeout(2000);
-
+    await page.getByText(pageLocators.TokenCreation.ContinueButton).click();
 
     //Enter Wallet Address
-    await page.fill(pageLocators.TokenCreator.WalletAddress, TezosTestData.TokenCreator.WalletAddress); 
+    await page.fill(pageLocators.TokenCreation.WalletAddress, TezosTestData.TokenCreation.WalletAddress); 
 
     //Enter The Amount
-    await page.fill(pageLocators.TokenCreator.Amount, TezosTestData.TokenCreator.TC02Amount); 
+    await page.fill(pageLocators.TokenCreation.Amount, TezosTestData.TokenCreation.TC01_03Amount); 
 
     //Click on Continue Button
-    await page.click(pageLocators.TokenCreator.ContinueButton2); 
+    await page.getByText(pageLocators.TokenCreation.ContinueButton).click(); 
 
-    const errorText = await page.getByText(TezosTestData.TokenCreator.ErrorText2);
-    await expect(errorText).toBeVisible()
-    console.log("message shown: ",TezosTestData.TokenCreator.ErrorText2);
-    console.log("Token cannot be created if Amount is less than Supply Token");
+    //Get error message
+    const errorText = await page.getByText(pageLocators.TokenCreation.ErrorText2);
+    await expect(errorText).toBeVisible();
+
+    console.log("message shown: ",TezosTestData.TokenCreation.ErrorText2);
+    console.log("Create Token with input values failed because amount cannot be less than or greater than supply.");
 
     await page.waitForTimeout(5000);
 

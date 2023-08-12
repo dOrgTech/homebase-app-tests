@@ -5,104 +5,146 @@ const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
 
-    test.setTimeout(600000);  //To extend the time of test execution
+    //To extend the time of test execution
+    test.setTimeout(120000); 
 
-    await changeNetwork(page); //PreConditions Open URL and Selecting the Ghost-net
+    //Open URL and Selecting the Ghost-net
+    await changeNetwork(page); 
 
-    await page.click(pageLocators.DAOCreate.CreateDAO); //Click on Create DAO
+    //Click on Create DAO
+    await page.getByText(pageLocators.DAOCreation.CreateDAO).click(); 
 
-    await page.click(pageLocators.DAOCreate.GovernanceToken);  //Selecting Governance (Yes, I Have one)
+    //Selecting Yes, I Have one
+    await page.getByText(pageLocators.DAOCreation.GovernanceToken).click();  
 
-    await page.click(pageLocators.DAOCreate.FullDAO);  //Click on FullDAO
+    //Click on FullDAO
+    await page.getByText(pageLocators.DAOCreation.FullDAO).click();  
 
-    await page.click(pageLocators.DAOCreate.ContinueButton1); //Click On Continue
+    //Click On Continue
+    await page.getByText(pageLocators.DAOCreation.ContinueButton).click(); 
 
-    await page.fill(pageLocators.DAOCreate.DAOName, TezosTestData.DAOCreate.DAOName);  //Fill DAO Name
+    //Fill DAO Name
+    await page.fill(pageLocators.DAOCreation.DAOName, TezosTestData.DAOCreation.DAOName);  
 
-    await page.fill(pageLocators.DAOCreate.TokenAddress, TezosTestData.DAOCreate.TokenAddress); //Fill Token Address
+    //Fill Token Address
+    await page.fill(pageLocators.DAOCreation.TokenAddress, TezosTestData.DAOCreation.TokenAddress); 
 
-    await page.fill(pageLocators.DAOCreate.TokenID, TezosTestData.DAOCreate.TokenID); //Fill Token ID 
+    //Fill Token ID
+    await page.fill(pageLocators.DAOCreation.TokenID, TezosTestData.DAOCreation.TokenID);  
 
-    await page.fill(pageLocators.DAOCreate.GuardianAddress, TezosTestData.DAOCreate.GuardianAddress); //Fill The Wallet Address
+    //Fill The Wallet Address
+    await page.fill(pageLocators.DAOCreation.GuardianAddress, TezosTestData.DAOCreation.GuardianAddress);
 
-    await page.fill(pageLocators.DAOCreate.Description, TezosTestData.DAOCreate.Description); //Fill The Description
+    //Fill The Description
+    await page.fill(pageLocators.DAOCreation.Description, TezosTestData.DAOCreation.Description); 
 
-    await page.click(pageLocators.DAOCreate.ContinueButton2);   //Click on Continue
+    //Click on Continue
+    await page.getByText(pageLocators.DAOCreation.ContinueButton).click();   
 
-    await page.fill(pageLocators.DAOCreate.VotingDays, TezosTestData.DAOCreate.VotingDays); //Pass The Voting Cycle Days Duration 
+    //Pass The Voting Cycle Days Duration
+    await page.fill(pageLocators.DAOCreation.VotingDays, TezosTestData.DAOCreation.VotingDays);  
 
-    await page.fill(pageLocators.DAOCreate.VotingHours, TezosTestData.DAOCreate.VotingHours); //Pass The Voting Cycle Hours Duration
+    //Pass The Voting Cycle Hours Duration
+    await page.fill(pageLocators.DAOCreation.VotingHours, TezosTestData.DAOCreation.VotingHours); 
 
-    await page.fill(pageLocators.DAOCreate.VotingMinutes, TezosTestData.DAOCreate.VotingMinutes); //Pass The Voting Minutes Duration
+    //Pass The Voting Minutes Duration
+    await page.fill(pageLocators.DAOCreation.VotingMinutes, TezosTestData.DAOCreation.VotingMinutes); 
 
-    await page.fill(pageLocators.DAOCreate.ExecutionDays, TezosTestData.DAOCreate.ExecutionDays); //Pass The Proposal Execution Days Duration
+    //Pass The Proposal Execution Days Duration
+    await page.fill(pageLocators.DAOCreation.ExecutionDays, TezosTestData.DAOCreation.ExecutionDays); 
 
-    await page.fill(pageLocators.DAOCreate.ExecutionHours, TezosTestData.DAOCreate.ExecutionHours); //Pass The Proposal Execution Hours Duration
+    //Pass The Proposal Execution Hours Duration
+    await page.fill(pageLocators.DAOCreation.ExecutionHours, TezosTestData.DAOCreation.ExecutionHours); 
 
-    await page.fill(pageLocators.DAOCreate.ExecutionMinutes, TezosTestData.DAOCreate.ExecutionMinutes); //Pass The Proposal Execution Minutes Duration
+    //Pass The Proposal Execution Minutes Duration
+    await page.fill(pageLocators.DAOCreation.ExecutionMinutes, TezosTestData.DAOCreation.ExecutionMinutes); 
 
-    await page.fill(pageLocators.DAOCreate.ThresholdExpiryDays, TezosTestData.DAOCreate.ThresholdExpiryDays); //Pass The Proposal Expiry Threshold Days Duration
+    //Pass The Proposal Expiry Threshold Days Duration
+    await page.fill(pageLocators.DAOCreation.ThresholdExpiryDays, TezosTestData.DAOCreation.ThresholdExpiryDays); 
 
-    await page.fill(pageLocators.DAOCreate.ThresholdExpiryHours, TezosTestData.DAOCreate.ThresholdExpiryHours); //Pass The Proposal Expiry Threshold Hours Duration
+    //Pass The Proposal Expiry Threshold Hours Duration
+    await page.fill(pageLocators.DAOCreation.ThresholdExpiryHours, TezosTestData.DAOCreation.ThresholdExpiryHours); 
 
-    await page.fill(pageLocators.DAOCreate.ThresholdExpiryMinutes, TezosTestData.DAOCreate.ThresholdExpiryMinutes); //Pass The Proposal Expiry Threshold Minutes Duration
+    //Pass The Proposal Expiry Threshold Minutes Duration
+    await page.fill(pageLocators.DAOCreation.ThresholdExpiryMinutes, TezosTestData.DAOCreation.ThresholdExpiryMinutes); 
 
-    await page.fill(pageLocators.DAOCreate.RequireStake, TezosTestData.DAOCreate.RequiredStake); //Fill Required Stake
+    //Fill Required Stake
+    await page.fill(pageLocators.DAOCreation.RequireStake, TezosTestData.DAOCreation.RequiredStake); 
 
-    const slider = page.locator(pageLocators.DAOCreate.Slider); //Locate The Slider
+    //Locate The Slider
+    const slider = page.locator(pageLocators.DAOCreation.Slider); 
 
-    const targetPosition = { x: 50, y: 0 }; // Replace with the desired target position.
+    // Get Target position.
+    const targetPosition = { x: 50, y: 0 }; 
 
-    await slider.scrollIntoViewIfNeeded(); // Ensure the slider is in view
+    // Ensure the slider is in view
+    await slider.scrollIntoViewIfNeeded(); 
 
-    const sliderBoundingBox = await slider.boundingBox();  // Get the bounding box of the slider for dragging
+    // Get the bounding box of the slider for dragging
+    const sliderBox = await slider.boundingBox();  
 
-    const targetX = sliderBoundingBox.x + targetPosition.x;    // Calculate the target position based on the slider's bounding box
+    // Calculate the target position based on the slider's bounding box
+    const targetX = sliderBox.x + targetPosition.x;
+    const targetY = sliderBox.y + targetPosition.y;
 
-    const targetY = sliderBoundingBox.y + targetPosition.y;
-
-    await page.mouse.move(sliderBoundingBox.x, sliderBoundingBox.y);  // Create a mouse action context and perform the drag and drop
-
+    // Create a mouse action context and perform the drag and drop
+    await page.mouse.move(sliderBox.x, sliderBox.y);  
     await page.mouse.down();
 
-    await page.mouse.move(targetX, targetY, { steps: 50 }); // You can adjust the number of steps for smoother animation
+    // You can adjust the number of steps for smoother animation
+    // await page.mouse.move(targetX, targetY, { steps: 50 }); 
 
-    await page.mouse.up();
+    // await page.mouse.up();
 
-    await page.fill(pageLocators.DAOCreate.MinAmount, TezosTestData.DAOCreate.MinAmount); //Pass Min Transfer Amount
+    //Pass Min Transfer Amount
+    await page.fill(pageLocators.DAOCreation.MinAmount, TezosTestData.DAOCreation.MinAmount); 
 
-    await page.fill(pageLocators.DAOCreate.MaxAmount, TezosTestData.DAOCreate.MaxAmount); //Pass Max Transfer Amount
+    //Pass Max Transfer Amount
+    await page.fill(pageLocators.DAOCreation.MaxAmount, TezosTestData.DAOCreation.MaxAmount); 
 
-    await page.click(pageLocators.DAOCreate.ContinueButton3);  //Click On Continue
+    //Click On Continue
+    await page.getByText(pageLocators.DAOCreation.ContinueButton).click();  
 
-    await page.fill(pageLocators.DAOCreate.QuorumThreshold, TezosTestData.DAOCreate.QuorumThreshold); //Pass The Initial Quorum Threshold
+    //Pass The Initial Quorum Threshold
+    await page.fill(pageLocators.DAOCreation.QuorumThreshold, TezosTestData.DAOCreation.QuorumThreshold); 
 
-    await page.fill(pageLocators.DAOCreate.QuorumChange, TezosTestData.DAOCreate.QuorumChange); //Pass The Initial Quorum Change
+    //Pass The Initial Quorum Change
+    await page.fill(pageLocators.DAOCreation.QuorumChange, TezosTestData.DAOCreation.QuorumChange); 
 
-    await page.fill(pageLocators.DAOCreate.MinQuorumAmount, TezosTestData.DAOCreate.MinQuorumAmount); //Pass The Min. Quorum Threshold
+    //Pass The Min. Quorum Threshold
+    await page.fill(pageLocators.DAOCreation.MinQuorumAmount, TezosTestData.DAOCreation.MinQuorumAmount); 
 
-    await page.fill(pageLocators.DAOCreate.QuorumMaxChange, TezosTestData.DAOCreate.QuorumChange); //Pass The Max. Quorum Change
+    //Pass The Max. Quorum Change
+    await page.fill(pageLocators.DAOCreation.QuorumMaxChange, TezosTestData.DAOCreation.QuorumChange); 
 
-    await page.fill(pageLocators.DAOCreate.MaxQuorumAmount, TezosTestData.DAOCreate.MaxQuorumAmount); //Pass The Max. Quorum Threshold
+    //Pass The Max. Quorum Threshold
+    await page.fill(pageLocators.DAOCreation.MaxQuorumAmount, TezosTestData.DAOCreation.MaxQuorumAmount); 
 
-    await page.waitForTimeout(1000); //Wait for the Page Load
+    //Wait for the Page Load
+    await page.waitForTimeout(1000); 
 
-    await page.click(pageLocators.DAOCreate.ContinueButton4);  //Click On Continue
+    //Click On Continue
+    await page.getByText(pageLocators.DAOCreation.ContinueButton).click();  
 
-    await page.waitForTimeout(1000); //Wait For The Page Load
+    //Wait For The Page Load
+    await page.waitForTimeout(1000); 
 
-    await page.click(pageLocators.DAOCreate.ContinueButton5); //Click On Continue 
+    //Click On Continue
+    await page.getByText(pageLocators.DAOCreation.ContinueButton).click();  
 
-    await page.click(pageLocators.DAOCreate.SelfDeployed);  //Click On Self Deployed
+    //Click On Self Deployed
+    await page.getByText(pageLocators.DAOCreation.SelfDeployed).click();  
 
-    await page.click(pageLocators.DAOCreate.DeployDAO); //Click On Launch
+    //Click On Launch
+    await page.getByText(pageLocators.DAOCreation.DeployDAO).click(); 
 
-    await page.waitForTimeout(60000); //Wait for Deploy the DAO
+    //Wait for Deploy the DAO
+    await page.waitForTimeout(60000); 
 
-    const content = await page.content(); //Assume Page
+    //Verify that text visible on the webpage
+    const content = await page.getByText(pageLocators.DAOCreation.DAOText); 
+    await expect(content).toBeVisible; 
 
-    const isTextVisible = content.includes(pageLocators.DAOCreate.DAOText, { visible: true });  //Verify that text visible on the webpage
-
-    console.log("The DAO is successfully created and the user is redirected to a confirmation page that links to the newly created DAO");
+    console.log("The DAO is successfully created and the user is redirected to a confirmation page");
 
 })

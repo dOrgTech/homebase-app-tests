@@ -5,36 +5,47 @@ const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test Case 4 : Create DAO with various input values', async ({ page }) => {
 
-    test.setTimeout(600000);  //To extend the time of test execution
+    //To extend the time of test execution
+    test.setTimeout(120000); 
 
-    await changeNetwork(page); //PreConditions Open URL and Selecting the Ghost-net
+    //Open URL and Selecting the Ghost-net
+    await changeNetwork(page); 
 
-    await page.click(pageLocators.DAOCreate.CreateDAO); //Click on Create DAO
+    //Click on Create DAO
+    await page.getByText(pageLocators.DAOCreation.CreateDAO).click(); 
 
-    await page.click(pageLocators.DAOCreate.GovernanceToken);  //Selecting Governance (Yes, I Have one)
+    //Selecting Yes, I Have one
+    await page.getByText(pageLocators.DAOCreation.GovernanceToken).click();  
 
-    await page.click(pageLocators.DAOCreate.FullDAO);  //Click on FullDAO
+    //Click on FullDAO
+    await page.getByText(pageLocators.DAOCreation.FullDAO).click();  
 
-    await page.click(pageLocators.DAOCreate.ContinueButton1); //Click On Continue
+    //Click On Continue
+    await page.getByText(pageLocators.DAOCreation.ContinueButton).click(); 
 
-    await page.fill(pageLocators.DAOCreate.DAOName, TezosTestData.DAOCreate.DAOName);  //Fill DAO Name
+    //Fill DAO Name
+    await page.fill(pageLocators.DAOCreation.DAOName, TezosTestData.DAOCreation.DAOName);  
 
-    await page.fill(pageLocators.DAOCreate.TokenAddress, TezosTestData.DAOCreate.TokenAddress); //Fill Token Address
+    //Fill Token Address
+    await page.fill(pageLocators.DAOCreation.TokenAddress, TezosTestData.DAOCreation.TokenAddress); 
 
-    await page.fill(pageLocators.DAOCreate.TokenID, TezosTestData.DAOCreate.TokenID); //Fill Token ID 
+    //Fill Token ID
+    await page.fill(pageLocators.DAOCreation.TokenID, TezosTestData.DAOCreation.TokenID);  
 
-    await page.fill(pageLocators.DAOCreate.GuardianAddress, TezosTestData.DAOCreate.GuardianAddress); //Fill The Wallet Address
+    //Fill The Wallet Address
+    await page.fill(pageLocators.DAOCreation.GuardianAddress, TezosTestData.DAOCreation.GuardianAddress);
 
-    await page.fill(pageLocators.DAOCreate.Description, TezosTestData.DAOCreate.TC04DAODescription); //Fill The Description
+    //Fill The Description
+    await page.fill(pageLocators.DAOCreation.Description, TezosTestData.DAOCreation.TC02_02DAODescription); 
 
-    await page.click(pageLocators.DAOCreate.ContinueButton2);   //Click on Continue
+    //Click on Continue
+    await page.getByText(pageLocators.DAOCreation.ContinueButton).click();
 
-    const errorMessage = page.getByText(pageLocators.DAOCreate.ErrorText);  //Get The Text 
+    //Get error message 
+    const errorMessage = page.getByText(pageLocators.DAOCreation.ErrorText); 
+    await expect(errorMessage).toBeVisible();
 
     console.log(errorMessage) //Show The Result
-
-    await expect(errorMessage).toBeVisible(); //Verify The Text Shows Description is Required
-
     console.log("The system handles the input appropriately, either creating the DAO or displaying an error message.");
 
 })

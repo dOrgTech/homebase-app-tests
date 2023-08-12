@@ -7,13 +7,13 @@ async function changeNetwork(page){
     console.log("WebApp URL for Testing:", AppConfig.TestURL)
     await page.goto(AppConfig.TestURL);
 
-    await page.click(pageLocators.TokenCreator.EnterApp)
+    await page.click(pageLocators.TokenCreation.EnterApp)
   
-    await page.click(pageLocators.TokenCreator.MainNet);
+    await page.getByText(pageLocators.TokenCreation.MainNet).click()
   
-    await page.waitForSelector(pageLocators.TokenCreator.frame);
+    await page.waitForSelector(pageLocators.TokenCreation.frame);
   
-    await page.click(pageLocators.TokenCreator.GhostNet);
+    await page.getByText(pageLocators.TokenCreation.GhostNet).click();
      
 }
 

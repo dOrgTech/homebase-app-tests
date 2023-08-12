@@ -1,54 +1,70 @@
-const { test } = require("@playwright/test");
+const { test, expect } = require("@playwright/test");
 const { changeNetwork } = require("../CommonFile/Action");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");+
 
 test("Test Case 1: Successful Token Creation", async ({ page }) => {
 
-  console.log('Extending Test Case timeout to 10 minutes')
-  test.setTimeout(10 * 60* 1000); //To extend the time of test execution
+  //To extend the time of test execution
+  test.setTimeout(120000); 
 
-  await changeNetwork(page); //PreConditions Open URL and Selecting the Ghost-net
+  //Open URL and Selecting the Ghost-net
+  await changeNetwork(page); 
 
-  await page.click(pageLocators.TokenCreator.CreateDAO); //Select A Create New DAO
+  //Select A Create New DAO
+  await page.getByText(pageLocators.TokenCreation.CreateDAO).click();
 
-  await page.click(pageLocators.TokenCreator.GovernanceToken); //Selecting the Governance Token
+  //Selecting the Governance Token
+  await page.getByText(pageLocators.TokenCreation.GovernanceToken).click(); 
 
-  await page.fill(pageLocators.TokenCreator.TokenName, TezosTestData.TokenCreator.TokenName); //Pass The Token Name
+  //Pass The Token Name
+  await page.fill(pageLocators.TokenCreation.TokenName, TezosTestData.TokenCreation.TokenName);
 
-  await page.fill(pageLocators.TokenCreator.TokenDescription, TezosTestData.TokenCreator.TokenDescription); //Pass The Token Description
+  //Pass The Token Description
+  await page.fill(pageLocators.TokenCreation.TokenDescription, TezosTestData.TokenCreation.TokenDescription); 
 
-  await page.fill(pageLocators.TokenCreator.TotalSupply, TezosTestData.TokenCreator.SupplyToken); //Total Supply of Tokens
+  //Total Supply of Tokens
+  await page.fill(pageLocators.TokenCreation.TotalSupply, TezosTestData.TokenCreation.SupplyToken); 
 
-  await page.fill(pageLocators.TokenCreator.Decimals, TezosTestData.TokenCreator.Decimals); //Pass The Decimals
+  //Pass The Decimals
+  await page.fill(pageLocators.TokenCreation.Decimals, TezosTestData.TokenCreation.Decimals); 
 
-  await page.fill(pageLocators.TokenCreator.Symbol, TezosTestData.TokenCreator.Symbol); //Pass The Symbol for token
+  //Pass The Symbol for token
+  await page.fill(pageLocators.TokenCreation.Symbol, TezosTestData.TokenCreation.Symbol); 
 
-  await page.fill(pageLocators.TokenCreator.Icon, TezosTestData.TokenCreator.Icon); //Pass The Icon for Token
+  //Pass The Icon for Token
+  await page.fill(pageLocators.TokenCreation.Icon, TezosTestData.TokenCreation.Icon);
 
-  await page.click(pageLocators.TokenCreator.ContinueButton1); //Click On Continue Button
+  //Click On Continue Button
+  await page.getByText(pageLocators.TokenCreation.ContinueButton).click();
 
-  await page.fill(pageLocators.TokenCreator.WalletAddress, TezosTestData.TokenCreator.WalletAddress); //Pass The Wallet Address
+  //Pass The Wallet Address
+  await page.fill(pageLocators.TokenCreation.WalletAddress, TezosTestData.TokenCreation.WalletAddress); 
 
-  await page.fill(pageLocators.TokenCreator.Amount, TezosTestData.TokenCreator.Amount); //Pass The Amount
+  //Pass The Amount
+  await page.fill(pageLocators.TokenCreation.Amount, TezosTestData.TokenCreation.Amount); 
 
-  await page.click(pageLocators.TokenCreator.ContinueButton2); //Click on Continue Button
+  //Click on Continue Button
+  await page.getByText(pageLocators.TokenCreation.ContinueButton).click(); 
 
-  await page.click(pageLocators.TokenCreator.launch); //Click on launch button
+  //Click on launch button
+  await page.getByText(pageLocators.TokenCreation.launch).click();
 
-  await page.waitForTimeout(30000); //Wait for the Token Create
+  //Wait for the Token Create
+  await page.waitForTimeout(30000); 
 
-  const content = await page.content(); //Assume Page
+  // Check whether Deploy text is visible
+  const content = await page.getByText(pageLocators.TokenCreation.DeployText);
+  await expect(content).toBeVisible; 
+  
+  //Wait for find the Element
+  await page.waitForSelector(pageLocators.TokenCreation.ConsoleAddress);  
 
-  const isTextVisible = content.includes(pageLocators.TokenCreator.DeployText, { visible: true });  //Verify that text visible on the webpage
-
-  await page.waitForSelector(pageLocators.TokenCreator.ConsoleAddress);  //Wait for find the Element
-
-  const element = await page.$(pageLocators.TokenCreator.ConsoleAddress); // get The element
+  const element = await page.$(pageLocators.TokenCreation.ConsoleAddress); // get The element
 
   const textContent = await element.innerText();  //get the text From this element
 
   console.log('Token Address:', textContent);  // Console The test Present on the Webpage
-  console.log("The token is successfully created and the user is redirected to a confirmation page with the details of the newly created token.");
+  console.log("The token is successfully created and the user is redirected to a confirmation page.");
 
 });

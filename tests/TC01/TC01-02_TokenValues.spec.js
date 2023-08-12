@@ -5,34 +5,46 @@ const { TezosTestData } = require("../CommonFile/TestData");
 
 test("Test Case 2: Token Creation with Various Input Values", async ({ page, }) => {
 
-  test.setTimeout(600000); //To extend the time of test execution
+  //To extend the time of test execution
+  test.setTimeout(120000); 
 
-  await changeNetwork(page); //PreConditions Open URL and selecting the Ghost-net
+  //Open URL and Selecting the Ghost-net
+  await changeNetwork(page); 
 
-  await page.click(pageLocators.TokenCreator.CreateDAO); //Select A Create New DAO
+  //Select A Create New DAO
+  await page.getByText(pageLocators.TokenCreation.CreateDAO).click();
+  
+  //Selecting the Governance Token
+  await page.getByText(pageLocators.TokenCreation.GovernanceToken).click(); 
 
-  await page.click(pageLocators.TokenCreator.GovernanceToken); //Selecting the Governance Token
+  //Pass The Token Name
+  await page.fill(pageLocators.TokenCreation.TokenName, TezosTestData.TokenCreation.TokenName);
 
-  await page.fill(pageLocators.TokenCreator.TokenName, TezosTestData.TokenCreator.TokenName); //Pass The Token Name
+  //Pass The Token Description
+  await page.fill(pageLocators.TokenCreation.TokenDescription, TezosTestData.TokenCreation.TC01_02TokenDescription); 
 
-  await page.fill(pageLocators.TokenCreator.TokenDescription, TezosTestData.TokenCreator.TC02TokenDescription); //Pass The Token Description
+  //Total Supply of Tokens
+  await page.fill(pageLocators.TokenCreation.TotalSupply, TezosTestData.TokenCreation.SupplyToken); 
 
-  await page.fill(pageLocators.TokenCreator.TotalSupply, TezosTestData.TokenCreator.SupplyToken); //Total Supply of Tokens
+  //Pass The Decimals
+  await page.fill(pageLocators.TokenCreation.Decimals, TezosTestData.TokenCreation.Decimals); 
 
-  await page.fill(pageLocators.TokenCreator.Decimals, TezosTestData.TokenCreator.Decimals); //Pass The Decimals
+  //Pass The Symbol for token
+  await page.fill(pageLocators.TokenCreation.Symbol, TezosTestData.TokenCreation.Symbol); 
 
-  await page.fill(pageLocators.TokenCreator.Symbol, TezosTestData.TokenCreator.Symbol); //Pass The Symbol for token
+  //Pass The Icon for Token
+  await page.fill(pageLocators.TokenCreation.Icon, TezosTestData.TokenCreation.Icon);
 
-  await page.fill(pageLocators.TokenCreator.Icon, TezosTestData.TokenCreator.Icon); //Pass The Icon for Token
+  //Click On Continue Button
+  await page.getByText(pageLocators.TokenCreation.ContinueButton).click();
 
-  await page.click(pageLocators.TokenCreator.ContinueButton1); //Click On Continue Button
+  //Get error the text 
+  const textMessage = page.getByText(pageLocators.TokenCreation.ErrorText);  
 
-  const textMessage = page.getByText(pageLocators.TokenCreator.ErrorText);  //Get The Text 
+  //Verify The Text Present on The Web
+  await expect(textMessage).toBeVisible();
 
-  console.log(textMessage);   //Console The Results 
-
-  await expect(textMessage).toBeVisible(); //Verify The Text Present on The Web
-
-  console.log(" Create Token with input values are fail due to the description test box does not accept empty string");
+  console.log(textMessage);
+  console.log("Create Token with input values failed  because description test box does not accept empty string");
 
 });
