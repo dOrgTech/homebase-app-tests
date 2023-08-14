@@ -1,14 +1,12 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("../CommonFile/PreAction");
 const { pageLocators } = require("../CommonFile/Locator");
+const { PreVoteOnOffChainPoll } = require("../CommonFile/PreVoteOnOffChainPoll");
 
 test('Test case 2: Vote On Off Chain Proposal ', async ({ page }) => {
 
-    console.log('Extending Test Case timeout to 10 minutes');
+    test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
-    test.setTimeout(10 * 60 * 1000); //To extend the time of test execution
-
-    await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
+    await PreVoteOnOffChainPoll(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
     await page.click(pageLocators.VoteOnOffChainPoll.ProposalName); //Click on the Proposal Name 
 

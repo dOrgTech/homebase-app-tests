@@ -1,11 +1,11 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("../CommonFile/PreAction");
-const { pageLocators } = require("../CommonFile/Locator");
-const { TezosTestData } = require("../CommonFile/TestData");
+const { PreProposal } = require("./PreAction");
+const { pageLocators } = require("./Locator");
+const { TezosTestData } = require("./TestData");
 
-test('Test case 1: Off Chain Poll Proposal Creation', async ({ page }) => {
+async function PreVoteOnOffChainPoll(page){
 
-    test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
+    test.setTimeout(10 * 60 * 1000); //To extend the time of test execution
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
@@ -39,6 +39,8 @@ test('Test case 1: Off Chain Poll Proposal Creation', async ({ page }) => {
 
     await page.waitForSelector(pageLocators.OffChainPoll.CreateText, { visible: true }); //Wait for Text Visible on Webpage
 
-    console.log("The poll is successfully created and the user is redirected to a confirmation page with the details of the newly created poll.");
+}
 
-})
+module.exports= {
+    PreVoteOnOffChainPoll
+}

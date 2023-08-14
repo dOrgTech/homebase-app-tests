@@ -13,15 +13,15 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "Decentralized Governance Initiative",
-        TokenAddress: "KT1EHxvnhn5gX9EcNyFsp3y1HnKCBM2JjXpm",
+        DAOName: "Decentralized",
+        TokenAddress: "KT1Dmxer8pvx8vTUX5V2k44th4DqnKsjhUya",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
         TC04DAODescription: "",
         VotingDays: '00',
-        VotingHours: '01',
-        VotingMinutes: "00",
+        VotingHours: '00',
+        VotingMinutes: "03",
         ExecutionDays: "00",
         ExecutionHours: "00",
         ExecutionMinutes: "01",
@@ -98,7 +98,7 @@ const TezosTestData = {
 
 
     OffChainPoll: {
-        ProposalTitle: "Community Governance Upgrades Poll",
+        ProposalTitle: "Community Governance",
         ShortDescription: "This proposal aims to conduct an off-chain poll to gather community input on potential upgrades to the Tezos governance process.",
         ExternalLink: "https://examplelink.com/tezos-gov-upgrades-poll",
         Choice1: "Introduce Liquid Democracy",

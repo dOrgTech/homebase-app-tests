@@ -9,9 +9,7 @@ test('Test case 1: Vote On On-Chain Proposal ', async ({ page }) => {
 
     try {
 
-        console.log('Extending Test Case timeout to 10 minutes');
-
-        test.setTimeout(10 * 60 * 1000); //To extend the time of test execution
+        test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
         await page.click(pageLocators.VoteOnProposal.VotingCycle);  // Click on Running Cycle Status
         

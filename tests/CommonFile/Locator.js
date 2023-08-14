@@ -183,7 +183,7 @@ const pageLocators = {
   },
 
   VoteOnOffChainPoll: {
-    ProposalName: "//h4[text()='Community Governance Upgrades Poll']",
+    ProposalName: "//h4[text()='Community Governance']",
     Option1: "//p[text()='Introduce Liquid Democracy']",
     Option2: "//p[text()='Increase Proposal Exploration Period']",
     CastYourVote: "//span[text()='Cast your vote']",
@@ -192,8 +192,8 @@ const pageLocators = {
 
   CorrectVoteCount: {
     VoteCount: "div[class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-6'] p[class='MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary']",
-    Option1: "div[class='MuiGrid-root jss342 jss373 jss372 MuiGrid-container MuiGrid-direction-xs-column'] div[class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-flex-end MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-lg-6'] p[class='MuiTypography-root MuiTypography-body2 MuiTypography-colorTextPrimary']",
-    Option2: "div[class='MuiGrid-root jss342 jss374 jss372 MuiGrid-container MuiGrid-direction-xs-column'] div[class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-flex-end MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-lg-6'] p[class='MuiTypography-root MuiTypography-body2 MuiTypography-colorTextPrimary']",
+    Options: "//div[@class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-flex-end MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-lg-6']",
+   
 
   },
 
@@ -204,6 +204,7 @@ const pageLocators = {
     UseMax: "//p[text()='Use Max']",
     Submit: "//span[text()='Submit']",
     TransactionText: "Deposit transaction confirmed",
+    Balance:"//div[@class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-space-between']",
   },
 
   UnStakingToken: {

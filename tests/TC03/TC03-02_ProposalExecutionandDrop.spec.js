@@ -4,9 +4,7 @@ const { pageLocators } = require("../CommonFile/Locator");
 
 test('Test case 2: On-Chain Proposal Execution & Drop', async ({ page }) => {
 
-    console.log('Extending Test Case timeout to 10 minutes');
-
-    test.setTimeout(10 * 60 * 1000); //To extend the time of test execution
+    test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal   
 
