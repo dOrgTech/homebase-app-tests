@@ -33,6 +33,6 @@ test("Test Case 2: Token Creation with Various Input Values", async ({ page, }) 
 
   await expect(textMessage).toBeVisible(); //Verify The Text Present on The Web
 
-  console.log(" Create Token with input values are fail due to the decimals test box not accept 0 value");
+  console.log("Create Token with input values are fail due to the decimals test box not accept 0 value");
 
 });
