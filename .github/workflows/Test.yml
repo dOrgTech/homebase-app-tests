@@ -13,59 +13,77 @@ permissions:
   contents: write
 
 jobs:
-  test-playwright:
-    name: Run Playwright Tests
+  setup:
+    name: Setup Environment
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14.17.6
+          node-version: 18
 
       - name: Cache node modules
         id: cache-npm
         uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
-            ${{ runner.os }}-
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: npm list
 
       - name: Install dependencies
-        if: steps.cache-npm.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests TC01
-        run: npm run test:tc01
-        env:
-          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+  test-tc-01:
+    name: Test 01 - Create Tokens
+    needs: setup
+    runs-on: ubuntu-latest
 
-      - name: Deploy Report for TC01
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: TC01 - Run Playwright tests 
+        run: npm run test:tc01
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}  
+
+      - name: TC01 - Deploy Report for TC 01🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: playwright-report
           target-folder: tests/tc-01/
 
-      - name: Run Playwright tests TC04
-        run: npm run test:tc04
-        env:
-          WEBAPP_URL: ${{  vars.WEBAPP_URL }}
+  test-tc-04:
+    name: Test 04 - Off Chain Proposals
+    needs: setup
+    runs-on: ubuntu-latest
 
-      - name: Deploy Report for TC04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: TC04 - Run Playwright tests 
+        run: npm run test:tc04
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}  
+
+      - name: TC04 - Deploy Report for TC 04🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: playwright-report
-          target-folder: tests/tc-04/
+          target-folder: tests/pr-01/tc-04/ 
