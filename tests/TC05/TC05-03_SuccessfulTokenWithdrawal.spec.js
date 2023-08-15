@@ -3,7 +3,7 @@ const { PreProposal } = require("../CommonFile/PreAction");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test('Test case 13: Successful Token Withdrawal', async ({ page }) => {
+test('Test case 3: Successful Token Withdrawal', async ({ page }) => {
 
     test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 

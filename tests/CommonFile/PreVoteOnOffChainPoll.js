@@ -35,9 +35,8 @@ async function PreVoteOnOffChainPoll(page){
 
     await page.click(pageLocators.OffChainPoll.CreateProposalButton); //Click on the Create Proposal Button
 
-    const content = await page.content(); //Assume Page
-
-    await page.waitForSelector(pageLocators.OffChainPoll.CreateText, { visible: true }); //Wait for Text Visible on Webpage
+    await page.click(pageLocators.OffChainPoll.CloseButton); //Click on x Mark
+    
 
 }
 

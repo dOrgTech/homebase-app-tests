@@ -27,9 +27,9 @@ test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
 
     await page.fill(pageLocators.DAOCreate.Description, TezosTestData.DAOCreate.Description); //Fill The Description
 
-    await page.click(pageLocators.DAOCreate.ContinueButton2);   //Click on Continue
+    await page.waitForTimeout(2000); //Wait For Click on Continue Button
 
-    await page.waitForTimeout(1000);
+    await page.click(pageLocators.DAOCreate.ContinueButton2);   //Click on Continue
     
     await page.fill(pageLocators.DAOCreate.VotingDays, TezosTestData.DAOCreate.VotingDays); //Pass The Voting Cycle Days Duration 
 

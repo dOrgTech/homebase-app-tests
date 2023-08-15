@@ -180,6 +180,7 @@ const pageLocators = {
     MM: "input[placeholder='MM']",
     CreateProposalButton: "button[class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']",
     CreateText: "//div[text()='Proposal created!']",
+    CloseButton:'.MuiBox-root > .MuiSvgIcon-root',
   },
 
   VoteOnOffChainPoll: {
