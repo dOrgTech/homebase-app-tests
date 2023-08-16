@@ -1,16 +1,16 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("./CommonFile/PreAction");
-const { pageLocators } = require("./CommonFile/Locator");
-const { TezosTestData } = require("./CommonFile/TestData");
+const { PreProposal } = require("../CommonFile/PreAction");
+const { pageLocators } = require("../CommonFile/Locator");
+const { TezosTestData } = require("../CommonFile/TestData");
 const path = require('path');
 
-test('Test case 05-05: Transfer NFT ', async ({ page }) => {
+test('Test case 5: Transfer NFT ', async ({ page }) => {
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
     try {
 
-        test.setTimeout(600000);  //To Extend the time of test Execution
+        test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
         await page.click(pageLocators.OffChainPoll.cycle);  // Click on Running Cycle Status
 
@@ -18,9 +18,7 @@ test('Test case 05-05: Transfer NFT ', async ({ page }) => {
 
         await page.click(pageLocators.TransferNFT.NFTs); //Click on the NFT Button
 
-        console.log("Uploading Report");
-
-        console.log(" The proposal is successfully created and the user is redirected to a confirmation page with the details of the newly created proposal.")
+        console.log("The proposal is successfully created and the user is redirected to a confirmation page with the details of the newly created proposal.");
 
     }
     catch (error) {

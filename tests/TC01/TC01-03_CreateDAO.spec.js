@@ -4,8 +4,8 @@ const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
-
-    test.setTimeout(600000);  //To extend the time of test execution
+    
+    test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
     await changeNetwork(page); //PreConditions Open URL and Selecting the Ghost-net
 
@@ -27,8 +27,10 @@ test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
 
     await page.fill(pageLocators.DAOCreate.Description, TezosTestData.DAOCreate.Description); //Fill The Description
 
-    await page.click(pageLocators.DAOCreate.ContinueButton2);   //Click on Continue
+    await page.waitForTimeout(2000); //Wait For Click on Continue Button
 
+    await page.click(pageLocators.DAOCreate.ContinueButton2);   //Click on Continue
+    
     await page.fill(pageLocators.DAOCreate.VotingDays, TezosTestData.DAOCreate.VotingDays); //Pass The Voting Cycle Days Duration 
 
     await page.fill(pageLocators.DAOCreate.VotingHours, TezosTestData.DAOCreate.VotingHours); //Pass The Voting Cycle Hours Duration

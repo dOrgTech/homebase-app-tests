@@ -13,15 +13,15 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "Decentralized Governance Initiative",
-        TokenAddress: "KT1EHxvnhn5gX9EcNyFsp3y1HnKCBM2JjXpm",
+        DAOName: "Decentralized",
+        TokenAddress: "KT1Dmxer8pvx8vTUX5V2k44th4DqnKsjhUya",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
         TC04DAODescription: "",
         VotingDays: '00',
-        VotingHours: '01',
-        VotingMinutes: "00",
+        VotingHours: '00',
+        VotingMinutes: "03",
         ExecutionDays: "00",
         ExecutionHours: "00",
         ExecutionMinutes: "01",
@@ -38,7 +38,7 @@ const TezosTestData = {
         MaxAmount: "20",
     },
 
-    DAOConfiguration: {
+    ChangeConfiguration: {
 
         ProposalFee: "1",
         ReturnedTokenPercentage: "1",
@@ -46,7 +46,7 @@ const TezosTestData = {
     },
 
     ChangeGuardian: {
-        WalletAddress: "tz1VxgGHwU6T6MaWrzfCBSpg2tw823KWVbk6",
+        WalletAddress: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
 
     },
 
@@ -83,7 +83,7 @@ const TezosTestData = {
     ExecuteLambda: {
         SearchText: "transfer_proposal",
         LambdaArgumentsCode: "Write Michelson Code For the Input",
-        LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format."
+        LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format.",
 
     },
 
@@ -98,7 +98,7 @@ const TezosTestData = {
 
 
     OffChainPoll: {
-        ProposalTitle: "Community Governance Upgrades Poll",
+        ProposalTitle: "Community Governance",
         ShortDescription: "This proposal aims to conduct an off-chain poll to gather community input on potential upgrades to the Tezos governance process.",
         ExternalLink: "https://examplelink.com/tezos-gov-upgrades-poll",
         Choice1: "Introduce Liquid Democracy",

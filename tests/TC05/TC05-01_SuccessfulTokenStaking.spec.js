@@ -1,13 +1,13 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("./CommonFile/PreAction");
-const { pageLocators } = require("./CommonFile/Locator");
+const { PreTokenStaking } = require("../CommonFile/PreTokenStaking");
+const { pageLocators } = require("../CommonFile/Locator");
 const path = require('path');
 
-test('Test case 11: Successful Token Staking', async ({ page }) => {
+test('Test case 1: Successful Token Staking', async ({ page }) => {
 
-    test.setTimeout(600000);  //To Extend the time of test Execution
+    test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
-    await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
+    await PreTokenStaking(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
     await page.click(pageLocators.TokenStaking.User);  //Click on the User ON the Tab
 
@@ -20,6 +20,14 @@ test('Test case 11: Successful Token Staking', async ({ page }) => {
     await page.click(pageLocators.TokenStaking.Submit); //Click on the Submit Button
 
     await page.waitForTimeout(30000); //Wait for Transaction Confirmed
+
+    const element = await page.$(pageLocators.TokenStaking.Balance); // get The element
+
+    await page.waitForTimeout(2000); //wait for get the votes
+
+    const textContent = await element.innerText();  //get the text From this element
+
+    console.log(textContent);  // Console The test Present on the Webpage
 
     console.log(" The tokens are successfully staked and and show up as available balance field");
 

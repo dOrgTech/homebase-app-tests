@@ -5,7 +5,7 @@ const { TezosTestData } = require("../CommonFile/TestData");
 
 test("Test Case 2: Token Creation with Various Input Values", async ({ page, }) => {
 
-  test.setTimeout(600000); //To extend the time of test execution
+  test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
   await changeNetwork(page); //PreConditions Open URL and selecting the Ghost-net
 
@@ -33,6 +33,6 @@ test("Test Case 2: Token Creation with Various Input Values", async ({ page, }) 
 
   await expect(textMessage).toBeVisible(); //Verify The Text Present on The Web
 
-  console.log(" Create Token with input values are fail due to the decimals test box not accept 0 value");
+  console.log("Create Token with input values are fail due to the decimals test box not accept 0 value");
 
 });
