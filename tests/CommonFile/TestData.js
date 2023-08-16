@@ -56,7 +56,7 @@ const TezosTestData = {
 
     TransferToken: {
         RecipientAddress: "tz1VxgGHwU6T6MaWrzfCBSpg2tw823KWVbk6",
-        Asset: "TST",
+        Asset: "SRD",
         Amount: "10",
         AgoraPostID: "10",
     },

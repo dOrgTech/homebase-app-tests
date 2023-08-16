@@ -65,8 +65,8 @@ const pageLocators = {
 
   ChangeConfiguration: {
     DAOConfiguration: "//p[text()='DAO Configuration']",
-    ProposalFee: "input[placeholder='Proposal fee']",
-    ReturnedTokenPercentage: "input[placeholder='Returned tokens percentage']",
+    ProposalFee: "//input[@name='frozen_extra_value']",
+    ReturnedTokenPercentage: "//input[@name='returnedPercentage']",
     SubmitButton: "//span[text()='Submit']",
     TransactionText: "",
   },
@@ -185,7 +185,7 @@ const pageLocators = {
 
   VoteOnOffChainPoll: {
     ProposalName: "//h4[text()='Community Governance']",
-    Option1: "//p[text()='Introduce Liquid Democracy']",
+    Option1: "//div[@class='Introduce Liquid Democracy']",
     Option2: "//p[text()='Increase Proposal Exploration Period']",
     CastYourVote: "//span[text()='Cast your vote']",
     VoteDone: "Your vote has been submitted",
