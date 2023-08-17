@@ -8,18 +8,6 @@ test('Test case 2: Successful Token UnStaking', async ({ page }) => {
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
-    await page.click(pageLocators.OffChainPoll.Proposal); //Click on the proposal on the Tab 
-
-    try {
-
-        await page.click(pageLocators.ProposalExecutionAndDrop.DropProposal); // Click on Drop All Proposals
-
-    } catch (error) {
-        console.log("Button not ready to be clicked")
-    }
-
-    await page.waitForTimeout(5000); //Wait For Drop All The Proposal
-
     await page.click(pageLocators.TokenStaking.User); //Click on the User Tab
 
     await page.click(pageLocators.UnStakingToken.UnStakeVotes); //Click on UnStake Votes 
