@@ -59,6 +59,15 @@ const pageLocators = {
     ErrorText: "Required",
   },
 
+  ProposalCreation: {
+    Search: "input[placeholder='Search']",
+    ExampleDAO: "Example DAO",
+    Proposal: "//p[text()='Proposals']",
+    Cycle: "Creating",
+    NewProposal: "New Proposal",
+
+  },
+
   DAOConfiguration: {
     DAOConfiguration: "//p[text()='DAO Configuration']",
     ProposalFee: "input[placeholder='Proposal fee']",
@@ -155,9 +164,9 @@ const pageLocators = {
   },
 
   OffChainPoll: {
-    ExampleDAO: "//p[text()='Example DAO']",
-    Proposal: "//p[text()='Proposals']",
-    cycle: "//p[text()='Creating']",
+    // ExampleDAO: "//p[text()='Example DAO']",
+    // Proposal: "//p[text()='Proposals']",
+    // cycle: "//p[text()='Creating']",
     NewProposal: "//span[text()='New Proposal']",
     OffChainPoll: "//p[text()='Off Chain Poll']",
     ProposalTitle: "input[placeholder='Proposal Title*']",

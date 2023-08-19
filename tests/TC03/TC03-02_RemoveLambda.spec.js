@@ -1,19 +1,25 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("./CommonFile/PreAction");
-const { pageLocators } = require("./CommonFile/Locator");
-const { TezosTestData } = require("./CommonFile/TestData");
+const { PreProposal } = require("../CommonFile/PreProposal");
+const { pageLocators } = require("../CommonFile/Locator");
+const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test case 05-08: Remove Lambda ', async ({ page }) => {
 
-    await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
+    // Selecting DAO for proposal creation
+    await PreProposal(page);
 
     try {
 
-        test.setTimeout(600000);  //To Extend the time of test Execution
+        //To Extend the time of test Execution
+        test.setTimeout(120000);  
 
-        await page.click(pageLocators.OffChainPoll.cycle);  // Click on Running Cycle Status
+        //Check if cycle status is CREATING
+        const cyclestatus = await page.getByText(pageLocators.ProposalCreation.Cycle)
 
-        await page.click(pageLocators.OffChainPoll.NewProposal); //Click On New Proposal
+        await expect(cyclestatus).toBeVisible()
+
+        //Click On New Proposal
+        await page.getByText(pageLocators.ProposalCreation.NewProposal).click()
 
         await page.click(pageLocators.RemoveLambda.RemoveLambda);   //Click on Remove Lambda
 

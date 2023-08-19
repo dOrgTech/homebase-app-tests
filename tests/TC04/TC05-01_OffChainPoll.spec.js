@@ -1,17 +1,16 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("../CommonFile/PreAction");
+const { PreProposal } = require("../CommonFile/PreProposal");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test case 08: Off Chain Poll Proposal Creation', async ({ page }) => {
 
-    test.setTimeout(600000);  //To Extend the time of test Execution
-
-    await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
+    // Selecting DAO for proposal creation
+    await PreProposal(page);
 
     try {
-
-        await page.click(pageLocators.OffChainPoll.cycle);  // Click on Running Cycle Status
+         //To extend the time of test execution
+        test.setTimeout(120000); 
 
         await page.click(pageLocators.OffChainPoll.NewProposal); //Click on new Proposal
 
