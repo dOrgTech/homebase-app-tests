@@ -35,6 +35,8 @@ async function PreVoteOnOffChainPoll(page){
 
     await page.click(pageLocators.OffChainPoll.CreateProposalButton); //Click on the Create Proposal Button
 
+    await page.waitForTimeout(3000); //Wait Transactions 
+
     await page.click(pageLocators.OffChainPoll.CloseButton); //Click on x Mark
     
 

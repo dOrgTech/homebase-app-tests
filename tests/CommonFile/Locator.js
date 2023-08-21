@@ -184,9 +184,9 @@ const pageLocators = {
   },
 
   VoteOnOffChainPoll: {
-    ProposalName: "//h4[text()='Community Governance']",
-    Option1: "//div[@class='Introduce Liquid Democracy']",
-    Option2: "//p[text()='Increase Proposal Exploration Period']",
+    ProposalTitle: "//h4[text()='Community']",
+    Choice1: "//p[text()='Democracy']",
+    Choice2: "//p[text()='Exploration']",
     CastYourVote: "//span[text()='Cast your vote']",
     VoteDone: "Your vote has been submitted",
   },

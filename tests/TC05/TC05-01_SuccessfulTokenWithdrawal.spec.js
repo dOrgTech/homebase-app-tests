@@ -9,7 +9,9 @@ test('Test case 1: Successful Token Withdrawal', async ({ page }) => {
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
-    await page.click(pageLocators.TokenStaking.User); //Click On the User tab s
+    await page.click(pageLocators.TokenStaking.User); //Click On the User tab 
+
+    await page.waitForTimeout(30000); //Wait for Pass all API 
 
     await page.click(pageLocators.TokenWithdrawal.Withdraw); //Click On withdrawal Button
 

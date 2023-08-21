@@ -98,12 +98,11 @@ const TezosTestData = {
 
 
     OffChainPoll: {
-        ProposalTitle: "Community Governance",
+        ProposalTitle: 'Community',
         ShortDescription: "This proposal aims to conduct an off-chain poll to gather community input on potential upgrades to the Tezos governance process.",
-        ExternalLink: "https://examplelink.com/tezos-gov-upgrades-poll",
-        Choice1: "Introduce Liquid Democracy",
-        Choice2: "Increase Proposal Exploration Period",
-        CreateProposalButton: "button[class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']",
+        ExternalLink: "https://tezos-gov-upgrades.com",
+        Choice1: "Democracy",
+        Choice2: "Exploration",
         DD: "01",
         HH: "05",
         MM: "00",
