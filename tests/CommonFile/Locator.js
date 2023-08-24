@@ -90,31 +90,6 @@ const pageLocators = {
 
   },
 
-  TransferToken: {
-    Treasury: "//p[text()='Treasury']",
-    NewTransfer: "//span[text()='New Transfer']",
-    Recipient: "input[placeholder='Type an Address Here']",
-    Asset: "//input[@class='MuiInputBase-input MuiInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd']",
-    Amount: "input[placeholder='0']",
-    AgoraPostID: "input[placeholder='Type an Agora Post ID']",
-    SubmitButton: "//span[normalize-space()='Submit']",
-    TransactionText: "Registry proposal transaction confirmed",
-  },
-
-  TransferNFT: {
-    NFTs: "//span[text()='NFTs']",
-  },
-
-  EditRegistry: {
-    Registry: "//p[text()='Registry']",
-    NewItem: "//span[text()='New Item']",
-    BatchTransfer: "//input[@type='checkbox']",
-    Key: "//input[@placeholder='Type a Key']",
-    Value: "//textarea[@placeholder='Type a value']",
-    Submit: "//span[text()='Submit']",
-
-  },
-
   AddLambda: {
     AddLambda: "//p[text()='Add Lambda']",
     TestBox: ".npm__react-simple-code-editor__textarea",
@@ -137,40 +112,14 @@ const pageLocators = {
     SubmitButton: "//span[text()='Submit']",
   },
 
-  VoteOnProposal: {
-    VotingCycle: "//p[text()='Creating']",
-    OnChainButton: "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-text jss417']",
-    Active: "//p[text()='Active']",
-    Pending: "//p[text()='Pending']",
-    VoteFor: "//span[text()='Vote For']",
-    VoteAgainst: "//span[text()='Vote Against']",
-    UseMax: "//p[text()='Use Max']",
-    Submit: "//span[text()='Submit']",
-    View: "//span[text()='View']",
-    Support: ".MuiGrid-root.MuiGrid-container.MuiGrid-item.MuiGrid-wrap-xs-nowrap.MuiGrid-align-items-xs-baseline.MuiGrid-grid-md-12",
-    Oppose: ".MuiGrid-root.MuiGrid-container.MuiGrid-wrap-xs-nowrap.MuiGrid-align-items-xs-center.MuiGrid-grid-md-12",
-
-  },
-
-  ProposalExecutionAndDrop: {
-    PassedExecutable: "//p[text()='Passed - Executable']",
-    Passed: "//p[text()='Passed']",
-    NoQuorum: "//p[text()='No Quorum']",
-    Expired: "//p[text()='Expired']",
-    DropProposal: "//span[text()='Drop Proposal']",
-    PercentageText: "//p[@class='MuiTypography-root jss1339 jss1340 MuiTypography-body1']",
-    DropExpired: "//span[text()='Drop Expired']",
-    Execute: "//span[text()='Execute']",
-  },
-
   OffChainPoll: {
     // ExampleDAO: "//p[text()='Example DAO']",
     // Proposal: "//p[text()='Proposals']",
     // cycle: "//p[text()='Creating']",
-    NewProposal: "//span[text()='New Proposal']",
-    OffChainPoll: "//p[text()='Off Chain Poll']",
+    NewProposal: "New Proposal",
+    OffChainPoll: "Off Chain Poll",
     ProposalTitle: "input[placeholder='Proposal Title*']",
-    ShortDescription: "textarea[placeholder='Short description']",
+    Description: "textarea[placeholder='Short description']",
     ExternalLink: "input[placeholder='External Link']",
     multipleChoice: "input[value='1']",
     Choice1: "input[placeholder='Choice 1']",
@@ -180,8 +129,8 @@ const pageLocators = {
     DD: "input[placeholder='DD']",
     HH: "input[placeholder='HH']",
     MM: "input[placeholder='MM']",
-    CreateProposalButton: "button[class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']",
-    CreateText: "//div[text()='Proposal created!']",
+    CreateProposalButton: "Create Proposal",
+    CreateText: "Proposal created!",
   },
 
   VoteOnOffChainPoll: {
@@ -190,35 +139,6 @@ const pageLocators = {
     Option2: "//p[text()='Increase Proposal Exploration Period']",
     CastYourVote: "//span[text()='Cast your vote']",
     VoteDone: "Your vote has been submitted",
-  },
-
-  CorrectVoteCount: {
-    VoteCount: "div[class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-6'] p[class='MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary']",
-    Option1: "div[class='MuiGrid-root jss342 jss373 jss372 MuiGrid-container MuiGrid-direction-xs-column'] div[class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-flex-end MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-lg-6'] p[class='MuiTypography-root MuiTypography-body2 MuiTypography-colorTextPrimary']",
-    Option2: "div[class='MuiGrid-root jss342 jss374 jss372 MuiGrid-container MuiGrid-direction-xs-column'] div[class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-flex-end MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-lg-6'] p[class='MuiTypography-root MuiTypography-body2 MuiTypography-colorTextPrimary']",
-
-  },
-
-  TokenStaking: {
-    User: "//p[text()='User']",
-    Deposit: "//span[text()='Deposit']",
-    PassAmount: "//input[@placeholder='0']",
-    UseMax: "//p[text()='Use Max']",
-    Submit: "//span[text()='Submit']",
-    TransactionText: "Deposit transaction confirmed",
-  },
-
-  UnStakingToken: {
-    UnStakeVotes: "//span[text()='Unstake Votes']",
-    TransactionText: "Execute transaction confirmed",
-  },
-
-  TokenWithdrawal: {
-    Withdraw: "//span[text()='Withdraw']",
-    Amount: "//input[@placeholder='0']",
-    UseMax: "//p[text()='Use Max']",
-    Submit: "//span[text()='Submit']",
-    TransactionText: "Withdrawal transaction confirmed",
   }
 
 };

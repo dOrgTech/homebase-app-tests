@@ -40,6 +40,17 @@ const TezosTestData = {
         MaxAmount: "20",
     },
 
+    OffChainPoll: {
+        ProposalTitle: "Testing Proposal",
+        Description: "This proposal aims to conduct an off-chain poll.",
+        ExternalLink: "https://example.com",
+        Choice1: "option1",
+        Choice2: "option2",
+        DD: "01",
+        HH: "02",
+        MM: "05",
+    },
+
     DAOConfiguration: {
 
         ProposalFee: "1",
@@ -54,23 +65,6 @@ const TezosTestData = {
 
     ChangeDelegate: {
         NewDelegateAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
-    },
-
-    TransferToken: {
-        RecipientAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
-        Asset: "SRD",
-        Amount: "10",
-        AgoraPostID: "10",
-    },
-
-    TransferNFT: {
-
-    },
-
-    EditRegistry: {
-        Key: "Hello",
-        Value: "Hi",
-
     },
 
     AddLambda: {
@@ -89,35 +83,6 @@ const TezosTestData = {
 
     },
 
-    VoteOnProposal: {
-
-    },
-
-    ProposalExecutionAndDrop: {
-        Execute: "//span[text()='Execute']",
-        DropExpired: "//span[text()='Drop Expired']",
-    },
-
-
-    OffChainPoll: {
-        ProposalTitle: "Community Governance Upgrades Poll",
-        ShortDescription: "This proposal aims to conduct an off-chain poll to gather community input on potential upgrades to the Tezos governance process.",
-        ExternalLink: "https://examplelink.com/tezos-gov-upgrades-poll",
-        Choice1: "Introduce Liquid Democracy",
-        Choice2: "Increase Proposal Exploration Period",
-        CreateProposalButton: "button[class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']",
-        DD: "01",
-        HH: "05",
-        MM: "00",
-    },
-
-    TokenStaking: {
-        Amount: "000+-e"
-    },
-
-    TokenWithdrawal: {
-        Amount: "23456E_+",
-    },
 
 
 
