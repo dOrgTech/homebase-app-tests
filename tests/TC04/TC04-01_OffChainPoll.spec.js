@@ -1,4 +1,4 @@
-const { test, expect } = require("@playwright/test");
+const { test, expect } = require('@playwright/test');
 const { PreProposal } = require("../CommonFile/PreProposal");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
@@ -9,7 +9,7 @@ test('Test case 08: Off Chain Poll Proposal Creation', async ({ page }) => {
     await PreProposal(page);
 
     try {
-         //To extend the time of test execution
+        //To extend the time of test execution
         test.setTimeout(120000); 
 
         //Click on new Proposal
@@ -55,7 +55,7 @@ test('Test case 08: Off Chain Poll Proposal Creation', async ({ page }) => {
         const validateText = await page.getByText(pageLocators.OffChainPoll.CreateText)
         await expect (validateText).toBeVisible
 
-        console.log("The poll is successfully created and the user is redirected to a confirmation page with the details of the newly created poll.")
+        console.log("The poll is successfully created.")
 
     }  catch (error) {
         console.error('Error:', error);

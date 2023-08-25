@@ -1,25 +1,31 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("./CommonFile/PreAction");
-const { pageLocators } = require("./CommonFile/Locator");
+const { PreProposal } = require("../CommonFile/PreProposal");
+const { pageLocators } = require("../CommonFile/Locator");
 
 test('Test case 10: Correct vote Count on Off Chain Poll ', async ({ page }) => {
 
-    test.setTimeout(600000);  //To Extend the time of test Execution
+    //To extend the time of test execution
+    test.setTimeout(120000); 
 
-    await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
+    // Selecting DAO for proposal creation
+    await PreProposal(page);
 
-    await page.click(pageLocators.VoteOnOffChainPoll.ProposalName);
+    await page.getByText(pageLocators.VoteOnOffChainPoll.ProposalName).click();
 
-    await page.waitForSelector(pageLocators.CorrectVoteCount.VoteCount);  //Wait for find the Element
+    await page.waitForTimeout(2000);
 
-    const element = await page.$(pageLocators.CorrectVoteCount.VoteCount); // get The element
+    // get The element
+    const content = await page.$(pageLocators.CorrectVoteCount.VoteCount); 
 
-    await page.waitForTimeout(2000); //wait for get the votes
+    //wait for get the votes
+    await page.waitForTimeout(2000); 
   
-    const textContent = await element.innerText();  //get the text From this element
+    //get the text From this element
+    const textContent = await content.innerText();  
   
-    console.log('Votes:', textContent);  // Console The test Present on the Webpage
+    // Console The test Present on the Webpage
+    console.log('Votes:', textContent);  
 
-    console.log("The vote count matches the number of votes submitted for the poll, and if multiple choice is enabled, the voting weight is evenly split between all the options that a voter picked.")
+    console.log("The vote count matches the number of votes submitted for the poll.")
 
 })

@@ -69,23 +69,24 @@ const pageLocators = {
   },
 
   DAOConfiguration: {
-    DAOConfiguration: "//p[text()='DAO Configuration']",
-    ProposalFee: "input[placeholder='Proposal fee']",
-    ReturnedTokenPercentage: "input[placeholder='Returned tokens percentage']",
-    SubmitButton: "//span[text()='Submit']",
+    DAOConfiguration: "DAO Configuration",
+    ProposalFee: "input[name='frozen_extra_value']",
+    ReturnedTokenPercentage: "input[name='returnedPercentage']",
+    SubmitButton: "Submit",
 
   },
 
   ChangeGuardian: {
-    ChangeGuardian: "//p[text()='Change Guardian']",
+    ChangeGuardian: "Change Guardian",
     WalletAddress: "input[placeholder=' tz1...']",
-    SubmitButton: '//span[text()="Submit"]',
+    SubmitButton: 'Submit',
+    validateText: 'Guardian change proposal transaction confirmed'
   },
 
   ChangeDelegate: {
-    ChangeDelegate: "//p[text()='Change Delegate']",
+    ChangeDelegate: "Change Delegate",
     NewDelegateAddress: "input[placeholder=' tz1...']",
-    SubmitButton: "//span[text()='Submit']",
+    SubmitButton: "Submit",
     PopUp: "",
 
   },
@@ -113,9 +114,6 @@ const pageLocators = {
   },
 
   OffChainPoll: {
-    // ExampleDAO: "//p[text()='Example DAO']",
-    // Proposal: "//p[text()='Proposals']",
-    // cycle: "//p[text()='Creating']",
     NewProposal: "New Proposal",
     OffChainPoll: "Off Chain Poll",
     ProposalTitle: "input[placeholder='Proposal Title*']",
@@ -134,12 +132,16 @@ const pageLocators = {
   },
 
   VoteOnOffChainPoll: {
-    ProposalName: "//h4[text()='Community Governance Upgrades Poll']",
-    Option1: "//p[text()='Introduce Liquid Democracy']",
-    Option2: "//p[text()='Increase Proposal Exploration Period']",
-    CastYourVote: "//span[text()='Cast your vote']",
-    VoteDone: "Your vote has been submitted",
-  }
+    ProposalName: "Testing Proposal",
+    Option1: "option1",
+    Option2: "option2",
+    CastYourVote: "Cast your vote",
+    VoteVerify: "Your vote has been submitted",
+  },
+
+  CorrectVoteCount: {
+    VoteCount: "div[class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-6'] p[class='MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary']"
+  },
 
 };
 

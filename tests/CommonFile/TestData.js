@@ -41,7 +41,7 @@ const TezosTestData = {
     },
 
     OffChainPoll: {
-        ProposalTitle: "Testing Proposal",
+        ProposalTitle: "Testing proposal",
         Description: "This proposal aims to conduct an off-chain poll.",
         ExternalLink: "https://example.com",
         Choice1: "option1",
@@ -54,7 +54,7 @@ const TezosTestData = {
     DAOConfiguration: {
 
         ProposalFee: "1",
-        ReturnedTokenPercentage: "1",
+        ReturnedTokenPercentage: "2",
 
     },
 
@@ -82,8 +82,6 @@ const TezosTestData = {
         LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format."
 
     },
-
-
 
 
 }
