@@ -83,6 +83,10 @@ const TezosTestData = {
 
     },
 
+    VotingOnChain: {
+        Amount: '10',
+    }
+
 
 }
 export { TezosTestData };

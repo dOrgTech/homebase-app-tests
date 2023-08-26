@@ -143,6 +143,16 @@ const pageLocators = {
     VoteCount: "div[class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-6'] p[class='MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary']"
   },
 
+  VotingOnChain: {
+    cycle: "Voting",
+    active: 'Active',
+    VoteFor: 'Vote For',
+    VoteAgainst: 'Vote Against',
+    Amount: 'input[placeholder="Type an Amount"]',
+    Submit: 'Submit',
+    validateText: 'Vote transaction confirmed!',
+    View: 'View',
+  }
 };
 
 export { pageLocators };

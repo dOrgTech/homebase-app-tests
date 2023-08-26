@@ -37,7 +37,7 @@ test('Test case 05-04: DAO Configuration', async ({ page }) => {
         await page.getByText(pageLocators.DAOConfiguration.SubmitButton).click(); 
 
         //Wait for DAO Configuration
-        await page.waitForTimeout(5000); 
+        await page.waitForTimeout(10000); 
 
         const validateText = await page.getByText('proposal transaction');
         await expect(validateText).toBeVisible();
@@ -46,7 +46,8 @@ test('Test case 05-04: DAO Configuration', async ({ page }) => {
 
     }
     catch (error) {
-        console.log("Now Voting Cycle is Running");
+        // console.log("Now Voting Cycle is Running");
+        console.log(error);
     }
 
 })

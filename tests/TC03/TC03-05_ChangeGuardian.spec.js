@@ -11,7 +11,7 @@ test('Test case 05-02: Change Guardian', async ({ page }) => {
     try {
 
         //To Extend the time of test Execution
-        test.setTimeout(120000);  
+        test.setTimeout(120000);
 
         //Check if cycle status is CREATING
         const cyclestatus = await page.getByText(pageLocators.ProposalCreation.Cycle)
