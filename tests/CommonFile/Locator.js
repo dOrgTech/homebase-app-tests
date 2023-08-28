@@ -144,7 +144,6 @@ const pageLocators = {
   },
 
   VotingOnChain: {
-    cycle: "Voting",
     active: 'Active',
     VoteFor: 'Vote For',
     VoteAgainst: 'Vote Against',

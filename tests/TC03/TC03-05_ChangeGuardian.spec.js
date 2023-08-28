@@ -3,7 +3,7 @@ const { PreProposal } = require("../CommonFile/PreProposal");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test('Test case 05-02: Change Guardian', async ({ page }) => {
+test('Test case 05-05: Change Guardian', async ({ page }) => {
 
     // Selecting DAO for proposal creation
     await PreProposal(page);

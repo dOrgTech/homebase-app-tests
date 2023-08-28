@@ -3,7 +3,7 @@ const { changeNetwork } = require("../CommonFile/Action");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
+test('Test Case 02-01 : Create DAO Successfully', async ({ page }) => {
 
     //To extend the time of test execution
     test.setTimeout(120000); 

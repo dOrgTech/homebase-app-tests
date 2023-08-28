@@ -3,7 +3,7 @@ const { changeNetwork } = require("../CommonFile/Action");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test("Test Case 2: Token Creation with Various Input Values", async ({ page, }) => {
+test("Test Case 01-02: Token Creation with Various Input Values", async ({ page, }) => {
 
   //To extend the time of test execution
   test.setTimeout(120000); 

@@ -3,7 +3,7 @@ const { PreProposal } = require("../CommonFile/PreProposal");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test('Test case 08: Off Chain Poll Proposal Creation', async ({ page }) => {
+test('Test case 04-01: Off Chain Poll Proposal Creation', async ({ page }) => {
 
     // Selecting DAO for proposal creation
     await PreProposal(page);
@@ -53,7 +53,7 @@ test('Test case 08: Off Chain Poll Proposal Creation', async ({ page }) => {
 
         //Wait for Text Visible on Webpage
         const validateText = await page.getByText(pageLocators.OffChainPoll.CreateText)
-        await expect (validateText).toBeVisible
+        await expect (validateText).toBeVisible();
 
         console.log("The poll is successfully created.")
 

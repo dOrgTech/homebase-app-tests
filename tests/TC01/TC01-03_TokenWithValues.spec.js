@@ -4,7 +4,7 @@ const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
 
-test('Test3: Amount Less than Supply Token',async ({page})=>{
+test('Test Case 01-03: Amount Less than Supply Token',async ({page})=>{
 
     //To extend the time of test execution
     test.setTimeout(120000); 

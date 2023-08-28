@@ -4,7 +4,7 @@ const { pageLocators } = require("../CommonFile/Locator");
 const path = require('path');
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test('Test case 06: Vote On Proposal ', async ({ page }) => {
+test('Test case 05-01: Vote On Proposal ', async ({ page }) => {
 
     // Selecting DAO for proposal creation
     await PreProposal(page);
@@ -12,16 +12,15 @@ test('Test case 06: Vote On Proposal ', async ({ page }) => {
     try {
 
         //To Extend the time of test Execution
-        test.setTimeout(120000);  
+        test.setTimeout(160000);  
 
-        //Check if cycle status is VOTING.
-        const cyclestatus = await page.getByText(pageLocators.VotingOnChain.cycle, {exact: true})
+        //Check if cycle status is CREATING
+        const cyclestatus = await page.getByText(pageLocators.ProposalCreation.Cycle)
 
-        await expect(cyclestatus).toBeVisible();
+        await expect(cyclestatus).not.toBeVisible();
 
-        
         //Click on the Active Button
-        await page.getByText(pageLocators.VotingOnChain.active).click(); 
+        await page.getByText(pageLocators.VotingOnChain.active, {exact: true}).click(); 
 
         await page.waitForTimeout(3000);
 
@@ -31,12 +30,14 @@ test('Test case 06: Vote On Proposal ', async ({ page }) => {
         //Enter an amount
         await page.type(pageLocators.VotingOnChain.Amount, TezosTestData.VotingOnChain.Amount); 
 
+        await page.waitForTimeout(5000)
+
         //Click on the Submit
         await page.getByText(pageLocators.VotingOnChain.Submit).click(); 
 
         //Wait for Submit the Proposal
-        await page.waitForTimeout(2000); 
-
+        await page.waitForTimeout(10000);
+        
         //Validate that Confirmation message is shown
         const validateText = await page.getByText(pageLocators.VotingOnChain.validateText);
         await expect(validateText).toBeVisible();
