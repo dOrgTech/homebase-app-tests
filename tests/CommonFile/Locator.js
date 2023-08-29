@@ -151,7 +151,31 @@ const pageLocators = {
     Submit: 'Submit',
     validateText: 'Vote transaction confirmed!',
     View: 'View',
-  }
+  },
+
+  TokenDeposit: {
+    User: "User",
+    Deposit: "Deposit",
+    Amount: "input[placeholder='0']",
+    Submit: "Submit",
+    verifyText: "Deposit transaction confirmed!",
+    Balance: ".MuiTypography-root jss2800 MuiTypography-body1 MuiTypography-colorTextPrimary"
+
+  },
+  TokenWithdrawal: {
+    User: "User",
+    Withdraw: "Withdraw",
+    Amount:"input[placeholder='0']",
+    Submit: "Submit",
+    verifyText: "Withdrawal transaction confirmed!"
+  },
+
+  TokenUnstaking: {
+    Drop: "Drop Expired",
+    User: "User",
+    Unstake: "Unstake Votes",
+    verifyText: "Execute transaction confirmed!"
+  },
 };
 
 export { pageLocators };

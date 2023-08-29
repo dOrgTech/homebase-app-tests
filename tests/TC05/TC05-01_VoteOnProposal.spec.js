@@ -1,7 +1,6 @@
 const { test, expect } = require("@playwright/test");
 const { PreProposal } = require("../CommonFile/PreProposal");
 const { pageLocators } = require("../CommonFile/Locator");
-const path = require('path');
 const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test case 05-01: Vote On Proposal ', async ({ page }) => {

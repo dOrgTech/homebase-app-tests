@@ -85,8 +85,16 @@ const TezosTestData = {
 
     VotingOnChain: {
         Amount: '5',
-    }
+    },
 
+    TokenDeposit: {
+        Amount: "2",
+        Balance: "2"
+    },
+
+    TokenWithdrawal: {
+        Amount: "5",
+    }
 
 }
 export { TezosTestData };
