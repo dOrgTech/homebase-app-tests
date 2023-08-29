@@ -143,6 +143,7 @@ const pageLocators = {
     VoteFor: "//span[text()='Vote For']",
     VoteAgainst: "//span[text()='Vote Against']",
     UseMax: "//p[text()='Use Max']",
+    Amount: "//input[@placeholder='0']",
     Submit: "//span[text()='Submit']",
     View: "//span[text()='View']",
     Support: ".MuiGrid-root.MuiGrid-container.MuiGrid-item.MuiGrid-wrap-xs-nowrap.MuiGrid-align-items-xs-baseline.MuiGrid-grid-md-12",
@@ -179,7 +180,7 @@ const pageLocators = {
     HH: "input[placeholder='HH']",
     MM: "input[placeholder='MM']",
     CreateProposalButton: "button[class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']",
-    CreateText: "//div[text()='Proposal created!']",
+    CreateText: "Proposal created",
     CloseButton:'.MuiBox-root > .MuiSvgIcon-root',
   },
 

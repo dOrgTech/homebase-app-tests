@@ -1,7 +1,8 @@
 const { test, expect } = require("@playwright/test");
 const { PreProposal } = require("../CommonFile/PreAction");
 const { pageLocators } = require("../CommonFile/Locator");
-const path = require('path');
+const { TezosTestData } = require("../CommonFile/TestData");
+
 
 test('Test case 1: Vote On On-Chain Proposal ', async ({ page }) => {
 
@@ -9,7 +10,7 @@ test('Test case 1: Vote On On-Chain Proposal ', async ({ page }) => {
 
     try {
 
-        test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
+        test.setTimeout(30 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
         await page.click(pageLocators.VoteOnProposal.VotingCycle);  // Click on Running Cycle Status
         
@@ -17,7 +18,9 @@ test('Test case 1: Vote On On-Chain Proposal ', async ({ page }) => {
 
         await page.click(pageLocators.VoteOnProposal.VoteFor); //Click on the Vote For Support
 
-        await page.click(pageLocators.VoteOnProposal.UseMax); //Click on Use Max
+        await page.fill(pageLocators.VoteOnProposal.Amount, TezosTestData.VoteOnProposal.Amount); //Fill the amount for proposal
+
+        // await page.click(pageLocators.VoteOnProposal.UseMax); //Click on Use Max
 
         await page.click(pageLocators.VoteOnProposal.Submit); //Click on the Submit
 

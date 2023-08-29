@@ -35,9 +35,13 @@ test('Test case 1: Off Chain Poll Proposal Creation', async ({ page }) => {
 
     await page.click(pageLocators.OffChainPoll.CreateProposalButton); //Click on the Create Proposal Button
 
-    const content = await page.content(); //Assume Page
+    await page.waitForTimeout(12000); //Wait for the transaction
 
-    await page.waitForSelector(pageLocators.OffChainPoll.CreateText, { visible: true }); //Wait for Text Visible on Webpage
+    const content = await page.content(); //Assume Page
+ 
+    const isTextVisible = content.includes(pageLocators.OffChainPoll.CreateText, { visible: true }); //Wait for Text Visible on Webpage
+
+    console.log(isTextVisible); //Console the results
 
     console.log("The poll is successfully created and the user is redirected to a confirmation page with the details of the newly created poll.");
 

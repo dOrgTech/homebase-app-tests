@@ -15,7 +15,7 @@ test('Test case 2: Vote On Off Chain Proposal ', async ({ page }) => {
 
     await page.click(pageLocators.VoteOnOffChainPoll.CastYourVote); //Submit Your Votes
 
-    await page.waitForTimeout(1000); //wait for CastYourVote
+    await page.waitForTimeout(12000); //wait for CastYourVote
 
     const content = await page.content(); //Assume Page
  

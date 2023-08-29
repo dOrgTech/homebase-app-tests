@@ -88,6 +88,7 @@ const TezosTestData = {
     },
 
     VoteOnProposal: {
+        Amount: "20000",
 
     },
 
