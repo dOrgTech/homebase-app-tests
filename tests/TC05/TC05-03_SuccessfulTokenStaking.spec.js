@@ -13,21 +13,17 @@ test('Test case 3: Successful Token Staking', async ({ page }) => {
 
     await page.click(pageLocators.TokenStaking.Deposit);  //Click on the Deposit Button
 
-    //await page.type(pageLocators.TokenStaking.PassAmount, TezosTestData.TokenStaking.Amount); //Pass The Amount
-
     await page.click(pageLocators.TokenStaking.UseMax); //Click onn the User Max
+
+    await page.waitForTimeout(2000); //Wait for the type numbers in text box
 
     await page.click(pageLocators.TokenStaking.Submit); //Click on the Submit Button
 
     await page.waitForTimeout(30000); //Wait for Transaction Confirmed
 
-    const element = await page.$(pageLocators.TokenStaking.Balance); //Get The element
+    const content = await page.content(); //Assume Page
 
-    await page.waitForTimeout(2000); //Wait for get the votes
-
-    const textContent = await element.innerText();  //Get the text From this element
-
-    console.log(textContent);  //Console The test Present on the Webpage
+    const isTextVisible = content.includes(pageLocators.TokenStaking.TransactionText, { visible: true });  //Verify that text visible on the webpage
 
     console.log("The tokens are successfully staked and and show up as available balance field");
 

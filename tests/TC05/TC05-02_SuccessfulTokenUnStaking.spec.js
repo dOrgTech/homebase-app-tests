@@ -12,9 +12,13 @@ test('Test case 2: Successful Token UnStaking', async ({ page }) => {
 
     await page.click(pageLocators.UnStakingToken.UnStakeVotes); //Click on UnStake Votes 
 
-    await page.waitForTimeout(2000); //Wait For Complete The Transaction
+    await page.waitForTimeout(30000); //Wait For Complete The Transaction
+
+    const content = await page.content(); //Assume Page
 
     const isTextVisible = content.includes(pageLocators.UnStakingToken.TransactionText, { visible: true });  //Verify that text visible on the webpage
+
+    console.log(isTextVisible); 
 
     console.log("The tokens are successfully UnStaked and show up in the Available Balance field.")
 

@@ -18,10 +18,8 @@ test('Test case 4: Change Configuration', async ({ page }) => {
         await page.click(pageLocators.ChangeConfiguration.DAOConfiguration); //Click on DAO Configuration
 
         await page.fill(pageLocators.ChangeConfiguration.ProposalFee, TezosTestData.ChangeConfiguration.ProposalFee); // Pass The Proposal Fee
-       //await page.keyboard.type('1');
 
         await page.fill(pageLocators.ChangeConfiguration.ReturnedTokenPercentage, TezosTestData.ChangeConfiguration.ReturnedTokenPercentage); //Pass The Returned Token Percentage
-        //await page.keyboard.type('1');
 
         await page.waitForTimeout(2000); //Wait For Type The Letters
 

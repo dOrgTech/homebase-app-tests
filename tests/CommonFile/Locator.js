@@ -219,6 +219,7 @@ const pageLocators = {
     UseMax: "//p[text()='Use Max']",
     Submit: "//span[text()='Submit']",
     TransactionText: "Withdrawal transaction confirmed",
+    AvailableBalance: "0",
   }
 
 };
