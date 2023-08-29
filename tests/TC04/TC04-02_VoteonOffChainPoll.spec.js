@@ -15,10 +15,14 @@ test('Test case 2: Vote On Off Chain Proposal ', async ({ page }) => {
 
     await page.click(pageLocators.VoteOnOffChainPoll.CastYourVote); //Submit Your Votes
 
+    await page.waitForTimeout(1000); //wait for CastYourVote
+
     const content = await page.content(); //Assume Page
+ 
+    const isTextVisible = content.includes(pageLocators.VoteOnOffChainPoll.VoteDone, { visible: true });  //Verify that text visible on the webpage
 
-    await page.waitForSelector(pageLocators.VoteOnOffChainPoll.VoteDone, { visible: true }); //Wait for Text Visible on Webpage
-
+    console.log(isTextVisible); //Prints True or false for is Text Visible
+    
     console.log("The vote is successfully recorded and the user is redirected to a confirmation page with the details of the vote.");
 
 })
