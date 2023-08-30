@@ -10,8 +10,8 @@ const TezosTestData = {
         Icon: "Picture.PNG",
         WalletAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Amount: "100",
-        TC01_03Amount:"10",
-        
+        TC01_03Amount: "10",
+
     },
 
     DAOCreation: {
@@ -67,19 +67,18 @@ const TezosTestData = {
         NewDelegateAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
     },
 
-    AddLambda: {
-        MichelsonCode: ".npm__react-simple-code-editor__textarea",
-
+    TransferToken: {
+        RecipientAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
+        Asset: "SRD",
+        Amount: "10",
+        AgoraPostID: "10",
     },
 
-    RemoveLambda: {
-        SearchText: "transfer_proposal",
-    },
+    TransferNFT: {},
 
-    ExecuteLambda: {
-        SearchText: "transfer_proposal",
-        LambdaArgumentsCode: "Write Michelson Code For the Input",
-        LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format."
+    EditRegistry: {
+        Key: "This is Registry",
+        Value: "Hello!",
 
     },
 

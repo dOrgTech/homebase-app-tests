@@ -1,8 +1,8 @@
 const pageLocators = {
 
   TokenCreation: {
-    MainNet:'Mainnet',
-    GhostNet:"Ghostnet",
+    MainNet: 'Mainnet',
+    GhostNet: "Ghostnet",
     EnterApp: ".MuiButtonBase-root.MuiButton-root.MuiButton-contained.jss11.jss12.MuiButton-containedSecondary",
     frame: "div.MuiGrid-root.MuiGrid-container.MuiGrid-align-items-xs-center.MuiGrid-justify-content-xs-center",
     // ConnectWallet: "//span[text()='Connect Wallet']",
@@ -44,14 +44,14 @@ const pageLocators = {
     ThresholdExpiryHours: "input[name='proposalExpiryBlocksHours']",
     ThresholdExpiryMinutes: "input[name='proposalExpiryBlocksMinutes']",
     RequireStake: "input[name='proposeStakeRequired']",
-    Slider:"span[role='slider']",
+    Slider: "span[role='slider']",
     MinAmount: "input[name='minXtzAmount']",
     MaxAmount: "input[name='maxXtzAmount']",
-    QuorumThreshold:"input[name='quorumThreshold']",
-    QuorumChange:"input[name='quorumChange']",
-    MinQuorumAmount:"input[name='minQuorumAmount']",
-    QuorumMaxChange:"input[name='quorumMaxChange']",
-    MaxQuorumAmount:"input[name='maxQuorumAmount']",
+    QuorumThreshold: "input[name='quorumThreshold']",
+    QuorumChange: "input[name='quorumChange']",
+    MinQuorumAmount: "input[name='minQuorumAmount']",
+    QuorumMaxChange: "input[name='quorumMaxChange']",
+    MaxQuorumAmount: "input[name='maxQuorumAmount']",
     SelfDeployed: " Self-Deployed",
     DeployDAO: "Deploy DAO",
     // Managed: "//p[text()='Managed']",
@@ -91,27 +91,31 @@ const pageLocators = {
 
   },
 
-  AddLambda: {
-    AddLambda: "//p[text()='Add Lambda']",
-    TestBox: ".npm__react-simple-code-editor__textarea",
-    SubmitButton: "//span[text()='Submit']",
+  TransferToken: {
+    Treasury: "Treasury",
+    NewTransfer: "New Transfer",
+    Recipient: "input[placeholder='Type an Address Here']",
+    Asset: "//input[@class='MuiInputBase-input MuiInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd']",
+    Amount: "input[placeholder='0']",
+    AgoraPostID: "input[placeholder='Type an Agora Post ID']",
+    SubmitButton: "//span[normalize-space()='Submit']",
+    TransactionText: "Registry proposal transaction confirmed",
+  },
+
+  TransferNFT: {
+    NFTs: "NFTs",
+  },
+
+  EditRegistry: {
+    Registry: "Registry",
+    NewItem: "New Item",
+    BatchTransfer: "//input[type='checkbox']",
+    Key: "//input[@placeholder='Type a Key']",
+    Value: "//textarea[@placeholder='Type a value']",
+    Submit: "//span[text()='Submit']",
 
   },
 
-  RemoveLambda: {
-    RemoveLambda: "//p[text()='Remove Lambda']",
-    SearchBox: "#combo-box-demo",
-    SubmitButton: "//span[text()='Submit']",
-
-  },
-
-  ExecuteLambda: {
-    ExecuteLambda: "//p[text()='Execute Lambda']",
-    SearchBox: "#combo-box-demo",
-    LambdaArgumentsCode: 'Write Michelson Code for the input Paramerers of your Lambda\n\nEg:-\n\n{\n  "prim": "pair",\n  "annots": [\n    "%xtz_transfer_type"\n  ],\n  "args": [\n    {\n      "prim": "mutez",\n      "annots": [\n        "%amount"\n      ]\n    },\n    {\n      "prim": "address",\n      "annots": [\n        "%recipient"\n      ]\n    }\n  ]\n},\n',
-    LambdaParams: 'Enter the values for the given params in a JSON/JavaScript Object format.\n\nEg:-\n\n{\n  xtz_transfer_type: {\n    amount: 10000000000000000000,\n    recipient: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb"\n  }\n}\n  ',
-    SubmitButton: "//span[text()='Submit']",
-  },
 
   OffChainPoll: {
     NewProposal: "New Proposal",
@@ -165,7 +169,7 @@ const pageLocators = {
   TokenWithdrawal: {
     User: "User",
     Withdraw: "Withdraw",
-    Amount:"input[placeholder='0']",
+    Amount: "input[placeholder='0']",
     Submit: "Submit",
     verifyText: "Withdrawal transaction confirmed!"
   },

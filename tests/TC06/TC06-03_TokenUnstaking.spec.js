@@ -10,15 +10,15 @@ test('Test case 06-03: Successful Token UnStaking', async ({ page }) => {
     // Selecting DAO for proposal creation
     await PreProposal(page);
 
-    // await page.waitForTimeout(10000);
+    await page.waitForTimeout(10000);
 
-    //Click on Drop Expire
-    // await page.getByText(pageLocators.TokenUnstaking.Drop).click();
+    Click on Drop Expire
+    await page.getByText(pageLocators.TokenUnstaking.Drop).click();
 
-    // await page.waitForTimeout(12000); 
+    await page.waitForTimeout(12000); 
 
-    // const validateText = page.getByText(pageLocators.TokenUnstaking.verifyText);
-    // await expect(validateText).toBeVisible();
+    const validateText = page.getByText(pageLocators.TokenUnstaking.verifyText);
+    await expect(validateText).toBeVisible();
 
     // go to Users tab
     await page.getByText(pageLocators.TokenUnstaking.User).click();
