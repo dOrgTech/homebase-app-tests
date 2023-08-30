@@ -3,7 +3,7 @@ const { PreProposal } = require("../CommonFile/PreAction");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test('Test case 3: Transfer Tokens', async ({ page }) => {
+test('Test case 1: Transfer Tokens', async ({ page }) => {
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
@@ -23,7 +23,7 @@ test('Test case 3: Transfer Tokens', async ({ page }) => {
 
         await page.waitForTimeout(2000) //Wait For Locate The Token
 
-        await page.keyboard.press('ArrowDown'); //Click on DownArrow Button
+        await page.keyboard.press('ArrowDown'); //Click on DownArrow Button 
 
         await page.keyboard.press('Enter'); //Click on Enter Button
 

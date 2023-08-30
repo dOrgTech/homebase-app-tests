@@ -4,7 +4,7 @@ const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 const path = require('path');
 
-test('Test case 5: Transfer NFT ', async ({ page }) => {
+test('Test case 3: Transfer NFT ', async ({ page }) => {
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 

@@ -1,8 +1,8 @@
 const pageLocators = {
 
   TokenCreator: {
-    MainNet:"//p[text()='Mainnet']",
-    GhostNet:"//h6[text()='Ghostnet']",
+    MainNet: "//p[text()='Mainnet']",
+    GhostNet: "//h6[text()='Ghostnet']",
     EnterApp: ".MuiButtonBase-root.MuiButton-root.MuiButton-contained.jss11.jss12.MuiButton-containedSecondary",
     frame: "div.MuiGrid-root.MuiGrid-container.MuiGrid-align-items-xs-center.MuiGrid-justify-content-xs-center",
     ConnectWallet: "//span[text()='Connect Wallet']",
@@ -44,16 +44,16 @@ const pageLocators = {
     ThresholdExpiryDays: "//input[@name='proposalExpiryBlocksDay']",
     ThresholdExpiryHours: "//input[@name='proposalExpiryBlocksHours']",
     ThresholdExpiryMinutes: "//input[@name='proposalExpiryBlocksMinutes']",
-    Slider:"span[role='slider']",
+    Slider: "span[role='slider']",
     RequireStake: "//input[@name='proposeStakeRequired']",
     MinAmount: "//input[@name='minXtzAmount']",
     MaxAmount: "//input[@name='maxXtzAmount']",
     ContinueButton3: "//p[text()='Continue']",
-    QuorumThreshold:"//input[@name='quorumThreshold']",
-    QuorumChange:"//input[@name='quorumChange']",
-    MinQuorumAmount:"//input[@name='minQuorumAmount']",
-    QuorumMaxChange:"//input[@name='quorumMaxChange']",
-    MaxQuorumAmount:"//input[@name='maxQuorumAmount']",
+    QuorumThreshold: "//input[@name='quorumThreshold']",
+    QuorumChange: "//input[@name='quorumChange']",
+    MinQuorumAmount: "//input[@name='minQuorumAmount']",
+    QuorumMaxChange: "//input[@name='quorumMaxChange']",
+    MaxQuorumAmount: "//input[@name='maxQuorumAmount']",
     ContinueButton4: "//p[text()='Continue']",
     ContinueButton5: "//p[text()='Continue']",
     SelfDeployed: " //p[text()='Self-Deployed']",
@@ -123,7 +123,7 @@ const pageLocators = {
     RemoveLambda: "//p[text()='Remove Lambda']",
     SearchBox: "#combo-box-demo",
     SubmitButton: "//span[text()='Submit']",
-    TransactionText:"",
+    TransactionText: "",
   },
 
   ExecuteLambda: {
@@ -132,7 +132,7 @@ const pageLocators = {
     LambdaArgumentsCode: 'Write Michelson Code for the input Paramerers of your Lambda\n\nEg:-\n\n{\n  "prim": "pair",\n  "annots": [\n    "%xtz_transfer_type"\n  ],\n  "args": [\n    {\n      "prim": "mutez",\n      "annots": [\n        "%amount"\n      ]\n    },\n    {\n      "prim": "address",\n      "annots": [\n        "%recipient"\n      ]\n    }\n  ]\n},\n',
     LambdaParams: 'Enter the values for the given params in a JSON/JavaScript Object format.\n\nEg:-\n\n{\n  xtz_transfer_type: {\n    amount: 10000000000000000000,\n    recipient: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb"\n  }\n}\n  ',
     SubmitButton: "//span[text()='Submit']",
-    TransactionText:"",
+    TransactionText: "",
   },
 
   VoteOnProposal: {
@@ -143,7 +143,7 @@ const pageLocators = {
     VoteFor: "//span[text()='Vote For']",
     VoteAgainst: "//span[text()='Vote Against']",
     UseMax: "//p[text()='Use Max']",
-    Amount: "//input[@placeholder='0']",
+    Amount: "//input[@placeholder='Type an Amount']",
     Submit: "//span[text()='Submit']",
     View: "//span[text()='View']",
     Support: ".MuiGrid-root.MuiGrid-container.MuiGrid-item.MuiGrid-wrap-xs-nowrap.MuiGrid-align-items-xs-baseline.MuiGrid-grid-md-12",
@@ -151,7 +151,12 @@ const pageLocators = {
 
   },
 
-  ProposalExecutionAndDrop: {
+  ProposalDrop: {
+    ProposalDrop: "//span[text()='Drop Proposal']",
+    TransactionText: "Drop proposal transaction confirmed",
+  },
+
+  ProposalExecution: {
     PassedExecutable: "//p[text()='Passed - Executable']",
     Passed: "//p[text()='Passed']",
     NoQuorum: "//p[text()='No Quorum']",
@@ -160,6 +165,7 @@ const pageLocators = {
     PercentageText: "//p[@class='MuiTypography-root jss1339 jss1340 MuiTypography-body1']",
     DropExpired: "//span[text()='Drop Expired']",
     Execute: "//span[text()='Execute']",
+    TransactionText: "",
   },
 
   OffChainPoll: {
@@ -181,7 +187,7 @@ const pageLocators = {
     MM: "input[placeholder='MM']",
     CreateProposalButton: "button[class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']",
     CreateText: "Proposal created",
-    CloseButton:'.MuiBox-root > .MuiSvgIcon-root',
+    CloseButton: '.MuiBox-root > .MuiSvgIcon-root',
   },
 
   VoteOnOffChainPoll: {
@@ -195,7 +201,7 @@ const pageLocators = {
   CorrectVoteCount: {
     VoteCount: "div[class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-6'] p[class='MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary']",
     Options: "//div[@class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-flex-end MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-lg-6']",
-   
+
 
   },
 
@@ -206,7 +212,7 @@ const pageLocators = {
     UseMax: "//p[text()='Use Max']",
     Submit: "//span[text()='Submit']",
     TransactionText: "Deposit transaction confirmed",
-    Balance:"//div[@class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-space-between']",
+    Balance: "//div[@class='MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-content-xs-space-between']",
   },
 
   UnStakingToken: {

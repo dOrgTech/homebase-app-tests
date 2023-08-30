@@ -3,7 +3,7 @@ const { PreProposal } = require("../CommonFile/PreAction");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test('Test case 9: Execute Lambda ', async ({ page }) => {
+test('Test case 7: Execute Lambda ', async ({ page }) => {
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 

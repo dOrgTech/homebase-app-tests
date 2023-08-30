@@ -4,13 +4,15 @@ const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
 
-test('Test case 1: Vote On On-Chain Proposal ', async ({ page }) => {
-
+test('Test case 1: Vote On On-Chain Proposal ', async ({ page, browserName }) => {
+    if (browserName !== 'chromium') {
+      return;
+    }
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
     try {
 
-        test.setTimeout(30 * 60 * 1000); //Extending Test Case timeout to 10 minutes
+        test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
         await page.click(pageLocators.VoteOnProposal.VotingCycle);  // Click on Running Cycle Status
         

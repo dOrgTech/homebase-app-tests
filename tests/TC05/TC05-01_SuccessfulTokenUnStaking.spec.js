@@ -7,7 +7,7 @@ test('Test case 1: Successful Token UnStaking on Chromium', async ({ page, brows
     return;
   }
 
-  test.setTimeout(30 * 60 * 1000); //Extending Test Case timeout to 10 minutes
+  test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
   await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
@@ -23,7 +23,7 @@ test('Test case 1: Successful Token UnStaking on Chromium', async ({ page, brows
     console.error("Error: No votes to unstake");
   }
 
-  await page.waitForTimeout(30000); //Wait For Complete The Transaction
+  await page.waitForTimeout(3000); //Wait For Complete The Transaction
 
   const content = await page.content(); //Assume Page
 

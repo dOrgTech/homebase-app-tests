@@ -13,7 +13,7 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "Decentralized",
+        DAOName: "Carbon black",
         TokenAddress: "KT1Dmxer8pvx8vTUX5V2k44th4DqnKsjhUya",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
@@ -46,16 +46,16 @@ const TezosTestData = {
     },
 
     ChangeGuardian: {
-        WalletAddress: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+        WalletAddress: "tz1RXo8kLmLZDfnuAyGD2vCAZWGcCsziR4HX",
 
     },
 
     ChangeDelegate: {
-        NewDelegateAddress: "tz1VxgGHwU6T6MaWrzfCBSpg2tw823KWVbk6",
+        NewDelegateAddress: "tz1RXo8kLmLZDfnuAyGD2vCAZWGcCsziR4HX",
     },
 
     TransferToken: {
-        RecipientAddress: "tz1VxgGHwU6T6MaWrzfCBSpg2tw823KWVbk6",
+        RecipientAddress: "tz1RXo8kLmLZDfnuAyGD2vCAZWGcCsziR4HX",
         Asset: "$",
         Amount: "10",
         AgoraPostID: "10",
@@ -72,7 +72,7 @@ const TezosTestData = {
     },
 
     AddLambda: {
-        MichelsonCode: ".npm__react-simple-code-editor__textarea",
+        MichelsonCode: "update_guardian_proposal",
 
     },
 
@@ -88,7 +88,7 @@ const TezosTestData = {
     },
 
     VoteOnProposal: {
-        Amount: "20000",
+        Amount: "30000",
 
     },
 
@@ -99,7 +99,7 @@ const TezosTestData = {
 
 
     OffChainPoll: {
-        ProposalTitle: 'Community',
+        ProposalTitle: 'governance',
         ShortDescription: "This proposal aims to conduct an off-chain poll to gather community input on potential upgrades to the Tezos governance process.",
         ExternalLink: "https://tezos-gov-upgrades.com",
         Choice1: "Democracy",

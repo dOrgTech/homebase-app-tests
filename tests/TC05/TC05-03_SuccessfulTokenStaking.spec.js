@@ -28,6 +28,8 @@ test('Test case 3: Successful Token Staking', async ({ page }) => {
 
     const isTextVisible = content.includes(pageLocators.TokenStaking.TransactionText, { visible: true });  //Verify that text visible on the webpage
 
+    console.log(isTextVisible); //Console the results of Text 
+
     console.log("The tokens are successfully staked and and show up as available balance field");
 
 })
