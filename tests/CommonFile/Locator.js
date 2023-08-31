@@ -95,24 +95,24 @@ const pageLocators = {
     Treasury: "Treasury",
     NewTransfer: "New Transfer",
     Recipient: "input[placeholder='Type an Address Here']",
-    Asset: "//input[@class='MuiInputBase-input MuiInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd']",
+    Asset: "input[class='MuiInputBase-input MuiInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd']",
+    TST:"TST",
     Amount: "input[placeholder='0']",
     AgoraPostID: "input[placeholder='Type an Agora Post ID']",
-    SubmitButton: "//span[normalize-space()='Submit']",
-    TransactionText: "Registry proposal transaction confirmed",
+    SubmitButton: "Submit",
+    verifyText: "Registry proposal transaction confirmed",
   },
 
   TransferNFT: {
     NFTs: "NFTs",
+    NFTid: "input[class='MuiInputBase-input MuiInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd']"
   },
 
   EditRegistry: {
     Registry: "Registry",
     NewItem: "New Item",
-    BatchTransfer: "//input[type='checkbox']",
-    Key: "//input[@placeholder='Type a Key']",
-    Value: "//textarea[@placeholder='Type a value']",
-    Submit: "//span[text()='Submit']",
+    Key: "input[placeholder='Type a Key']",
+    Value: "textarea[placeholder='Type a value']",
 
   },
 

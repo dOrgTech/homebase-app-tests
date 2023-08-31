@@ -24,31 +24,33 @@ test('Test case 05-07: Transfer Tokens', async ({ page }) => {
         //Click on New Transfer
         await page.getByText(pageLocators.TransferToken.NewTransfer).click(); 
 
-        //Pass Recipient Address
+        //Enter Recipient Address
         await page.type(pageLocators.TransferToken.Recipient, TezosTestData.TransferToken.RecipientAddress); 
 
         //Click on Asset Button
         await page.type(pageLocators.TransferToken.Asset, TezosTestData.TransferToken.Asset); 
 
-        await page.waitForTimeout(2000) //Wait For Locate The Token
+        //Wait For Locate The Token
+        await page.waitForTimeout(2000) 
 
-        await page.keyboard.press('ArrowDown'); //Click on DownArrow Button
+        //Click on DownArrow Button
+        await page.keyboard.press('ArrowDown'); 
+        await page.keyboard.press('Enter'); 
 
-        await page.keyboard.press('Enter'); //Click on Enter Button
+        //Pass The Amount Wants to Transfer
+        await page.type(pageLocators.TransferToken.Amount, TezosTestData.TransferToken.Amount); 
 
-        await page.type(pageLocators.TransferToken.Amount, TezosTestData.TransferToken.Amount); //Pass The Amount Wants to Transfer
+        //Pass The Agora Post ID
+        await page.type(pageLocators.TransferToken.AgoraPostID, TezosTestData.TransferToken.AgoraPostID); 
 
-        await page.type(pageLocators.TransferToken.AgoraPostID, TezosTestData.TransferToken.AgoraPostID); //Pass The Agora Post ID
+        //Click On Submit Button
+        await page.getByText(pageLocators.TransferToken.SubmitButton).click();
 
-        await page.click(pageLocators.TransferToken.SubmitButton);  //Click On Submit Button
+        await page.waitForTimeout(30000); 
 
-        await page.waitForTimeout(30000); //Wait for Transfer Tokens
-
-        const isTextVisible = content.includes(pageLocators.TransferToken.TransactionText, { visible: true });  //Verify that text visible on the webpage
-
-        console.log(isTextVisible); // console The Pass And Fail Result
-
-        console.log("Uploading Report");
+        //Verify POPUP text is visible 
+        const validateText = await page.getByText(pageLocators.TransferToken.verifyText);
+        await expect(validateText).toBeVisible();
 
         console.log(" The proposal is successfully created and the user is redirected to a confirmation page with the details of the newly created proposal.")
 

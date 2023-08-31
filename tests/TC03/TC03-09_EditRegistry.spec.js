@@ -24,13 +24,19 @@ test('Test case 05-09: Edit Registry', async ({ page }) => {
         // Click On the New Registry item
         await page.getByText(pageLocators.EditRegistry.NewItem).click(); 
 
-        await page.type(pageLocators.EditRegistry.Key,TezosTestData.EditRegistry.Key); // Pass The Key For Registry
+        // Enter The Key For Registry
+        await page.type(pageLocators.EditRegistry.Key,TezosTestData.EditRegistry.Key); 
 
-        await page.type(pageLocators.EditRegistry.Value, TezosTestData.EditRegistry.Value); //Pass The Value
+        //Enter The Value
+        await page.type(pageLocators.EditRegistry.Value, TezosTestData.EditRegistry.Value); 
 
-        await page.click(pageLocators.EditRegistry.Submit); //Click on the submit button
+        //Pass The Agora Post ID
+        await page.type(pageLocators.TransferToken.AgoraPostID, TezosTestData.TransferToken.AgoraPostID); 
 
-        await page.waitForTimeout(30000);  //Wait for Timeout the Script
+        //Click On Submit Button
+        await page.getByText(pageLocators.TransferToken.SubmitButton).click();
+
+        await page.waitForTimeout(30000);  
         
         console.log(" The proposal is successfully created and the user is redirected to a confirmation page with the details of the newly created proposal.");
 
