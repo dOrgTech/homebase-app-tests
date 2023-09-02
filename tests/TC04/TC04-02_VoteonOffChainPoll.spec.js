@@ -10,8 +10,8 @@ test('Test case 04-02: Vote On Off Chain Proposal ', async ({ page }) => {
     // Selecting DAO for proposal creation
     await PreProposal(page);
 
-    //Click on the Proposal Name 
-    await page.getByText(pageLocators.VoteOnOffChainPoll.ProposalName).click(); 
+    //Click on the Proposal Name  
+    await page.getByRole('heading', { name: pageLocators.VoteOnOffChainPoll.ProposalName }).first().click();
 
     //Click On Option 1
     await page.getByText(pageLocators.VoteOnOffChainPoll.Option1).first().click(); 

@@ -28,20 +28,28 @@ test('Test case 05-07: Transfer Tokens', async ({ page }) => {
         await page.type(pageLocators.TransferToken.Recipient, TezosTestData.TransferToken.RecipientAddress); 
 
         //Click on Asset Button
-        await page.type(pageLocators.TransferToken.Asset, TezosTestData.TransferToken.Asset); 
+        await page.locator(pageLocators.TransferToken.Asset).click(); 
 
         //Wait For Locate The Token
-        await page.waitForTimeout(2000) 
+        await page.waitForTimeout(2000);
+
+        await page.getByRole('option', { name: pageLocators.TransferToken.TST }).click();
 
         //Click on DownArrow Button
-        await page.keyboard.press('ArrowDown'); 
-        await page.keyboard.press('Enter'); 
+        // await page.keyboard.press('ArrowDown'); 
+        // await page.keyboard.press('Enter'); 
 
         //Pass The Amount Wants to Transfer
-        await page.type(pageLocators.TransferToken.Amount, TezosTestData.TransferToken.Amount); 
+        await page.locator(pageLocators.TransferToken.Amount).click(); 
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type(TezosTestData.TransferToken.Amount);
 
         //Pass The Agora Post ID
-        await page.type(pageLocators.TransferToken.AgoraPostID, TezosTestData.TransferToken.AgoraPostID); 
+        await page.locator(pageLocators.TransferToken.AgoraPostID).click();
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type(TezosTestData.TransferToken.AgoraPostID);
+
+        await page.waitForTimeout(5000); 
 
         //Click On Submit Button
         await page.getByText(pageLocators.TransferToken.SubmitButton).click();
@@ -56,12 +64,7 @@ test('Test case 05-07: Transfer Tokens', async ({ page }) => {
 
     }
     catch (error) {
-        console.log("Now Voting Cycle is running");
+        console.log("Error: ", error);
     }
-
-
-
-
-
 
 })

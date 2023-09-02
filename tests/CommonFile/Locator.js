@@ -96,7 +96,7 @@ const pageLocators = {
     NewTransfer: "New Transfer",
     Recipient: "input[placeholder='Type an Address Here']",
     Asset: "input[class='MuiInputBase-input MuiInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd']",
-    TST:"TST",
+    TST: "TST",
     Amount: "input[placeholder='0']",
     AgoraPostID: "input[placeholder='Type an Agora Post ID']",
     SubmitButton: "Submit",
@@ -113,7 +113,7 @@ const pageLocators = {
     NewItem: "New Item",
     Key: "input[placeholder='Type a Key']",
     Value: "textarea[placeholder='Type a value']",
-
+    verifyText: "Registry proposal transaction confirmed!"
   },
 
 
@@ -155,6 +155,15 @@ const pageLocators = {
     Submit: 'Submit',
     validateText: 'Vote transaction confirmed!',
     View: 'View',
+  },
+
+  ProposalExecutionandDrop: {
+    PassedExecutable: "Passed - Executable",
+    Passed: "Passed",
+    DropProposal: "Drop Proposal",
+    PercentageText: "p[class='MuiTypography-root jss1339 jss1340 MuiTypography-body1']",
+    DropExpired: "//span[text()='Drop Expired']",
+    Execute: "//span[text()='Execute']",
   },
 
   TokenDeposit: {

@@ -10,7 +10,8 @@ test('Test case 04-03: Correct vote Count on Off Chain Poll ', async ({ page }) 
     // Selecting DAO for proposal creation
     await PreProposal(page);
 
-    await page.getByText(pageLocators.VoteOnOffChainPoll.ProposalName).click();
+    //Click on the Proposal Name 
+    await page.getByRole('heading', { name: pageLocators.VoteOnOffChainPoll.ProposalName }).first().click();
 
     await page.waitForTimeout(2000);
 

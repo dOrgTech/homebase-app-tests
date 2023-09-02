@@ -30,11 +30,13 @@ test('Test case 05-08: Transfer NFT ', async ({ page }) => {
         //Enter Recipient Address
         await page.type(pageLocators.TransferToken.Recipient, TezosTestData.TransferToken.RecipientAddress); 
         
-        //Click on Asset Button
-        await page.type(pageLocators.TransferNFT.NFTid, TezosTestData.TransferNFT.NFTid);
         
         //Enter The Agora Post ID
-        await page.type(pageLocators.TransferToken.AgoraPostID, TezosTestData.TransferToken.AgoraPostID); 
+        await page.locator(pageLocators.TransferToken.AgoraPostID).click();
+        await page.keyboard.press('Backspace');
+        await page.keyboard.type(TezosTestData.TransferToken.AgoraPostID);
+
+        await page.waitForTimeout(3000); 
 
         //Click On Submit Button
         await page.getByText(pageLocators.TransferToken.SubmitButton).click();

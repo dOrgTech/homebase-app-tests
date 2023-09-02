@@ -70,17 +70,14 @@ const TezosTestData = {
     TransferToken: {
         RecipientAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Asset: "TST",
-        Amount: "10",
-        AgoraPostID: "10",
+        Amount: "05",
+        AgoraPostID: "05",
     },
 
-    TransferNFT: {
-        NFTid: "10"
-    },
 
     EditRegistry: {
         Key: "This is Registry",
-        Value: "Hello!",
+        Value: "Helloo",
 
     },
 
