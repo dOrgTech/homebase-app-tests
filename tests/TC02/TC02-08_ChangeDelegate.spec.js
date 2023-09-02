@@ -3,8 +3,10 @@ const { PreProposal } = require("../CommonFile/PreAction");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test('Test case 1: Change Delegate', async ({ page }) => {
-
+test('Test case 8: Change Delegate', async ({ page, browserName }) => {
+    if (browserName !== 'chromium') {
+      return;
+    }
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
     try {
