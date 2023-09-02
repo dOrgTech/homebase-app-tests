@@ -123,7 +123,7 @@ const pageLocators = {
     RemoveLambda: "//p[text()='Remove Lambda']",
     SearchBox: "#combo-box-demo",
     SubmitButton: "//span[text()='Submit']",
-    TransactionText: "",
+    TransactionText: "Remove Lambda proposal transaction confirmed",
   },
 
   ExecuteLambda: {
@@ -165,7 +165,7 @@ const pageLocators = {
     PercentageText: "//p[@class='MuiTypography-root jss1339 jss1340 MuiTypography-body1']",
     DropExpired: "//span[text()='Drop Expired']",
     Execute: "//span[text()='Execute']",
-    TransactionText: "",
+    TransactionText: "Execute proposal transaction confirmed",
   },
 
   OffChainPoll: {

@@ -4,7 +4,7 @@ const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
 
-test('Test case 3: Drop the Active proposal',  async ({ page, browserName }) => {
+test('Test case 2: Drop the Active proposal',  async ({ page, browserName }) => {
     if (browserName !== 'chromium') {
       return;
     }

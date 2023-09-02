@@ -1,11 +1,12 @@
+
 const TezosTestData = {
 
     TokenCreator: {
         TokenName: "My token name",
         TokenDescription: "My Token Descriptions",
         TC02TokenDescription: "",
-        SupplyToken: "100",
-        Decimals: "18",
+        SupplyToken: "10000000",
+        Decimals: "13",
         Symbol: "#",
         Icon: "Picture.PNG",
         WalletAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
@@ -13,7 +14,7 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "Carbon black",
+        DAOName: "Carbon black.",
         TokenAddress: "KT1Dmxer8pvx8vTUX5V2k44th4DqnKsjhUya",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
@@ -21,10 +22,10 @@ const TezosTestData = {
         TC04DAODescription: "",
         VotingDays: '00',
         VotingHours: '00',
-        VotingMinutes: "03",
+        VotingMinutes: "10",
         ExecutionDays: "00",
         ExecutionHours: "00",
-        ExecutionMinutes: "01",
+        ExecutionMinutes: "15",
         ThresholdExpiryDays: "01",
         ThresholdExpiryHours: "00",
         ThresholdExpiryMinutes: "00",
@@ -33,32 +34,29 @@ const TezosTestData = {
         MinQuorumAmount: '1',
         QuorumMaxChange: '19',
         MaxQuorumAmount: '90',
-        RequiredStake: "10",
-        MinAmount: "10",
-        MaxAmount: "20",
+        RequiredStake: "0.1",
+        MinAmount: "1",
+        MaxAmount: "200000",
     },
 
     ChangeConfiguration: {
-
-        ProposalFee: "1",
-        ReturnedTokenPercentage: "1",
-
+        ProposalFee: "12",
+        ReturnedTokenPercentage: "64"
     },
 
     ChangeGuardian: {
-        WalletAddress: "tz1RXo8kLmLZDfnuAyGD2vCAZWGcCsziR4HX",
-
+        WalletAddress: "tz1XqJz9dj4eL5c1fboFFAnevueRNFEtrBRf",
     },
 
     ChangeDelegate: {
-        NewDelegateAddress: "tz1RXo8kLmLZDfnuAyGD2vCAZWGcCsziR4HX",
+        NewDelegateAddress: "tz1LcL32qu4k7aBikZs9e7LojLPbPygz5HHR",
     },
 
     TransferToken: {
-        RecipientAddress: "tz1RXo8kLmLZDfnuAyGD2vCAZWGcCsziR4HX",
+        RecipientAddress: "tz1TSz4j3ANETG1pERGv3kddJrCymRJUV5VD", 
         Asset: "$",
-        Amount: "10",
-        AgoraPostID: "10",
+        Amount: "11",
+        AgoraPostID: "0",
     },
 
     TransferNFT: {
@@ -66,13 +64,13 @@ const TezosTestData = {
     },
 
     EditRegistry: {
-        Key: "Hello",
-        Value: "Hi",
+        Key: "Home DOC",
+        Value: "ALL Documents",
 
     },
 
     AddLambda: {
-        MichelsonCode: "update_guardian_proposal",
+        MichelsonCode: "  CDR;   Extract the lambda and an integer from the parameter",
 
     },
 
@@ -88,14 +86,11 @@ const TezosTestData = {
     },
 
     VoteOnProposal: {
-        Amount: "30000",
+        Amount: "300000",
 
     },
 
-    ProposalExecutionAndDrop: {
-        Execute: "//span[text()='Execute']",
-        DropExpired: "//span[text()='Drop Expired']",
-    },
+   
 
 
     OffChainPoll: {
@@ -104,9 +99,9 @@ const TezosTestData = {
         ExternalLink: "https://tezos-gov-upgrades.com",
         Choice1: "Democracy",
         Choice2: "Exploration",
-        DD: "01",
-        HH: "05",
-        MM: "00",
+        DD: "00",
+        HH: "00",
+        MM: "20",
     },
 
     TokenStaking: {
@@ -114,10 +109,8 @@ const TezosTestData = {
     },
 
     TokenWithdrawal: {
-        Amount: "23",
+        Amount: "50",
     },
-
-
 
 }
 export { TezosTestData };

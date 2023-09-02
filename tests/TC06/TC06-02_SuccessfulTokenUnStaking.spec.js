@@ -2,7 +2,7 @@ const { test, expect } = require("@playwright/test");
 const { PreProposal } = require("../CommonFile/PreAction");
 const { pageLocators } = require("../CommonFile/Locator");
 
-test('Test case 1: Successful Token UnStaking on Chromium', async ({ page, browserName }) => {
+test('Test case 2: Successful Token UnStaking on Chromium', async ({ page, browserName }) => {
   if (browserName !== 'chromium') {
     return;
   }
