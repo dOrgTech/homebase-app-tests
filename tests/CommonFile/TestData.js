@@ -10,7 +10,7 @@ const TezosTestData = {
         Symbol: "#",
         Icon: "Picture.PNG",
         WalletAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
-        Amount: "100",
+        Amount: "10000000",
     },
 
     DAOCreate: {
