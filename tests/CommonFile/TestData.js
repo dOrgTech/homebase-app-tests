@@ -17,6 +17,7 @@ const TezosTestData = {
     DAOCreation: {
         DAOName: "My Test DAO",
         TokenAddress: "KT1ND3pDj67PqfjvzqPUAvSRqmcqcHnqpiEQ",
+        TokenAddress2:"KT1BERTLG7JzpzWcT5UMVZFe4gC2cv9BhKMM",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
@@ -71,7 +72,7 @@ const TezosTestData = {
         RecipientAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Asset: "TST",
         Amount: "05",
-        AgoraPostID: "05",
+        AgoraPostID: "5",
     },
 
 

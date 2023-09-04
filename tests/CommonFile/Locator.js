@@ -162,8 +162,8 @@ const pageLocators = {
     Passed: "Passed",
     DropProposal: "Drop Proposal",
     PercentageText: "p[class='MuiTypography-root jss1339 jss1340 MuiTypography-body1']",
-    DropExpired: "//span[text()='Drop Expired']",
-    Execute: "//span[text()='Execute']",
+    DropExpired: "Drop Expired",
+    Execute: "Execute",
   },
 
   TokenDeposit: {

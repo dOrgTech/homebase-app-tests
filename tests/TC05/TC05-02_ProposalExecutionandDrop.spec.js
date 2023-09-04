@@ -15,19 +15,23 @@ test('Test case 05-02: Proposal Execution & Drop', async ({ page }) => {
         //Check if cycle status is CREATING
         const cyclestatus = await page.getByText(pageLocators.ProposalCreation.Cycle)
 
-        await expect(cyclestatus).toBeVisible();
+        await expect(cyclestatus).not.toBeVisible();
 
-        const passed = await page.getByText(pageLocators.ProposalExecutionandDrop.PassedExecutable);
+        // To check if proposal is in Passed-Executable state
+        const passed = await page.getByText(pageLocators.ProposalExecutionandDrop.PassedExecutable).textContent();
+        const isexecuteable = await expect(passed).toBe("Passed - Executable");
+        console.log(isexecuteable);
 
-        await passed.click();
-
+        await page.waitForTimeout(5000)
         // Click on the Passed - Executeable 
-        if (await expect(passed).toBeVisible()) { 
+        if (isexecuteable) { 
+
+            const execute = await page.getByText(pageLocators.ProposalExecutionandDrop.Execute);
 
             //Validate That Button is clickable or not
-            if (await page.waitForSelector(pageLocators.ProposalExecutionandDrop.Execute, { click: true })) {   
+            if (await page.getByText(pageLocators.ProposalExecutionandDrop.Execute, { click: true })) {   
                 //Click on Execute Button
-                await page.click(pageLocators.ProposalExecutionandDrop.Execute);  
+                await page.getByText(pageLocators.ProposalExecutionandDrop.Execute).click();  
             }
         } else {        
             //Click on drop Expired Proposal
@@ -36,7 +40,7 @@ test('Test case 05-02: Proposal Execution & Drop', async ({ page }) => {
 
     }
     catch (error) {
-        console.log("Error");
+        console.log("Error:", error);
     }
 
 })

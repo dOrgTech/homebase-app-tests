@@ -52,14 +52,74 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
+      - name: TC01- Run Playwright tests
         run: npm run test:tc01
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
 
-      - name: Deploy Report 🚀
+      - name: Deploy Report for tc01🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: playwright-report # The folder the action should deploy.
           target-folder: tests/tc-01/
+      
+      - name: TC02- Run Playwright tests
+        run: npm run test:tc02
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+
+      - name: Deploy Report for tc02🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: playwright-report # The folder the action should deploy.
+          target-folder: tests/tc-02/
+
+      - name: TC03- Run Playwright tests
+        run: npm run test:tc03
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+
+      - name: Deploy Report for tc03🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: playwright-report # The folder the action should deploy.
+          target-folder: tests/tc-03/
+      
+      - name: TC04- Run Playwright tests
+        run: npm run test:tc04
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+
+      - name: Deploy Report for tc04🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: playwright-report # The folder the action should deploy.
+          target-folder: tests/tc-04/
+
+      - name: TC05- Run Playwright tests
+        run: npm run test:tc05
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+
+      - name: Deploy Report for tc05🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: playwright-report # The folder the action should deploy.
+          target-folder: tests/tc-05/
+      
+      - name: TC06- Run Playwright tests
+        run: npm run test:tc06
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+
+      - name: Deploy Report for tc06🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: playwright-report # The folder the action should deploy.
+          target-folder: tests/tc-06/
