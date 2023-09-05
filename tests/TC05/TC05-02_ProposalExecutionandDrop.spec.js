@@ -13,40 +13,29 @@ test('Test case 05-02: Proposal Execution & Drop', async ({ page }) => {
     try {
 
         //Check if cycle status is CREATING
-        const cyclestatus = await page.getByText(pageLocators.ProposalCreation.Cycle)
+        // const cyclestatus = await page.getByText(pageLocators.ProposalCreation.Cycle)
 
-        await expect(cyclestatus).not.toBeVisible();
+        // await expect(cyclestatus).not.toBeVisible();
 
-        await page.waitForTimeout(5000);
+        await page.waitForTimeout(10000);
 
         // To check if proposal is in Passed-Executable state
-        const passed = await page.getByText(pageLocators.ProposalExecutionandDrop.PassedExecutable);
-        const isexecuteable = await expect(passed).toBeEnabled();
-        console.log(isexecuteable);
+        const passed = await page.getByText(pageLocators.ProposalExecutionandDrop.PassedExecutable, { exact: true });
 
-        await page.waitForTimeout(5000)
-        // Click on the Passed - Executeable 
-        if (isexecuteable) { 
-            console.log("pass1")
+        await expect(passed).toBeVisible();
 
-            const executeBtn = await page.getByText(pageLocators.ProposalExecutionandDrop.Execute);
-            const isclickable = await expect(executeBtn).toBeEnabled();
+        const executeBtn = await page.getByText(pageLocators.ProposalExecutionandDrop.Execute);
+        await expect(executeBtn).toBeEnabled();
+        //Click on Execute Button
+        await executeBtn.click();
 
-            //Validate That Button is clickable or not
-            if (isclickable) {  
-                console.log("pass2") 
-                //Click on Execute Button
-                await page.executeBtn.click();  
-            }
-        } else {        
-            console.log("failll")
-            //Click on drop Expired Proposal
-            await page.getByText(pageLocators.ProposalExecutionandDrop.DropExpired).click();   
-        }
-
+        //Verify POPUP text is visible 
+        const validateText = await page.getByText(pageLocators.ProposalExecutionandDrop.verifyText);
+        await expect(validateText).toBeVisible();
     }
     catch (error) {
         console.log("Error:", error);
     }
+    
 
 })

@@ -4,18 +4,20 @@ const { PreProposal } = require("../CommonFile/PrePoposal");
 
 test('Test case 06-03: Successful Token UnStaking', async ({ page }) => {
 
+    //To Extend the time of test Execution
+    test.setTimeout(160000);
+    
+    // Selecting DAO for proposal creation
+    await PreProposal(page);
+
     try {
-
-        //To Extend the time of test Execution
-        test.setTimeout(160000);
-
-        // Selecting DAO for proposal creation
-        await PreProposal(page);
 
         await page.waitForTimeout(10000);
 
         // Click on Drop Expire
-        await page.getByText(pageLocators.TokenUnstaking.Drop).click();
+        const dropBtn = await page.getByText(pageLocators.TokenUnstaking.Drop);
+        await expect(dropBtn).toBeEnabled();
+        await dropBtn.click();
 
         await page.waitForTimeout(30000);
 

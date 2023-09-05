@@ -164,6 +164,7 @@ const pageLocators = {
     PercentageText: "p[class='MuiTypography-root jss1339 jss1340 MuiTypography-body1']",
     DropExpired: "Drop Expired",
     Execute: "Execute",
+    verifyText:"Execute transaction confirmed!"
   },
 
   TokenDeposit: {
