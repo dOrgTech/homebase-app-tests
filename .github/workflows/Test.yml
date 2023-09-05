@@ -75,4 +75,4 @@ jobs:
         with:
             branch: gh-pages
             folder: playwright-report # The folder the action should deploy.
-            target-folder: tests/pr-01/tc-04/
+            target-folder: tests/pr-03/tc-04/
