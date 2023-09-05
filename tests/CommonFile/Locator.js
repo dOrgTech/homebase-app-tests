@@ -115,7 +115,7 @@ const pageLocators = {
     AddLambda: "//p[text()='Add Lambda']",
     TestBox: ".npm__react-simple-code-editor__textarea",
     SubmitButton: "//span[text()='Submit']",
-    TransactionText: "",
+    TransactionText: "Add Lambda proposal transaction confirmed",
 
   },
 
@@ -129,10 +129,11 @@ const pageLocators = {
   ExecuteLambda: {
     ExecuteLambda: "//p[text()='Execute Lambda']",
     SearchBox: "#combo-box-demo",
-    LambdaArgumentsCode: 'Write Michelson Code for the input Paramerers of your Lambda\n\nEg:-\n\n{\n  "prim": "pair",\n  "annots": [\n    "%xtz_transfer_type"\n  ],\n  "args": [\n    {\n      "prim": "mutez",\n      "annots": [\n        "%amount"\n      ]\n    },\n    {\n      "prim": "address",\n      "annots": [\n        "%recipient"\n      ]\n    }\n  ]\n},\n',
-    LambdaParams: 'Enter the values for the given params in a JSON/JavaScript Object format.\n\nEg:-\n\n{\n  xtz_transfer_type: {\n    amount: 10000000000000000000,\n    recipient: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb"\n  }\n}\n  ',
+    Dropdown: "//button[@class='MuiButtonBase-root MuiIconButton-root MuiAutocomplete-popupIndicator']",
+    LambdaArgumentsCode: "//textarea[@placeholder='Write Michelson Code for the input Paramerers of your Lambda']",
+    LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format",
     SubmitButton: "//span[text()='Submit']",
-    TransactionText: "",
+    TransactionText: "Execute Lambda proposal transaction confirmed",
   },
 
   VoteOnProposal: {
@@ -148,7 +149,6 @@ const pageLocators = {
     View: "//span[text()='View']",
     Support: ".MuiGrid-root.MuiGrid-container.MuiGrid-item.MuiGrid-wrap-xs-nowrap.MuiGrid-align-items-xs-baseline.MuiGrid-grid-md-12",
     Oppose: ".MuiGrid-root.MuiGrid-container.MuiGrid-wrap-xs-nowrap.MuiGrid-align-items-xs-center.MuiGrid-grid-md-12",
-
   },
 
   ProposalDrop: {

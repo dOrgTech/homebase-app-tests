@@ -5,15 +5,15 @@ const TezosTestData = {
         TokenName: "My token name",
         TokenDescription: "My Token Descriptions",
         TC02TokenDescription: "",
-        SupplyToken: "10000000",
+        SupplyToken: "100000000",
         Decimals: "13",
-        Symbol: "#",
+        Symbol: "$",
         Icon: "Picture.PNG",
         WalletAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
-        Amount: "10000000",
+        Amount: "100000000",
     },
 
-    DAOCreate: {
+    DAOCreate: { 
         DAOName: "Carbon black.",
         TokenAddress: "KT1Dmxer8pvx8vTUX5V2k44th4DqnKsjhUya",
         TokenID: "0",
@@ -79,7 +79,7 @@ const TezosTestData = {
     },
 
     ExecuteLambda: {
-        SearchText: "transfer_proposal",
+     
         LambdaArgumentsCode: "Write Michelson Code For the Input",
         LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format.",
 
