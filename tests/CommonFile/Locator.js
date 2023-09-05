@@ -20,7 +20,7 @@ const pageLocators = {
     ContinueButton2: "//p[text()='Continue']",
     launch: "//p[text()='Launch']",
     DeployText: "Governance token successfully deployed",
-    ConsoleAddress: "p[class='MuiTypography-root-165 MuiTypography-body1-167 MuiTypography-colorTextSecondary-191']",
+    ConsoleAddress: "//p[@class='MuiTypography-root-165 MuiTypography-body1-167 MuiTypography-colorTextSecondary-191']",
     ErrorText: "Required",
   },
 

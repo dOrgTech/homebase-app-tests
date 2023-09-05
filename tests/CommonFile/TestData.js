@@ -40,22 +40,22 @@ const TezosTestData = {
     },
 
     ChangeConfiguration: {
-        ProposalFee: "12",
-        ReturnedTokenPercentage: "64"
+        ProposalFee: "14",
+        ReturnedTokenPercentage: "63"
     },
 
     ChangeGuardian: {
-        WalletAddress: "tz1XqJz9dj4eL5c1fboFFAnevueRNFEtrBRf",
+        WalletAddress: "tz1hhjjjnCe7ePEKGRaArKzqyKpgQtrTK3RD",
     },
 
     ChangeDelegate: {
-        NewDelegateAddress: "tz1LcL32qu4k7aBikZs9e7LojLPbPygz5HHR",
+        NewDelegateAddress: "tz1LY2KJKKkXbA7EoN8K2rd8X1GDgcfj5zy6",
     },
 
     TransferToken: {
-        RecipientAddress: "tz1TSz4j3ANETG1pERGv3kddJrCymRJUV5VD", 
+        RecipientAddress: "tz1MBFA5nJgPgkp1ThXHcSs4YLuUrHmUM1Ef", 
         Asset: "$",
-        Amount: "11",
+        Amount: "12",
         AgoraPostID: "0",
     },
 
@@ -64,13 +64,13 @@ const TezosTestData = {
     },
 
     EditRegistry: {
-        Key: "Home DOC",
-        Value: "ALL Documents",
+        Key: "Home ",
+        Value: "Documents",
 
     },
 
     AddLambda: {
-        MichelsonCode: "  CDR;   Extract the lambda and an integer from the parameter",
+        MichelsonCode: "Extract the lambda and an integer from the parameter",
 
     },
 
@@ -91,8 +91,6 @@ const TezosTestData = {
     },
 
    
-
-
     OffChainPoll: {
         ProposalTitle: 'governance',
         ShortDescription: "This proposal aims to conduct an off-chain poll to gather community input on potential upgrades to the Tezos governance process.",
