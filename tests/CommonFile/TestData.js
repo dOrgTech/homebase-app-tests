@@ -83,7 +83,7 @@ const TezosTestData = {
     },
 
     VotingOnChain: {
-        Amount: '5',
+        Amount: '25584',
     },
 
     TokenDeposit: {
