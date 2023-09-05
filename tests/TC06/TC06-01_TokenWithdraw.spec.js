@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
 const { pageLocators } = require("../CommonFile/Locator");
-const { PreProposal } = require("../CommonFile/PreProposal");
 const { TezosTestData } = require("../CommonFile/TestData");
+const { PreProposal } = require("../CommonFile/PrePoposal");
 
 test('Test case 06-01: Successful Token Withdrawal', async ({ page }) => {
 

@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("../CommonFile/PreProposal");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
+const { PreProposal } = require("../CommonFile/PrePoposal");
 
 test('Test case 05-07: Transfer Tokens', async ({ page }) => {
 

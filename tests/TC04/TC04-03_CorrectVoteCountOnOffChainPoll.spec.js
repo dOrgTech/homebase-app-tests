@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("../CommonFile/PreProposal");
 const { pageLocators } = require("../CommonFile/Locator");
+const { PreProposal } = require("../CommonFile/PrePoposal");
 
 test('Test case 04-03: Correct vote Count on Off Chain Poll ', async ({ page }) => {
 

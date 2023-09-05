@@ -1,5 +1,5 @@
 const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("../CommonFile/PreProposal");
+const { PreProposal } = require("../CommonFile/PrePoposal");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
