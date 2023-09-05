@@ -1,21 +1,29 @@
 const { test, expect } = require("@playwright/test");
+const { PreProposal } = require("../CommonFile/PreProposal");
 const { pageLocators } = require("../CommonFile/Locator");
-const { PreVoteOnOffChainPoll } = require("../CommonFile/PreVoteOnOffChainPoll");
 
-test('Test case 2: Vote On Off Chain Proposal ', async ({ page }) => {
+test('Test case 04-02: Vote On Off Chain Proposal ', async ({ page }) => {
 
-    test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
+    //To extend the time of test execution
+    test.setTimeout(120000); 
 
-    await PreVoteOnOffChainPoll(page);   //PreConditions Open URL and Open Mask DAO For Proposal
+    // Selecting DAO for proposal creation
+    await PreProposal(page);
 
-    await page.waitForTimeout(2000); //Wait for page Load
+    //Click on the Proposal Name  
+    await page.getByRole('heading', { name: pageLocators.VoteOnOffChainPoll.ProposalName }).first().click();
 
-    await page.click(pageLocators.VoteOnOffChainPoll.ProposalName); //Click on the Proposal Name 
+    //Click On Option 1
+    await page.getByText(pageLocators.VoteOnOffChainPoll.Option1).first().click(); 
 
-    await page.click(pageLocators.VoteOnOffChainPoll.Option2); //Click On Option 2
+    //Submit Your Votes
+    await page.getByText(pageLocators.VoteOnOffChainPoll.CastYourVote).click();
 
-    await page.click(pageLocators.VoteOnOffChainPoll.CastYourVote); //Submit Your Votes
+    await page.waitForTimeout(3000);
+    
+    const validateText = await page.getByText(pageLocators.VoteOnOffChainPoll.VoteVerify);
+    await expect(validateText).toBeVisible;
 
-    console.log("The vote is successfully recorded and the user is redirected to a confirmation page with the details of the vote.");
+    console.log("The vote is successfully casted.");
 
 })
