@@ -5,7 +5,7 @@ const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test case 3: Successful Token Staking', async ({ page }) => {
 
-    test.setTimeout(7 * 60 * 1000); //Extending Test Case timeout to 7 minutes
+    test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 

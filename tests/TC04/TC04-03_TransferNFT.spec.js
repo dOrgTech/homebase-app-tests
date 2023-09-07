@@ -10,7 +10,7 @@ test('Test case 3: Transfer NFT ',  async ({ page }) => {
 
     try {
 
-        test.setTimeout(7 * 60 * 1000); //Extending Test Case timeout to 7 minutes
+        test.setTimeout(5 * 60 * 1000); //Extending Test Case timeout to 5 minutes
 
         await page.click(pageLocators.OffChainPoll.cycle);  // Click on Running Cycle Status
 

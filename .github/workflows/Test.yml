@@ -44,7 +44,7 @@ jobs:
         with:
           branch: gh-pages
           folder: playwright-report 
-          target-folder: tests/pr-05/tc-01/
+          target-folder: tests/pr-03/tc-01/
 
       - name: TC02 - Run Playwright tests 
         run: npm run test:tc02
@@ -57,7 +57,7 @@ jobs:
         with:
           branch: gh-pages
           folder: playwright-report
-          target-folder: tests/pr-05/tc-02/
+          target-folder: tests/pr-03/tc-02/
 
       - name: TC03 - Run Playwright tests 
         run: npm run test:tc03
@@ -70,7 +70,7 @@ jobs:
         with:
           branch: gh-pages
           folder: playwright-report 
-          target-folder: tests/pr-05/tc-03/
+          target-folder: tests/pr-03/tc-03/
 
       - name: TC04 - Run Playwright tests 
         run: npm run test:tc04
@@ -83,7 +83,7 @@ jobs:
         with:
             branch: gh-pages
             folder: playwright-report
-            target-folder: tests/pr-05/tc-04/
+            target-folder: tests/pr-03/tc-04/
 
       - name: TC05 - Run Playwright tests 
         run: npm run test:tc05
@@ -96,7 +96,7 @@ jobs:
         with:
             branch: gh-pages
             folder: playwright-report 
-            target-folder: tests/pr-05/tc-05/
+            target-folder: tests/pr-03/tc-05/
 
       - name: TC06 - Run Playwright tests 
         run: npm run test:tc06
@@ -109,4 +109,4 @@ jobs:
         with:
             branch: gh-pages
             folder: playwright-report 
-            target-folder: tests/pr-05/tc-06/
+            target-folder: tests/pr-03/tc-06/

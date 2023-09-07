@@ -2,11 +2,11 @@
 const TezosTestData = {
 
     TokenCreator: {
-        TokenName: "Green Token",
+        TokenName: "Gold Token",
         TokenDescription: "My Free Descriptions",
         TC02TokenDescription: "",
         SupplyToken: "1000000",
-        Decimals: "12",
+        Decimals: "11",
         Symbol: "$",
         Icon: "Picture.PNG",
         WalletAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
@@ -14,8 +14,8 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "green Dark DAO",
-        TokenAddress: "KT1NSiFhDYVfu6MXycFR5prML3K13EBCM189",
+        DAOName: "Gold DAO",
+        TokenAddress: "KT1PsVMp9kkJyxU3KnnfNn4AB24fT9k3BBdP",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
@@ -25,7 +25,7 @@ const TezosTestData = {
         VotingMinutes: "08",
         ExecutionDays: "00",
         ExecutionHours: "00",
-        ExecutionMinutes: "02",
+        ExecutionMinutes: "01",
         ThresholdExpiryDays: "01",
         ThresholdExpiryHours: "00",
         ThresholdExpiryMinutes: "00",
