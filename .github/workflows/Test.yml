@@ -27,26 +27,6 @@ jobs:
         with:
           node-version: 18
 
-      # TODO: Caches not working properly as of now. Debug it later
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      
-      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
-        continue-on-error: true
-        run: npm list
-
       - name: Install dependencies
         run: npm ci
       
@@ -57,70 +37,76 @@ jobs:
         run: npm run test:tc01
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
 
       - name: TC01 - Deploy Report for TC 01🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: playwright-report # The folder the action should deploy.
-          target-folder: tests/pr-01/tc-01/
+          folder: playwright-report 
+          target-folder: tests/pr-05/tc-01/
 
       - name: TC02 - Run Playwright tests 
         run: npm run test:tc02
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
   
       - name: TC02 - Deploy Report for TC 02🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: playwright-report # The folder the action should deploy.
-          target-folder: tests/pr-01/tc-02/
+          folder: playwright-report
+          target-folder: tests/pr-05/tc-02/
 
       - name: TC03 - Run Playwright tests 
         run: npm run test:tc03
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
   
       - name: TC03 - Deploy Report for TC 03🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: playwright-report # The folder the action should deploy.
-          target-folder: tests/pr-01/tc-03/
+          folder: playwright-report 
+          target-folder: tests/pr-05/tc-03/
 
       - name: TC04 - Run Playwright tests 
         run: npm run test:tc04
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
   
       - name: TC04 - Deploy Report for TC 04🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
             branch: gh-pages
-            folder: playwright-report # The folder the action should deploy.
-            target-folder: tests/pr-01/tc-04/
+            folder: playwright-report
+            target-folder: tests/pr-05/tc-04/
 
       - name: TC05 - Run Playwright tests 
         run: npm run test:tc05
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
       
       - name: TC05 - Deploy Report for TC 05🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
             branch: gh-pages
-            folder: playwright-report # The folder the action should deploy.
-            target-folder: tests/pr-01/tc-05/
+            folder: playwright-report 
+            target-folder: tests/pr-05/tc-05/
 
       - name: TC06 - Run Playwright tests 
         run: npm run test:tc06
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
           
       - name: TC06 - Deploy Report for TC 06🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
             branch: gh-pages
-            folder: playwright-report # The folder the action should deploy.
-            target-folder: tests/pr-01/tc-06/
+            folder: playwright-report 
+            target-folder: tests/pr-05/tc-06/

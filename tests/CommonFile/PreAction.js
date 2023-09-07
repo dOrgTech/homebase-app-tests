@@ -8,7 +8,7 @@ async function PreProposal(page){
     
     await changeNetwork(page);   //PreConditions Open URL and Selecting the Ghost-net
 
-    await page.click(pageLocators.OffChainPoll.EasyTaskDAO); //Click on Mask DAO
+    await page.click(pageLocators.OffChainPoll.DAO); //Click on Mask DAO
 
     await page.click(pageLocators.OffChainPoll.Proposal); //Click on Proposal
     

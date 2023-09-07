@@ -13,16 +13,16 @@ const TezosTestData = {
         Amount: "100000000",
     },
 
-    DAOCreate: { 
-        DAOName: "Carbon black.",
-        TokenAddress: "KT1Dmxer8pvx8vTUX5V2k44th4DqnKsjhUya",
+    DAOCreate: {
+        DAOName: "Pink DAO",
+        TokenAddress: "KT1U7kVDDa6bnjSs6nts1KywzPs5oyGNMxuv",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
         TC04DAODescription: "",
         VotingDays: '00',
         VotingHours: '00',
-        VotingMinutes: "10",
+        VotingMinutes: "08",
         ExecutionDays: "00",
         ExecutionHours: "00",
         ExecutionMinutes: "15",
@@ -34,9 +34,20 @@ const TezosTestData = {
         MinQuorumAmount: '1',
         QuorumMaxChange: '19',
         MaxQuorumAmount: '90',
-        RequiredStake: "0.1",
+        RequiredStake: "10",
         MinAmount: "1",
         MaxAmount: "200000",
+    },
+
+    OffChainPoll: {
+        ProposalTitle: "GOV",
+        ShortDescription: "This proposal aims to conduct an off-chain poll to gather community input on potential upgrades to the Tezos governance process.",
+        ExternalLink: "https://tezos-gov-upgrades.com",
+        Choice1: "Democracy",
+        Choice2: "Exploration",
+        DD: "00",
+        HH: "00",
+        MM: "20",
     },
 
     ChangeConfiguration: {
@@ -53,15 +64,12 @@ const TezosTestData = {
     },
 
     TransferToken: {
-        RecipientAddress: "tz1MBFA5nJgPgkp1ThXHcSs4YLuUrHmUM1Ef", 
+        RecipientAddress: "tz1MBFA5nJgPgkp1ThXHcSs4YLuUrHmUM1Ef",
         Asset: "$",
         Amount: "12",
         AgoraPostID: "0",
     },
 
-    TransferNFT: {
-
-    },
 
     EditRegistry: {
         Key: "Home ",
@@ -79,7 +87,7 @@ const TezosTestData = {
     },
 
     ExecuteLambda: {
-     
+
         LambdaArgumentsCode: "Write Michelson Code For the Input",
         LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format.",
 
@@ -90,17 +98,6 @@ const TezosTestData = {
 
     },
 
-   
-    OffChainPoll: {
-        ProposalTitle: 'governance',
-        ShortDescription: "This proposal aims to conduct an off-chain poll to gather community input on potential upgrades to the Tezos governance process.",
-        ExternalLink: "https://tezos-gov-upgrades.com",
-        Choice1: "Democracy",
-        Choice2: "Exploration",
-        DD: "00",
-        HH: "00",
-        MM: "20",
-    },
 
     TokenStaking: {
         Amount: "20"

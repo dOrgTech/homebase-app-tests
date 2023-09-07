@@ -2,12 +2,9 @@ const { test, expect } = require("@playwright/test");
 const { PreProposal } = require("../CommonFile/PreAction");
 const { pageLocators } = require("../CommonFile/Locator");
 
-test('Test case 2: Successful Token UnStaking on Chromium', async ({ page, browserName }) => {
-  if (browserName !== 'chromium') {
-    return;
-  }
+test('Test case 1: Successful Token UnStaking ', async ({ page }) => {
 
-  test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
+  test.setTimeout(7 * 60 * 1000); //Extending Test Case timeout to 7 minutes
 
   await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 

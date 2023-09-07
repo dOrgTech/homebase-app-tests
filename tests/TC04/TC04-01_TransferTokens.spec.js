@@ -3,16 +3,13 @@ const { PreProposal } = require("../CommonFile/PreAction");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test('Test case 1: Transfer Tokens',  async ({ page, browserName }) => {
-    if (browserName !== 'chromium') {
-      return;
-    }
-
+test('Test case 1: Transfer Tokens',  async ({ page }) => {
+ 
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
     try {
 
-        test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
+        test.setTimeout(7 * 60 * 1000); //Extending Test Case timeout to 7 minutes
 
         await page.click(pageLocators.OffChainPoll.cycle);  // Click on Running Cycle Status
 

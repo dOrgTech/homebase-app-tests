@@ -1,11 +1,13 @@
 const { test, expect } = require("@playwright/test");
 const { pageLocators } = require("../CommonFile/Locator");
-const { PreVoteOnOffChainPoll } = require("../CommonFile/PreVoteOnOffChainPoll");
+const { PreProposal } = require("../CommonFile/PreAction");
 const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test case 2: Vote On Off Chain Proposal ', async ({ page }) => {
 
-    await PreVoteOnOffChainPoll(page);   //PreConditions Open URL and Open Mask DAO For Proposal
+    test.setTimeout(7 * 60 * 1000); //Extending Test Case timeout to 7 minutes
+
+    await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
     await page.waitForTimeout(2000); //Wait for page Load
 
