@@ -14,7 +14,7 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "Dark red DAO",
+        DAOName: "yellow DAO",
         TokenAddress: "KT1TLAvG8GxWNVzUZF2frfh3q8rS8sVRCLP8",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
