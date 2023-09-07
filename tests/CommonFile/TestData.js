@@ -2,20 +2,20 @@
 const TezosTestData = {
 
     TokenCreator: {
-        TokenName: "My token name",
-        TokenDescription: "My Token Descriptions",
+        TokenName: "Green Token",
+        TokenDescription: "My Free Descriptions",
         TC02TokenDescription: "",
-        SupplyToken: "100000000",
-        Decimals: "13",
+        SupplyToken: "1000000",
+        Decimals: "12",
         Symbol: "$",
         Icon: "Picture.PNG",
         WalletAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
-        Amount: "100000000",
+        Amount: "1000000",
     },
 
     DAOCreate: {
-        DAOName: "yellow DAO",
-        TokenAddress: "KT1TLAvG8GxWNVzUZF2frfh3q8rS8sVRCLP8",
+        DAOName: "green Dark DAO",
+        TokenAddress: "KT1NSiFhDYVfu6MXycFR5prML3K13EBCM189",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
