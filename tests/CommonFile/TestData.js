@@ -14,8 +14,8 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "red Black DAO",
-        TokenAddress: "KT1DNZwpNHJ6MX1bQbhMipsgppBhehCiwrG6",
+        DAOName: "Dark red DAO",
+        TokenAddress: "KT1TLAvG8GxWNVzUZF2frfh3q8rS8sVRCLP8",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
@@ -25,7 +25,7 @@ const TezosTestData = {
         VotingMinutes: "08",
         ExecutionDays: "00",
         ExecutionHours: "00",
-        ExecutionMinutes: "15",
+        ExecutionMinutes: "02",
         ThresholdExpiryDays: "01",
         ThresholdExpiryHours: "00",
         ThresholdExpiryMinutes: "00",
@@ -94,7 +94,7 @@ const TezosTestData = {
     },
 
     VoteOnProposal: {
-        Amount: "300000",
+        Amount: "3000000",
 
     },
 

@@ -81,7 +81,7 @@ const pageLocators = {
   },
 
   OffChainPoll: {
-    DAO: "//p[text()='red Black DAO']",
+    DAO: "//p[text()='Dark red DAO']",
     Proposal: "//p[text()='Proposals']",
     cycle: "//p[text()='Creating']",
     NewProposal: "//span[text()='New Proposal']",
@@ -192,6 +192,9 @@ const pageLocators = {
     OnChainButton: "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-text jss417']",
     Active: "//p[text()='Active']",
     Pending: "//p[text()='Pending']",
+    NoQuorum: "//p[text()='No Quorum']",
+    Expired: "//p[text()='Expired']",
+    Rejected: "//p[text()='Rejected']",
     VoteFor: "//span[text()='Vote For']",
     VoteAgainst: "//span[text()='Vote Against']",
     UseMax: "//p[text()='Use Max']",
@@ -200,6 +203,7 @@ const pageLocators = {
     View: "//span[text()='View']",
     Support: ".MuiGrid-root.MuiGrid-container.MuiGrid-item.MuiGrid-wrap-xs-nowrap.MuiGrid-align-items-xs-baseline.MuiGrid-grid-md-12",
     Oppose: ".MuiGrid-root.MuiGrid-container.MuiGrid-wrap-xs-nowrap.MuiGrid-align-items-xs-center.MuiGrid-grid-md-12",
+    TransactionText: "Vote transaction confirmed",
   },
 
   ProposalExecution: {
