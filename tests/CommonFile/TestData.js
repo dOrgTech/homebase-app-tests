@@ -14,8 +14,8 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "Gold DAO",
-        TokenAddress: "KT1PsVMp9kkJyxU3KnnfNn4AB24fT9k3BBdP",
+        DAOName: "Silver DAO",
+        TokenAddress: "KT1LWzWve5zoB9RsUobWNeUprAJBX5naYpAM",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
