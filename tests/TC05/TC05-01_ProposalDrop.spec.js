@@ -11,6 +11,8 @@ test('Test case 1: Drop the Active proposal', async ({ page }) => {
 
     try {
 
+        await page.click(pageLocators.VoteOnProposal.VotingCycle);  // Click on Running Cycle Status
+
         await page.waitForSelector(pageLocators.VoteOnProposal.Active, { click: true });
         
         await page.click(pageLocators.ProposalDrop.ProposalDrop); //Click on the Drop Proposal
