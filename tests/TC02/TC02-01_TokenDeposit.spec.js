@@ -19,7 +19,7 @@ test('Test case 1: Successful Token Deposit', async ({ page }) => {
 
     await page.click(pageLocators.TokenStaking.Submit); //Click on the Submit Button
 
-    await page.waitForTimeout(300000); //Wait for Transaction Confirmed
+    await page.waitForTimeout(3000); //Wait for Transaction Confirmed
 
     const content = await page.content(); //Assume Page
 
