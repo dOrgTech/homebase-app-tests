@@ -2,7 +2,7 @@
 const TezosTestData = {
 
     TokenCreator: {
-        TokenName: "D Token",
+        TokenName: "C Token",
         TokenDescription: "My Silver Descriptions",
         TC02TokenDescription: "",
         SupplyToken: "1000000",
@@ -14,8 +14,8 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "A DAO",
-        TokenAddress: "KT1HeCeCa1mBjtnMmQAupAJ7Q7ZzQFg85ors",
+        DAOName: "f DAO",
+        TokenAddress: "KT1GgrgBTJ4c7epo9jkg6cu84wkxR9kKHxRy",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
