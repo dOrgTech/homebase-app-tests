@@ -4,6 +4,8 @@ const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
+   
+    const tokenAddress = global.sharedData.tokenAddress;  // Access the Token Address from the shared global object
     
     test.setTimeout(5 * 60 * 1000); //Extending Test Case timeout to 5 minutes
 
@@ -19,7 +21,7 @@ test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
 
     await page.fill(pageLocators.DAOCreate.DAOName, TezosTestData.DAOCreate.DAOName);  //Fill DAO Name
 
-    await page.fill(pageLocators.DAOCreate.TokenAddress, TezosTestData.DAOCreate.TokenAddress); //Fill Token Address
+    await page.fill(pageLocators.DAOCreate.TokenAddress, tokenAddress); //Fill Token Address
 
     await page.fill(pageLocators.DAOCreate.TokenID, TezosTestData.DAOCreate.TokenID); //Fill Token ID 
 
