@@ -43,6 +43,8 @@ test("Test Case 1: Successful Token Creation", async ({ page }) => {
 
   const isTextVisible = content.includes(pageLocators.TokenCreator.DeployText, { visible: true });  //Verify that text visible on the webpage
 
+  console.log(isTextVisible); //console the results of Token
+
   await page.waitForSelector(pageLocators.TokenCreator.ConsoleAddress);  //Wait for find the Element
 
   const element = await page.$(pageLocators.TokenCreator.ConsoleAddress); // get The element

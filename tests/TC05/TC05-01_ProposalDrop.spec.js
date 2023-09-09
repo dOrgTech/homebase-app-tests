@@ -25,7 +25,7 @@ test('Test case 1: Drop the Active proposal', async ({ page }) => {
 
         await page.click(pageLocators.ProposalDrop.ProposalDrop); //Click on the Drop Proposal
 
-        await page.waitForTimeout(30000); //wait for the transaction
+        await page.waitForTimeout(3000); //wait for the transaction
 
         const content = await page.content(); //Assume Page
 
