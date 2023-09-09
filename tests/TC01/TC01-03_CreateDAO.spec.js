@@ -107,6 +107,8 @@ test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
 
     const isTextVisible = content.includes(pageLocators.DAOCreate.DAOText, { visible: true });  //Verify that text visible on the webpage
 
+    console.log(isTextVisible); //Show the Results of True of false
+
     console.log("The DAO is successfully created and the user is redirected to a confirmation page that links to the newly created DAO");
 
 })

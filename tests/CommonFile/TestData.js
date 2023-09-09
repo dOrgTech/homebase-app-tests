@@ -2,7 +2,7 @@
 const TezosTestData = {
 
     TokenCreator: {
-        TokenName: "I Token",
+        TokenName: "J Token",
         TokenDescription: "My Silver Descriptions",
         TC02TokenDescription: "",
         SupplyToken: "1000000",
@@ -14,7 +14,7 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "I DAO",
+        DAOName: "J DAO",
         TokenID: "0",
         TokenAddress: "KT1VPiQUCrYSzicaNa5yWhndt7K19HYUCGzP",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
@@ -22,7 +22,7 @@ const TezosTestData = {
         TC04DAODescription: "",
         VotingDays: '00',
         VotingHours: '00',
-        VotingMinutes: "10",
+        VotingMinutes: "07",
         ExecutionDays: "00",
         ExecutionHours: "00",
         ExecutionMinutes: "16",
