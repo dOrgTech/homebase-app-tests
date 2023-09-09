@@ -19,13 +19,15 @@ test('Test case 1: Successful Token Deposit', async ({ page }) => {
 
     await page.click(pageLocators.TokenStaking.Submit); //Click on the Submit Button
 
-    await page.waitForTimeout(3000); //Wait for Transaction Confirmed
+    await page.waitForTimeout(30000); //Wait for Transaction Confirmed
 
     const content = await page.content(); //Assume Page
 
     const isTextVisible = content.includes(pageLocators.TokenStaking.TransactionText, { visible: true });  //Verify that text visible on the webpage
 
     console.log(isTextVisible); //Console the results of Text 
+
+    expect(isTextVisible).toBe(true, "The tokens are not successfully staked or the text is not visible");
 
     console.log("The tokens are successfully staked and and show up as available balance field");
 

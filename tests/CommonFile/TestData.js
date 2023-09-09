@@ -2,7 +2,7 @@
 const TezosTestData = {
 
     TokenCreator: {
-        TokenName: "C Token",
+        TokenName: "E Token",
         TokenDescription: "My Silver Descriptions",
         TC02TokenDescription: "",
         SupplyToken: "1000000",
@@ -14,7 +14,7 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: "f DAO",
+        DAOName: "E DAO",
         TokenAddress: "KT1GgrgBTJ4c7epo9jkg6cu84wkxR9kKHxRy",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",

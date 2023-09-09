@@ -17,7 +17,7 @@ test('Test case 2: Accept Delegations', async ({ page }) => {
 
     await page.click(pageLocators.AcceptDelegation.SubmitButton); //Click on the Submit Button
 
-    await page.waitForTimeout(3000); //Wait for Transaction Confirmed
+    await page.waitForTimeout(30000); //Wait for Transaction Confirmed
 
     const content = await page.content(); //Assume Page
 
@@ -25,6 +25,8 @@ test('Test case 2: Accept Delegations', async ({ page }) => {
 
     console.log(isTextVisible); //Console the results of Text 
 
-    console.log("The tokens are successfully staked and and show up as available balance field");
+    expect(isTextVisible).toBe(true, "The Accept delegation are not successfully accepted.");
+
+    console.log("The Accepted Delegation transaction are successfully passed.");
 
 })
