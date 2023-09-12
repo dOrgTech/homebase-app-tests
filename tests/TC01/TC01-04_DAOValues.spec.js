@@ -5,7 +5,7 @@ const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test Case 4 : Create DAO with various input values', async ({ page }) => {
 
-    test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
+    test.setTimeout(5 * 60 * 1000); //Extending Test Case timeout to 5 minutes
 
     await changeNetwork(page); //PreConditions Open URL and Selecting the Ghost-net
 

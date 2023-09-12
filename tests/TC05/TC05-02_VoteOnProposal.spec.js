@@ -3,17 +3,13 @@ const { PreProposal } = require("../CommonFile/PreAction");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
+test('Test case 1: Vote On On-Chain Proposal ',  async ({ page }) => {
 
-test('Test case 1: Vote On On-Chain Proposal ',  async ({ page, browserName }) => {
-    if (browserName !== 'chromium') {
-      return;
-    }
-
+    test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
+  
     await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
 
     try {
-
-        test.setTimeout(20 * 60 * 1000); //Extending Test Case timeout to 10 minutes
 
         await page.click(pageLocators.VoteOnProposal.VotingCycle);  // Click on Running Cycle Status
         
@@ -26,6 +22,14 @@ test('Test case 1: Vote On On-Chain Proposal ',  async ({ page, browserName }) =
         // await page.click(pageLocators.VoteOnProposal.UseMax); //Click on Use Max
 
         await page.click(pageLocators.VoteOnProposal.Submit); //Click on the Submit
+
+        await page.waitForTimeout(30000); //wait for the execute transaction
+
+        const content = await page.content(); //Assume Page
+ 
+        const isTextVisible = content.includes(pageLocators.VoteOnProposal.TransactionText, { visible: true });  //Verify that text visible on the webpage
+    
+        console.log(isTextVisible); //Prints True or false for is Text Visible
 
         await page.waitForTimeout(2000); //Wait for Submit the Proposal
 
