@@ -27,26 +27,6 @@ jobs:
         with:
           node-version: 18
 
-      # TODO: Caches not working properly as of now. Debug it later
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      
-      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
-        continue-on-error: true
-        run: npm list
-
       - name: Install dependencies
         run: npm ci
       
@@ -63,7 +43,7 @@ jobs:
         with:
           branch: gh-pages
           folder: playwright-report # The folder the action should deploy.
-          target-folder: tests/pr-01/tc-01/
+          target-folder: tests/pr-05/tc-01/
 
       - name: TC02 - Run Playwright tests 
         run: npm run test:tc02
@@ -75,7 +55,7 @@ jobs:
         with:
           branch: gh-pages
           folder: playwright-report # The folder the action should deploy.
-          target-folder: tests/pr-01/tc-02/
+          target-folder: tests/pr-05/tc-02/
 
       - name: TC03 - Run Playwright tests 
         run: npm run test:tc03
@@ -87,7 +67,7 @@ jobs:
         with:
           branch: gh-pages
           folder: playwright-report # The folder the action should deploy.
-          target-folder: tests/pr-01/tc-03/
+          target-folder: tests/pr-05/tc-03/
 
       - name: TC04 - Run Playwright tests 
         run: npm run test:tc04
@@ -99,7 +79,7 @@ jobs:
         with:
             branch: gh-pages
             folder: playwright-report # The folder the action should deploy.
-            target-folder: tests/pr-01/tc-04/
+            target-folder: tests/pr-05/tc-04/
 
       - name: TC05 - Run Playwright tests 
         run: npm run test:tc05
@@ -111,7 +91,7 @@ jobs:
         with:
             branch: gh-pages
             folder: playwright-report # The folder the action should deploy.
-            target-folder: tests/pr-01/tc-05/
+            target-folder: tests/pr-05/tc-05/
 
       - name: TC06 - Run Playwright tests 
         run: npm run test:tc06
@@ -123,4 +103,4 @@ jobs:
         with:
             branch: gh-pages
             folder: playwright-report # The folder the action should deploy.
-            target-folder: tests/pr-01/tc-06/
+            target-folder: tests/pr-05/tc-06/
