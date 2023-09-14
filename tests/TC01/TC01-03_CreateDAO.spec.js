@@ -110,6 +110,14 @@ test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
 
     console.log(isTextVisible); //Show the Results of True of false
 
+    await page.click(pageLocators.DAOCreate.DAOText); //Click on the my DAO
+
+    const element = await page.$(pageLocators.DAOCreate.DAOClass); // get The element
+  
+    const textContent = await element.innerText();  //get the text From this element
+  
+    console.log('DAO Name:', textContent);  // Console The token Address
+
     console.log("The DAO is successfully created and the user is redirected to a confirmation page that links to the newly created DAO");
 
 })

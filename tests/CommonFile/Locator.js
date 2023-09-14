@@ -63,7 +63,7 @@ const pageLocators = {
     DAOText: "Go to my DAO",
     ErrorText: "Required",
     ConsoleDAOName:"//p[@class='MuiTypography-root jss30 jss31 MuiTypography-body1 MuiTypography-colorTextPrimary']",
-
+    DAOClass:"//p[@class='MuiTypography-root jss30 jss31 MuiTypography-body1 MuiTypography-colorTextPrimary']",
   },
 
   AcceptDelegation:{
@@ -85,8 +85,8 @@ const pageLocators = {
 
   OffChainPoll: {
     
-    // DAO: `//p[text()='${DAOName}']`,  
-    DAO:"//p[text()='New1694521222DAO'] ",
+    DAO: `//p[text()='${DAOName}']`,  
+    // DAO:"//p[text()='New1694521222DAO'] ",
     Proposal: "//p[text()='Proposals']",
     cycle: "//p[text()='Creating']",
     NewProposal: "//span[text()='New Proposal']",
