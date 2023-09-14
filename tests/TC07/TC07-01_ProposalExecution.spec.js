@@ -14,13 +14,7 @@ test('Test case 1: On-Chain Proposal Execution', async ({ page }) => {
 
         const timeout = 300000; // 5 minutes in milliseconds
 
-        try {
-            await page.waitForSelector(pageLocators.ProposalExecution.Execute, { click: true, timeout });
-
-        } catch (error) {
-
-            console.error("No Any passed Proposals");
-        }
+        await page.waitForSelector(pageLocators.ProposalExecution.Execute, { click: true, timeout: 300000 });
 
         await page.click(pageLocators.ProposalExecution.Execute);  //Click on Execute Button
 
