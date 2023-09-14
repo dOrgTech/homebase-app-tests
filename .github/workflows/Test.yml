@@ -110,3 +110,17 @@ jobs:
             branch: gh-pages
             folder: playwright-report 
             target-folder: tests/pr-05/tc-06/
+            
+            
+      - name: TC07 - Run Playwright tests 
+        run: npm run test:tc07
+        env: 
+          WEBAPP_URL: ${{ vars.WEBAPP_URL }}
+          BROWSER: chromium
+              
+      - name: TC07 - Deploy Report for TC 07🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+            branch: gh-pages
+            folder: playwright-report 
+            target-folder: tests/pr-05/tc-07/

@@ -11,6 +11,7 @@
         "test:tc04": "playwright test tests/TC04",
         "test:tc05": "playwright test tests/TC05",
         "test:tc06": "playwright test tests/TC06",
+        "test:tc07": "playwright test tests/TC07",
         "dev": "node --inspect-brk ./node_modules/@playwright/test/cli.js test TC04DAOValues.spec.js --project=chromium --headed"
     },
     "keywords": [],
