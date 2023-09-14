@@ -6,7 +6,7 @@ const { TezosTestData } = require("../CommonFile/TestData");
 
 test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
 
-    const tokenAddress = global.sharedData.tokenAddress;  // Access the Token Address from the shared global object
+    const tokenAddress = global.sharedData.tokenAddress; // Access the Token Address from the shared global object
 
     test.setTimeout(5 * 60 * 1000); //Extending Test Case timeout to 5 minutes
 

@@ -85,7 +85,8 @@ const pageLocators = {
 
   OffChainPoll: {
     
-    DAO: `//p[text()='${DAOName}']`,  
+    // DAO: `//p[text()='${DAOName}']`,  
+    DAO:"//p[text()='New1694521222DAO'] ",
     Proposal: "//p[text()='Proposals']",
     cycle: "//p[text()='Creating']",
     NewProposal: "//span[text()='New Proposal']",
@@ -172,8 +173,8 @@ const pageLocators = {
     ExecuteLambda: "//p[text()='Execute Lambda']",
     SearchBox: "#combo-box-demo",
     Dropdown: "//button[@class='MuiButtonBase-root MuiIconButton-root MuiAutocomplete-popupIndicator']",
-    LambdaArgumentsCode: "//textarea[@placeholder='Write Michelson Code for the input Paramerers of your Lambda']",
-    LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format",
+    LambdaArgumentsCode: ".npm__react-simple-code-editor__textarea:nth-child(2)",
+    LambdaParams: ".npm__react-simple-code-editor__textarea:nth-child(3)",
     SubmitButton: "//span[text()='Submit']",
     TransactionText: "Execute Lambda proposal transaction confirmed",
   },
