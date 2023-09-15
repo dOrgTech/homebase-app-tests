@@ -2,13 +2,11 @@ const { test } = require('@playwright/test');
 const { changeNetwork } = require("../CommonFile/Action");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
-const fs = require('fs/promises');
+const { getTokenAddress } = require("../CommonFile/sharedValues");
 
 test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
 
-    const tokenData = JSON.parse(await fs.readFile('tokenData.json'));    // Read the token address from the external JSON file
-    
-    const tokenAddress = tokenData.tokenAddress;
+    const tokenAddress = getTokenAddress();   // Retrieve the TokenAddress value when needed
 
     test.setTimeout(5 * 60 * 1000); //Extending Test Case timeout to 5 minutes
 
@@ -24,7 +22,7 @@ test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
 
     await page.fill(pageLocators.DAOCreate.DAOName, TezosTestData.DAOCreate.DAOName);  //Fill DAO Name
 
-    await page.fill(pageLocators.DAOCreate.TokenAddress, tokenAddress); //Fill Token Address
+    await page.fill(pageLocators.DAOCreate.TokenAddress,tokenAddress); //Fill Token Address
 
     await page.fill(pageLocators.DAOCreate.TokenID, TezosTestData.DAOCreate.TokenID); //Fill Token ID 
 
