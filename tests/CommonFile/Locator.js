@@ -1,4 +1,5 @@
-import { DAOName } from './TestData'; 
+const { DAOName } = require("./sharedValues");
+
 const pageLocators = {
 
   TokenCreator: {

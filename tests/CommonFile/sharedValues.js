@@ -1,4 +1,5 @@
 let TokenAddress;
+const DAOName = `New${Math.floor(+new Date() / 1000)}DAO`;
 
 module.exports = {
   setTokenAddress: (address) => {
@@ -7,4 +8,5 @@ module.exports = {
   getTokenAddress: () => {
     return TokenAddress;
   },
+  DAOName,
 };
