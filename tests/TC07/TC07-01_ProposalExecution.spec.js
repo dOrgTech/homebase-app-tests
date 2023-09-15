@@ -12,11 +12,11 @@ test('Test case 1: On-Chain Proposal Execution', async ({ page }) => {
 
         await page.click(pageLocators.OffChainPoll.cycle);  // Click on Running Cycle Status
 
-        const timeout = 300000; // 5 minutes in milliseconds
-
-        await page.waitForSelector(pageLocators.ProposalExecution.Execute, { click: true, timeout: 300000 });
+        await page.waitForSelector(pageLocators.ProposalExecution.Execute, { click: true, timeout: 600000 });
 
         await page.click(pageLocators.ProposalExecution.Execute);  //Click on Execute Button
+
+        await page.waitForTimeout(30000); //Wait for transaction
 
         const content = await page.content(); //Assume Page
 

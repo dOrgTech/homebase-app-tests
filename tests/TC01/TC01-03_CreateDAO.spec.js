@@ -1,12 +1,14 @@
-const { test, expect } = require('@playwright/test');
+const { test } = require('@playwright/test');
 const { changeNetwork } = require("../CommonFile/Action");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
-
+const fs = require('fs/promises');
 
 test('Test Case 3 : Create DAO Successfully', async ({ page }) => {
 
-    const tokenAddress = global.sharedData.tokenAddress; // Access the Token Address from the shared global object
+    const tokenData = JSON.parse(await fs.readFile('tokenData.json'));    // Read the token address from the external JSON file
+    
+    const tokenAddress = tokenData.tokenAddress;
 
     test.setTimeout(5 * 60 * 1000); //Extending Test Case timeout to 5 minutes
 

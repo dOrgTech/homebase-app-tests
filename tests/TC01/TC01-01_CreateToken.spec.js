@@ -2,8 +2,7 @@ const { test } = require("@playwright/test");
 const { changeNetwork } = require("../CommonFile/Action");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
-
-global.sharedData = {}; // Initialize a global object
+const fs = require('fs/promises');
 
 test("Test Case 1: Successful Token Creation", async ({ page }) => {
 
@@ -49,11 +48,11 @@ test("Test Case 1: Successful Token Creation", async ({ page }) => {
 
   const element = await page.$(pageLocators.TokenCreator.ConsoleAddress); // get The element
 
-  const textContent = await element.innerText();  //get the text From this element
+  const tokenAddress = await element.innerText(); //Get the text From element 
 
-  console.log('Token Address:', textContent);  // Console The token Address
+  const tokenData = { tokenAddress };     // Store the token address in an external JSON file
 
-  global.sharedData.tokenAddress = textContent;  // Share the Token Address with other test cases using global.sharedData
+  await fs.writeFile('tokenData.json', JSON.stringify(tokenData));
 
   console.log("The token is successfully created and the user is redirected to a confirmation page with the details of the newly created token.");
 
