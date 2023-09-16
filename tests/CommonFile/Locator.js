@@ -85,8 +85,7 @@ const pageLocators = {
   },
 
   OffChainPoll: {
-    // DAO: `//p[text()='${generateDAOName()}']`, 
-    DAO: "//p[text()='Blue Black']", 
+    DAO: `//p[text()='${generateDAOName()}']`, 
     Proposal: "//p[text()='Proposals']",
     cycle: "//p[text()='Creating']",
     NewProposal: "//span[text()='New Proposal']",

@@ -2,7 +2,7 @@ const { test } = require("@playwright/test");
 const { changeNetwork } = require("../CommonFile/Action");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
-const { setTokenAddress } = require("../CommonFile/sharedValues"); // Import the function to set TokenAddress
+const { setTokenAddress } = require("../CommonFile/sharedValues");
 
 
 test("Test Case 1: Successful Token Creation", async ({ page }) => {

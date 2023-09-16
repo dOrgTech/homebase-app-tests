@@ -1,6 +1,6 @@
 const generateDAOName = () => {
-    return `New${Math.floor(+new Date() / 1000)}DAO`;
-  };
+  return `New${Math.floor(+new Date() / 1000)}DAO`;
+};
 
 const TezosTestData = {
 
