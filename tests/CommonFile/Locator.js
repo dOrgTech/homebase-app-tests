@@ -1,4 +1,4 @@
-import { DAOName } from "./TestData";
+import { generateDAOName } from "./TestData";
 
 const pageLocators = {
 
@@ -85,7 +85,7 @@ const pageLocators = {
   },
 
   OffChainPoll: {
-    DAO: `//p[text()='${DAOName}']`,  
+    DAO: `//p[text()='${generateDAOName()}']`, 
     Proposal: "//p[text()='Proposals']",
     cycle: "//p[text()='Creating']",
     NewProposal: "//span[text()='New Proposal']",
