@@ -33,13 +33,13 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: TC01 - Run Playwright tests 
-        run: npm run test:test
+      - name: Run Playwright tests 
+        run: npm run test
         env: 
           WEBAPP_URL: ${{ vars.WEBAPP_URL }}
           BROWSER: chromium
 
-      - name: Deploy Report for ALL Tests🚀
+      - name: Deploy Reports🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
