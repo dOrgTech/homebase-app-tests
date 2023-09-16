@@ -1,4 +1,4 @@
-const { DAOName } = require("./sharedValues");
+import { DAOName } from "./TestData";
 
 const pageLocators = {
 
