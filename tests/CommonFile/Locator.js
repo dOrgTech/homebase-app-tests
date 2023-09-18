@@ -1,7 +1,4 @@
-import { generateDAOName } from "./CommonData";
-
 const pageLocators = {
-
   TokenCreator: {
     MainNet: "//p[text()='Mainnet']",
     GhostNet: "//h6[text()='Ghostnet']",
@@ -85,7 +82,7 @@ const pageLocators = {
   },
 
   OffChainPoll: {
-    DAO: `//p[text()='${generateDAOName()}']`, 
+    DAO: `//p[text()='']`, 
     Proposal: "//p[text()='Proposals']",
     cycle: "//p[text()='Creating']",
     NewProposal: "//span[text()='New Proposal']",

@@ -1,5 +1,3 @@
-import { generateDAOName } from "./CommonData";
-
 const TezosTestData = {
 
     TokenCreator: {
@@ -15,7 +13,7 @@ const TezosTestData = {
     },
 
     DAOCreate: {
-        DAOName: generateDAOName(),
+        DAOName: `New${Math.floor(+new Date() / 1000)}DAO`,
         TokenID: "0",
         TokenAddress: "KT1VPiQUCrYSzicaNa5yWhndt7K19HYUCGzP",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
@@ -102,5 +100,4 @@ const TezosTestData = {
         Amount: "50",
     },
 }
-
 export { TezosTestData };
