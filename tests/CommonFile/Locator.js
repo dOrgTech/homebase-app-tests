@@ -1,4 +1,4 @@
-import { generateDAOName } from "./TestData";
+import { generateDAOName } from "./CommonData";
 
 const pageLocators = {
 

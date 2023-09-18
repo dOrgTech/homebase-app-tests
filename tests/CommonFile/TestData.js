@@ -1,6 +1,4 @@
-const generateDAOName = () => {
-  return `New${Math.floor(+new Date() / 1000)}DAO`;
-};
+import { generateDAOName } from "./CommonData";
 
 const TezosTestData = {
 
@@ -104,6 +102,5 @@ const TezosTestData = {
         Amount: "50",
     },
 }
-const DAOName = generateDAOName();
 
-export { TezosTestData , DAOName, generateDAOName};
+export { TezosTestData };
