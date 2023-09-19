@@ -1,13 +1,22 @@
 name: Run Playwright Tests
 
 on:
+
   push:
     branches:
       - main
+      
   pull_request:
     branches:
       - main
+
+  # Allow manual run
   workflow_dispatch:
+
+  # Allows external webhook trigger
+  repository_dispatch:
+    types:
+      - webhook
 
 permissions: 
   contents: write
