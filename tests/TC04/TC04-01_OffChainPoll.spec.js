@@ -1,44 +1,65 @@
-const { test, expect } = require("@playwright/test");
-const { PreProposal } = require("../CommonFile/PreAction");
-const { pageLocators } = require("../CommonFile/Locator");
-const { TezosTestData } = require("../CommonFile/TestData");
+const { test, expect } = require('@playwright/test');
+const { pageLocators } = require('../CommonFile/Locator');
+const { TezosTestData } = require('../CommonFile/TestData');
+const { PreProposal } = require('../CommonFile/PrePoposal');
 
-test('Test case 1: Off Chain Poll Proposal Creation', async ({ page }) => {
+test('Test case 04-01: Off Chain Poll Proposal Creation', async ({ page }) => {
 
-    test.setTimeout(10 * 60 * 1000); //Extending Test Case timeout to 10 minutes
+    // Selecting DAO for proposal creation
+    await PreProposal(page);
 
-    await PreProposal(page);   //PreConditions Open URL and Open Mask DAO For Proposal
+    try {
+        //To extend the time of test execution
+        test.setTimeout(120000); 
 
-    await page.click(pageLocators.OffChainPoll.NewProposal); //Click on new Proposal
+        //Click on new Proposal
+        await page.getByText(pageLocators.OffChainPoll.NewProposal).click(); 
 
-    await page.click(pageLocators.OffChainPoll.OffChainPoll);  //Click on Off Chain Poll
+        //Click on Off Chain Poll
+        await page.getByText(pageLocators.OffChainPoll.OffChainPoll).click();  
 
-    await page.fill(pageLocators.OffChainPoll.ProposalTitle, TezosTestData.OffChainPoll.ProposalTitle);  //Pass the Proposal Title
+        //Pass the Proposal Title
+        await page.type(pageLocators.OffChainPoll.ProposalTitle, TezosTestData.OffChainPoll.ProposalTitle);  
 
-    await page.fill(pageLocators.OffChainPoll.ShortDescription, TezosTestData.OffChainPoll.ShortDescription); //Pass the Short Description
+        //Pass the Short Description    
+        await page.type(pageLocators.OffChainPoll.Description, TezosTestData.OffChainPoll.Description); 
 
-    await page.fill(pageLocators.OffChainPoll.ExternalLink, TezosTestData.OffChainPoll.ExternalLink);  //Pass the External Link
+        //Pass the External Link
+        await page.type(pageLocators.OffChainPoll.ExternalLink, TezosTestData.OffChainPoll.ExternalLink);  
 
-    await page.click(pageLocators.OffChainPoll.multipleChoice); // Click on Multiple Choice
+        // Click on Multiple Choice
+        await page.click(pageLocators.OffChainPoll.multipleChoice); 
 
-    await page.fill(pageLocators.OffChainPoll.Choice1, TezosTestData.OffChainPoll.Choice1); //Pass the Choice 1 Data
+        //Pass the Choice 1 Data
+        await page.type(pageLocators.OffChainPoll.Choice1, TezosTestData.OffChainPoll.Choice1); 
 
-    await page.click(pageLocators.OffChainPoll.AddChoice); //Click on Add Choice
+        //Click on Add Choice
+        await page.click(pageLocators.OffChainPoll.AddChoice); 
 
-    await page.fill(pageLocators.OffChainPoll.Choice2, TezosTestData.OffChainPoll.Choice2); //Pass The Choice 2 Data 
+        //Pass The Choice 2 Data 
+        await page.type(pageLocators.OffChainPoll.Choice2, TezosTestData.OffChainPoll.Choice2); 
 
-    await page.fill(pageLocators.OffChainPoll.DD, TezosTestData.OffChainPoll.DD); //Pass The Date 
+        //Pass The Date 
+        await page.type(pageLocators.OffChainPoll.DD, TezosTestData.OffChainPoll.DD); 
 
-    await page.fill(pageLocators.OffChainPoll.HH, TezosTestData.OffChainPoll.HH); //Pass The Hours
+        //Pass The Hours
+        await page.type(pageLocators.OffChainPoll.HH, TezosTestData.OffChainPoll.HH);
 
-    await page.fill(pageLocators.OffChainPoll.MM, TezosTestData.OffChainPoll.MM); //Pass The Minute
+        //Pass The Minute
+        await page.type(pageLocators.OffChainPoll.MM, TezosTestData.OffChainPoll.MM); 
 
-    await page.click(pageLocators.OffChainPoll.CreateProposalButton); //Click on the Create Proposal Button
+        //Click on the Create Proposal Button
+        await page.getByText(pageLocators.OffChainPoll.CreateProposalButton).click(); 
 
-    const content = await page.content(); //Assume Page
+        //Wait for Text Visible on Webpage
+        const validateText = await page.getByText(pageLocators.OffChainPoll.CreateText)
+        await expect (validateText).toBeVisible();
 
-    await page.waitForSelector(pageLocators.OffChainPoll.CreateText, { visible: true }); //Wait for Text Visible on Webpage
+        console.log("The poll is successfully created.")
 
-    console.log("The poll is successfully created and the user is redirected to a confirmation page with the details of the newly created poll.");
+    }  catch (error) {
+        console.error('Error:', error);
+    }
 
+   
 })

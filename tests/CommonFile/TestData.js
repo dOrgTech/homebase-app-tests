@@ -1,32 +1,35 @@
 const TezosTestData = {
 
-    TokenCreator: {
+    TokenCreation: {
         TokenName: "My token name",
         TokenDescription: "My Token Descriptions",
-        TC02TokenDescription: "",
+        TC01_02TokenDescription: "",
         SupplyToken: "100",
         Decimals: "18",
         Symbol: "#",
         Icon: "Picture.PNG",
         WalletAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Amount: "100",
+        TC01_03Amount: "10",
+
     },
 
-    DAOCreate: {
-        DAOName: "Decentralized",
-        TokenAddress: "KT1Dmxer8pvx8vTUX5V2k44th4DqnKsjhUya",
+    DAOCreation: {
+        DAOName: "My Test DAO",
+        TokenAddress: "KT1ND3pDj67PqfjvzqPUAvSRqmcqcHnqpiEQ",
+        TokenAddress2:"KT1BnUunpH9MTXMMyBQ1daJpKQrC1XgCgRtn",
         TokenID: "0",
         GuardianAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
         Description: "A DAO focused on funding and promoting open-source projects related to sustainability and renewable energy.",
-        TC04DAODescription: "",
+        TC02_02DAODescription: "",
         VotingDays: '00',
-        VotingHours: '00',
-        VotingMinutes: "03",
+        VotingHours: '01',
+        VotingMinutes: "00",
         ExecutionDays: "00",
         ExecutionHours: "00",
         ExecutionMinutes: "01",
         ThresholdExpiryDays: "01",
-        ThresholdExpiryHours: "00",
+        ThresholdExpiryHours: "01",
         ThresholdExpiryMinutes: "00",
         QuorumThreshold: '2',
         QuorumChange: '2',
@@ -36,88 +39,62 @@ const TezosTestData = {
         RequiredStake: "10",
         MinAmount: "10",
         MaxAmount: "20",
+        
     },
 
-    ChangeConfiguration: {
+    OffChainPoll: {
+        ProposalTitle: "Testing proposal",
+        Description: "This proposal aims to conduct an off-chain poll.",
+        ExternalLink: "https://example.com",
+        Choice1: "option1",
+        Choice2: "option2",
+        DD: "01",
+        HH: "02",
+        MM: "05",
+    },
+
+    DAOConfiguration: {
 
         ProposalFee: "1",
-        ReturnedTokenPercentage: "1",
+        ReturnedTokenPercentage: "2",
 
     },
 
     ChangeGuardian: {
-        WalletAddress: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+        WalletAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
 
     },
 
     ChangeDelegate: {
-        NewDelegateAddress: "tz1VxgGHwU6T6MaWrzfCBSpg2tw823KWVbk6",
+        NewDelegateAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
     },
 
     TransferToken: {
-        RecipientAddress: "tz1VxgGHwU6T6MaWrzfCBSpg2tw823KWVbk6",
-        Asset: "SRD",
-        Amount: "10",
-        AgoraPostID: "10",
+        RecipientAddress: "tz1LCFwczMiEuNHcMvpqgNzzEs8f4FNBgyNK",
+        Asset: "TST",
+        Amount: "05",
+        AgoraPostID: "5",
     },
 
-    TransferNFT: {
-
-    },
 
     EditRegistry: {
-        Key: "Hello",
-        Value: "Hi",
+        Key: "This is Registry",
+        Value: "Helloo",
 
     },
 
-    AddLambda: {
-        MichelsonCode: ".npm__react-simple-code-editor__textarea",
-
+    VotingOnChain: {
+        Amount: '25584',
     },
 
-    RemoveLambda: {
-        SearchText: "transfer_proposal",
-    },
-
-    ExecuteLambda: {
-        SearchText: "transfer_proposal",
-        LambdaArgumentsCode: "Write Michelson Code For the Input",
-        LambdaParams: "Enter the values for the given params in a JSON/JavaScript Object format.",
-
-    },
-
-    VoteOnProposal: {
-
-    },
-
-    ProposalExecutionAndDrop: {
-        Execute: "//span[text()='Execute']",
-        DropExpired: "//span[text()='Drop Expired']",
-    },
-
-
-    OffChainPoll: {
-        ProposalTitle: "Community Governance",
-        ShortDescription: "This proposal aims to conduct an off-chain poll to gather community input on potential upgrades to the Tezos governance process.",
-        ExternalLink: "https://examplelink.com/tezos-gov-upgrades-poll",
-        Choice1: "Introduce Liquid Democracy",
-        Choice2: "Increase Proposal Exploration Period",
-        CreateProposalButton: "button[class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']",
-        DD: "01",
-        HH: "05",
-        MM: "00",
-    },
-
-    TokenStaking: {
-        Amount: "000+-e"
+    TokenDeposit: {
+        Amount: "2",
+        Balance: "2"
     },
 
     TokenWithdrawal: {
-        Amount: "23456E_+",
-    },
-
-
+        Amount: "5",
+    }
 
 }
 export { TezosTestData };
