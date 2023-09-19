@@ -17,8 +17,12 @@ test('Test case 04-02: Vote On Off Chain Proposal ', async ({ page }) => {
         //Click On Option 1
         await page.getByText(pageLocators.VoteOnOffChainPoll.Option1).first().click();
 
+        // to check if Cast your vote button is enabled
+        const isbutton = await page.getByText(pageLocators.VoteOnOffChainPoll.CastYourVote);
+        await expect(isbutton).toBeVisible();
+        
         //Submit Your Votes
-        await page.getByText(pageLocators.VoteOnOffChainPoll.CastYourVote).click();
+        await isbutton.click();
 
         await page.waitForTimeout(3000);
 

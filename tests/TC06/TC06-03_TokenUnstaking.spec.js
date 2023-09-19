@@ -27,7 +27,9 @@ test('Test case 06-03: Successful Token UnStaking', async ({ page }) => {
         await page.waitForTimeout(5000);
 
         //Click on UnStake Votes 
-        page.getByText(pageLocators.TokenUnstaking.Unstake).click();
+        const UnstakeBtn = await page.getByText(pageLocators.TokenUnstaking.Unstake);
+        await expect(UnstakeBtn).toBeEnabled()
+        await UnstakeBtn.click()
 
         await page.waitForTimeout(12000);
 
