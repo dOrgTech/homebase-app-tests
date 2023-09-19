@@ -11,7 +11,7 @@ test('Test Case 02-01 : Create DAO Successfully', async ({ page }) => {
     //To extend the time of test execution
     test.setTimeout(120000);
 
-    customTimeout(12000, async () => {
+    // customTimeout(12000, async () => {
 
         //Open URL and Selecting the Ghost-net
         await changeNetwork(page);
@@ -154,6 +154,6 @@ test('Test Case 02-01 : Create DAO Successfully', async ({ page }) => {
 
         console.log("The DAO is successfully created and the user is redirected to a confirmation page");
 
-    })
+    // })
 
 })
