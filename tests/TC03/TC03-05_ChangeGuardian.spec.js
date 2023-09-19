@@ -3,7 +3,7 @@ const { PreProposal } = require("../CommonFile/PrePoposal");
 const { pageLocators } = require("../CommonFile/Locator");
 const { TezosTestData } = require("../CommonFile/TestData");
 
-test('Test case 05-05: Change Guardian', async ({ page }) => {
+test('Test case 03-05: Change Guardian', async ({ page }) => {
 
     // Selecting DAO for proposal creation
     await PreProposal(page);
@@ -37,7 +37,7 @@ test('Test case 05-05: Change Guardian', async ({ page }) => {
 
     }
     catch (error) {
-        console.log("Now Voting Cycle is running");
+        console.log("Error: ", error);
     }
 
 })

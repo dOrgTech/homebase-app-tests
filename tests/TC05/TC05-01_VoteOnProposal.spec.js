@@ -44,11 +44,10 @@ test('Test case 05-01: Vote On Proposal ', async ({ page }) => {
 
         console.log("Vote was casted successfully.");
 
-}
+    }
     catch (error) {
-    // console.log("Now Creating Cycle is running");
-    console.log(error);
-}
+        console.log("Error: ", error);
+    }
 
 
 
