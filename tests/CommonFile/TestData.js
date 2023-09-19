@@ -39,6 +39,7 @@ const TezosTestData = {
         RequiredStake: "10",
         MinAmount: "10",
         MaxAmount: "20",
+        
     },
 
     OffChainPoll: {
