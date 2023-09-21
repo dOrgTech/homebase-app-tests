@@ -100,4 +100,7 @@ const TezosTestData = {
         Amount: "50",
     },
 }
-export { TezosTestData };
+const DAONam= TezosTestData.DAOCreate.DAOName;
+
+
+export { TezosTestData , DAONam};

@@ -8,13 +8,7 @@ async function PreProposal(page) {
 
     await changeNetwork(page);   //PreConditions Open URL and Selecting the Ghost-net
 
-    const DAOName = await page.evaluate(() => {   // Retrieve DAOName from Local Storage
-        return localStorage.getItem('DAOName');
-    });
-
-    const daoElement = await page.locator(pageLocators.OffChainPoll.DAO.replace('${DAOName}', DAOName)).first();   // Use DAOName to locate elements on the page
-
-    await daoElement.click();   // Perform actions with the located element
+   await page.click(pageLocators.OffChainPoll.DAO)  // Use DAOName to locate elements on the page
 
     await page.click(pageLocators.OffChainPoll.Proposal); //Click on Proposal
 

@@ -1,3 +1,5 @@
+import { DAONam } from "./TestData";
+
 const pageLocators = {
   TokenCreator: {
     MainNet: "//p[text()='Mainnet']",
@@ -82,7 +84,7 @@ const pageLocators = {
   },
 
   OffChainPoll: {
-    DAO: `//p[text()='']`, 
+    DAO: `//p[text()='${DAONam}']`, 
     Proposal: "//p[text()='Proposals']",
     cycle: "//p[text()='Creating']",
     NewProposal: "//span[text()='New Proposal']",
