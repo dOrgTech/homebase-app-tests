@@ -3,7 +3,7 @@ const pageLocators = {
   TokenCreation: {
     MainNet: 'Mainnet',
     GhostNet: "Ghostnet",
-    EnterApp: ".MuiButtonBase-root.MuiButton-root.MuiButton-contained.jss11.jss12.MuiButton-containedSecondary",
+    EnterApp: "#playwright-key-create-dao-button",
     frame: "div.MuiGrid-root.MuiGrid-container.MuiGrid-align-items-xs-center.MuiGrid-justify-content-xs-center",
     // ConnectWallet: "//span[text()='Connect Wallet']",
     CreateDAO: "Create DAO",
